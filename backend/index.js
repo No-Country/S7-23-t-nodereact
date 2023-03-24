@@ -4,6 +4,8 @@ import connectDB from "./database/db.js";
 import cors from "cors";
 
 import users from './api/routes/users.routes.js'
+import projects from './api/routes/projects.routes.js'
+
 const app = express();
 app.use(express.json());
 app.use(cors({
@@ -36,6 +38,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/users", users);
+app.use("/api/projects", projects)
 
 
 

@@ -26,10 +26,10 @@ const userSchema = mongoose.mongoose.Schema({
         type: mongoose.Schema.Types.String,
         ref: 'User'
     },
-   /*  category: {
+    category: {
         type: mongoose.Schema.Types.String,
         ref: 'Categories'
-    }, */
+    },
     totalAmount: {
         type: Number,
         default: 0
