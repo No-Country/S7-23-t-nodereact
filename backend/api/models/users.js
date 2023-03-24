@@ -1,17 +1,20 @@
 import mongoose from "mongoose";
-import generateJWT from "../helpers/generateJWT";
+// import generateJWT from "../helpers/generateJWT.js";
 
 
 const userSchema = mongoose.Schema({
   name: {
     type: String,
-    required: true,
     trim: true,
   },
   lastName: {
     type: String,
-   
     trim: true,
+  },
+  userName: {
+    type: String,
+    trim: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -19,7 +22,6 @@ const userSchema = mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
     trim: true,
   },
   celphone: {
@@ -38,7 +40,7 @@ const userSchema = mongoose.Schema({
   status: {
     type: String,
     required: true,
-    enum:["active ","suspended","banned"]
+    enum:["active","suspended","banned"]
   },
 });
 
