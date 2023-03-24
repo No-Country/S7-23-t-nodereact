@@ -35,6 +35,11 @@ const userSchema = mongoose.Schema({
     required: true,
     enum:["user","admin"]
   },
+  status: {
+    type: String,
+    required: true,
+    enum:["active ","suspended","banned"]
+  },
 });
 
 
