@@ -2,6 +2,9 @@ import User from "../models/users.js";
 
 
 
-export const findOneByElement = async (name) => {
-    return User.findOne({name});
+export const findElement = async (element) => {
+    return User.find(element);
+};
+export const findOneElement = async (element) => {
+    return User.findOne(element);
 };
