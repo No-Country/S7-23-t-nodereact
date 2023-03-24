@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./database/db.js";
 import cors from "cors";
+import morgan from "morgan"
 
 import users from './api/routes/users.routes.js'
 import projects from './api/routes/projects.routes.js'
@@ -19,6 +20,7 @@ app.use(cors({
         'authorization',
       ],
 }));
+app.use(morgan("dev"));
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header(

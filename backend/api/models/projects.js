@@ -11,7 +11,7 @@ const userSchema = mongoose.mongoose.Schema({
         type: String,
         require: true,
         minLength: [10, 'Must be at least 10 characters long, {VALUE} is not long enough'],
-        maxLength: [35, 'Must be at most 35 characters long, {VALUE} is not supported']
+        maxLength: [60, 'Must be at most 35 characters long, {VALUE} is not supported']
     },
     img: {
         type: String
@@ -50,7 +50,7 @@ const userSchema = mongoose.mongoose.Schema({
         default: 'active'
     },
     finaldate:{
-        type: Date
+        type: Date,
     },
 },
 {
