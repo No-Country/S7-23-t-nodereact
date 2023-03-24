@@ -1,13 +1,8 @@
 import mongoose from "mongoose";
-// import generateJWT from "../helpers/generateJWT.js";
 
 
 const userSchema = mongoose.Schema({
   name: {
-    type: String,
-    trim: true,
-  },
-  lastName: {
     type: String,
     trim: true,
   },
@@ -16,30 +11,29 @@ const userSchema = mongoose.Schema({
     trim: true,
     unique: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
   email: {
     type: String,
     trim: true,
+    unique: true,
   },
   celphone: {
     type: String,
     trim: true,
   },
-  token: {
+  picture: {
     type: String,
-    // default: generateJWT(),
+    trim:true,
   },
   type: {
     type: String,
     required: true,
+    default:"user",
     enum:["user","admin"]
   },
   status: {
     type: String,
     required: true,
+    default:"active",
     enum:["active","suspended","banned"]
   },
 });
