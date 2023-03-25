@@ -17,7 +17,6 @@ const userProfile = async (req, res) => {
     res.status(500).json({ message: "Error al buscar el perfil" });
   }
 };
-
 const newUser = async (req, res) => {
   const query = req.body;
   const profile = await findOneElement(query);
