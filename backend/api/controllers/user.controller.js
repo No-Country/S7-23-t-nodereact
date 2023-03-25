@@ -2,7 +2,6 @@ import User from "../models/users.js";
 import {
   findElement,
   findOneElement,
-  validation,
 } from "../utils/users.utils.js";
 
 const userProfile = async (req, res) => {
@@ -22,7 +21,6 @@ const userProfile = async (req, res) => {
 const newUser = async (req, res) => {
   const query = req.body;
   const profile = await findOneElement(query);
-  console.log("soy profile" + profile);
   try {
     if (profile) {
       return res.status(400).json({
@@ -51,5 +49,6 @@ const editUser = async (req, res) => {
     res.status(400).json(error);
   }
 };
+
 
 export { userProfile, newUser, editUser };
