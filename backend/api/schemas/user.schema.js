@@ -18,7 +18,6 @@ export const idValidation = Joi.object({
 export const dataUsers = Joi.object({
 name:name.required(),
 email:email.required(),
-celphone:celphone.required(),
 type:type.required(),
 picture:picture.required(),
 userName:username.required(),
