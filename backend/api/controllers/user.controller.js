@@ -1,8 +1,5 @@
 import User from "../models/users.js";
-import {
-  findElement,
-  findOneElement,
-} from "../utils/users.utils.js";
+import { findElement, findOneElement } from "../utils/users.utils.js";
 
 const userProfile = async (req, res) => {
   const query = req.query;
@@ -17,7 +14,6 @@ const userProfile = async (req, res) => {
     res.status(500).json({ message: "Error al buscar el perfil" });
   }
 };
-
 const newUser = async (req, res) => {
   const query = req.body;
   const profile = await findOneElement(query);
@@ -32,10 +28,9 @@ const newUser = async (req, res) => {
     res.json(savedUser);
   } catch (error) {
     console.log(error);
-    res.status(400).json(error)
+    res.status(400).json(error);
   }
 };
-
 const editUser = async (req, res) => {
   const { id } = req.params;
 
@@ -45,10 +40,19 @@ const editUser = async (req, res) => {
     });
     res.status(200).json(userUpdate);
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(400).json(error);
   }
 };
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    const data = await User.deleteOne({ _id: id });
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 
-
-export { userProfile, newUser, editUser };
+export { userProfile, newUser, editUser, deleteUser };
