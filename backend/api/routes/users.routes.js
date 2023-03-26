@@ -1,11 +1,13 @@
 import express from "express";
 import { userProfile, newUser, editUser,deleteUser } from "../controllers/user.controller.js";
+import {validatorHandler,  validatorUserHandler } from "../middleware/validator.handler.js";
+import { dataUsers, idValidation } from "../schemas/user.schema.js";
 
 const router = express.Router();
 
-router.post("/new", newUser);
+router.post("/new",validatorUserHandler(dataUsers,'body'), newUser);
 router.get("/profile", userProfile);
-router.put("/edit/:id", editUser);
-router.delete("/:id", deleteUser);
+router.put("/edit/:id",validatorHandler(idValidation,'params'),validatorHandler(dataUsers,'body'), editUser);
+router.delete("/:id",validatorHandler(idValidation,'params'), deleteUser);
 
 export default router;

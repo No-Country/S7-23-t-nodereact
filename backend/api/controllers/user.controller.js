@@ -15,14 +15,7 @@ const userProfile = async (req, res) => {
   }
 };
 const newUser = async (req, res) => {
-  const query = req.body;
-  const profile = await findOneElement(query);
   try {
-    if (profile) {
-      return res.status(400).json({
-        message: "El cliente ya existe",
-      });
-    }
     const user = new User(req.body);
     const savedUser = await user.save();
     res.json(savedUser);
