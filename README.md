@@ -1,6 +1,6 @@
 # S7-23-t-nodereact
 
-##Que hace? 
+##Que hace el proyecto? 
 
 ##Para que se hace?
 
