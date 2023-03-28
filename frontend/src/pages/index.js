@@ -16,6 +16,7 @@ export default function Home() {
       </Head>
       <main className=''>
         <h1 className='text-3xl font-bold underline'>hola next js</h1>
+        <h1 className='text-primary-color'>Hola soy Marcos</h1>
       </main>
     </>
   )
