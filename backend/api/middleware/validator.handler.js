@@ -1,3 +1,4 @@
+import Category from "../models/categories.js";
 import User from "../models/users.js";
 
 export async function findExistingUser(value) {
@@ -7,7 +8,7 @@ export async function findExistingUser(value) {
   return existingUser;
 }
 
-export function validatorUserHandler(schema,property) {
+export function validatorUserHandler(schema, property) {
   return async (req, res, next) => {
     const { error, value } = schema.validate(req[property]);
     if (error) {
@@ -24,7 +25,7 @@ export function validatorUserHandler(schema,property) {
         errors.userName = `El nombre de usuario ${userName} ya está en uso`;
       }
       if (Object.keys(errors).length > 0) {
-        return res.status(409).json({ message: 'Conflict', errors });
+        return res.status(409).json({ message: "Conflict", errors });
       }
     }
     next();
@@ -48,4 +49,29 @@ export function validatorHandler(schema, property) {
   };
 }
 
+export async function findExistingCategory(value) {
+  const existingCategory = await Category.findOne({ name: value.name });
+  return existingCategory;
+}
 
+export function validatorCategoryHandler(schema, property) {
+  return async (req, res, next) => {
+    const { error, value } = schema.validate(req[property]);
+    if (error) {
+      console.log(error)
+      return res.status(400).json({ message: error.details[0].message });
+    }
+    const existingCategory = await findExistingCategory(value);
+    const { name } = value;
+    const errors = {};
+    if (existingCategory) {
+      if (existingCategory.name === name) {
+        errors.name = `La categoria ${name} ya ha sido registrada`;
+      }
+      if (Object.keys(errors).length > 0) {
+        return res.status(409).json({ message: "Conflict", errors });
+      }
+    }
+    next();
+  };
+}
