@@ -3,9 +3,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import NoveCard from "@/components/NoveCard";
 import ProyDestac from "@/components/ProyDestac";
-
 const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <>
@@ -21,6 +19,7 @@ export default function Home() {
           <NoveCard />
           <NoveCard />
           <NoveCard />
+
           <NoveCard />
         </div>
 

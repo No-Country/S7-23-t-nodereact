@@ -6,6 +6,7 @@ import morgan from "morgan"
 
 import users from './api/routes/users.routes.js'
 import projects from './api/routes/projects.routes.js'
+import categories from './api/routes/categories.routes.js'
 
 const app = express();
 app.use(express.json());
@@ -40,8 +41,8 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/users", users);
-app.use("/api/projects", projects)
-
+app.use("/api/projects", projects);
+app.use("/api/categories", categories);
 
 
 
