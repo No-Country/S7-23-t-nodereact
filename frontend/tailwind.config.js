@@ -20,7 +20,8 @@ module.exports = {
       "accent-hover": "#B93243",
       "light-gray": "#F5F5F5",
     },
+
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/line-clamp")],
 };

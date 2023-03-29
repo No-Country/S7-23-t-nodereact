@@ -2,10 +2,8 @@ import Head from "next/head";
 
 import { Inter } from "next/font/google";
 import NoveCard from "@/components/NoveCard";
-import Navbar from "@/components/Navbar";
-
+import ProyDestac from "@/components/ProyDestac";
 const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <>
@@ -15,14 +13,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="w-[90%] m-auto ">
-        <h1 className="text-3xl font-bold underline">hola next js</h1>
-        <h1 className="text-primary-color">Hola soy Marcos</h1>
-        <div className="flex justify-around flex-wrap">
+      <main className="w-[90%] m-auto bg-font-text ">
+        <h2 className="text-[40px] font-bold text-text mb-5 mt-4">Novedades</h2>
+        <div className="flex justify-between flex-wrap">
           <NoveCard />
           <NoveCard />
           <NoveCard />
-          <Navbar />
+
+          <NoveCard />
+        </div>
+
+        <h2 className="text-[40px] font-bold text-text mb-5 mt-4">
+          PROYECTOS DESTACADOS
+        </h2>
+        <div className="flex justify-between flex-wrap">
+          <ProyDestac />
+          <ProyDestac />
+          <ProyDestac />
+          <NoveCard />
         </div>
       </main>
     </>
