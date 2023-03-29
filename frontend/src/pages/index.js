@@ -15,14 +15,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Navbar />
       <main className="w-[90%] m-auto ">
-        <h1 className="text-3xl font-bold underline">hola next js</h1>
+               <h1 className="text-3xl font-bold underline">hola next js</h1>
         <h1 className="text-primary-color">Hola soy Marcos</h1>
         <div className="flex justify-around flex-wrap">
           <NoveCard />
           <NoveCard />
           <NoveCard />
-          <Navbar />
+          
         </div>
       </main>
     </>
