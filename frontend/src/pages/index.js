@@ -21,7 +21,13 @@ export default function Home() {
           <NoveCard />
           <NoveCard />
           <NoveCard />
-
+          <NoveCard />
+        </div>
+        <div className="flex justify-around flex-wrap">
+          <NoveCard />
+          <NoveCard />
+          <NoveCard />
+          <NoveCard />
         </div>
       </main>
       <Footer />
