@@ -1,9 +1,9 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
+import NoveCard from "@/components/NoveCard";
 
-
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -14,10 +14,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=''>
-        <h1 className='text-3xl font-bold underline'>hola next js</h1>
-        <h1 className='text-primary-color'>Hola soy Marcos</h1>
+      <main className="w-[90%] m-auto ">
+        <h1 className="text-3xl font-bold underline">hola next js</h1>
+        <h1 className="text-primary-color">Hola soy Marcos</h1>
+        <div className="flex justify-around flex-wrap">
+          <NoveCard />
+          <NoveCard />
+          <NoveCard />
+        </div>
       </main>
     </>
-  )
+  );
 }
