@@ -20,7 +20,18 @@ export default function Home() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="#">
-                <h2 className="text-2xl text-white font-bold">NEXT JS</h2>
+              <div className="flex flex-shrink-0 items-center">
+                  <img
+                    className="block h-8 w-auto lg:hidden"
+                    src='/logo-ideadev.jpeg'
+                    alt="Your Company"
+                  />
+                  <img
+                    className="hidden h-8 w-auto lg:block"
+                    src="/logo-ideadev.jpeg"
+                    alt="Your Company"
+                  />
+                </div>
               </a>
               <div className="md:hidden">
                 <button
@@ -67,24 +78,25 @@ export default function Home() {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              
                 <li className="text-white">
                   <Link href="/">
-                    <a>Home</a>
+                    DESCUBRIR
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/blogs">
-                    <a>Blogs</a>
+                    FINANCIAR
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/about">
-                    <a>About US</a>
+                    COLABORAR
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/contact">
-                    <a>Contact US</a>
+                    PUBLICAR CAMPAÑA
                   </Link>
                 </li>
               </ul>
