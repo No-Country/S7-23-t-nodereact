@@ -11,3 +11,7 @@
 body {
   background-color: white;
 }
+
+.custom-bg {
+  background-color: rgba(217, 217, 217, 0.28);
+}
