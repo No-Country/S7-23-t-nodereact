@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
   return (
-    <div className='my-20'>
+    <div className='my-20 absolute z-0'>
        <nav className="w-full bg-font-text shadow fixed top-0">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
