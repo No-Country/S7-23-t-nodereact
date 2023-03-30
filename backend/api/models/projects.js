@@ -38,15 +38,20 @@ const userSchema = mongoose.mongoose.Schema({
         type: Number,
         default: 0
     },
+   
     devRequired: {
-        type:[String],
+        type:[{
+            quantity: Number,
+            position: String
+        }],
+        
     },
     techRequired:{
         type: [String]
     },
     colaborators:{
         type:[String],
-    },
+    },//ux
     status: {
         type: String,
         enum: ['active', 'paused', 'finished', 'deleted' ],
