@@ -41,6 +41,9 @@ const userSchema = mongoose.mongoose.Schema({
     devRequired: {
         type:[String],
     },
+    techRequired:{
+        type: [String]
+    },
     colaborators:{
         type:[String],
     },
