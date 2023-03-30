@@ -23,6 +23,7 @@ module.exports = {
       "progress": "#53B830",
       "accent-hover": "#B93243",
       "light-gray": "#F5F5F5",
+
     },
 
     extend: {},

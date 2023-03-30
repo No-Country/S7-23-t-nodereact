@@ -8,8 +8,8 @@ const Footer = () => {
             src="/logo-ideadev.jpeg"
             alt="idea dev Logo"
             className=""
-            width={100}
-            height={24}
+            width={214}
+            height={34}
             priority
           />
         </div>
@@ -17,25 +17,33 @@ const Footer = () => {
           <span className="font-Manrope text-base text-font-text">
             Explorar
           </span>
-          <a className="link link-hover">Qué hacemos</a>
-          <a className="link link-hover">Cómo publicar una campaña</a>
+          <a className="link link-hover text-font-text">Qué hacemos</a>
+          <a className="link link-hover text-font-text">
+            Cómo publicar una campaña
+          </a>
         </div>
         <div>
           <span className="font-Manrope text-base text-font-text">
             Acerca de nosotros
           </span>
-          <a className="link link-hover">Blog</a>
-          <a className="link link-hover">Prensa</a>
-          <a className="link link-hover">Empleo</a>
+          <a className="link link-hover text-font-text">Blog</a>
+          <a className="link link-hover text-font-text">Prensa</a>
+          <a className="link link-hover text-font-text">Empleo</a>
         </div>
         <div>
           <span className="font-Manrope text-base text-font-text">
             Atencionm al cliente
           </span>
-          <a className="link link-hover">Terminos y Condiciones</a>
-          <a className="link link-hover">Politicas de Privacidad</a>
-          <a className="link link-hover">Recursos Para Creaodres</a>
-          <a className="link link-hover">FAQ</a>
+          <a className="link link-hover text-font-text">
+            Terminos y Condiciones
+          </a>
+          <a className="link link-hover text-font-text">
+            Politicas de Privacidad
+          </a>
+          <a className="link link-hover text-font-text">
+            Recursos Para Creaodres
+          </a>
+          <a className="link link-hover text-font-text">FAQ</a>
         </div>
       </footer>
 

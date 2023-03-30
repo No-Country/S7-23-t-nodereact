@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import NoveCard from "@/components/NoveCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Testimonios from "@/components/Testimonios";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
           <NoveCard />
           <NoveCard />
           <NoveCard />
+          <Testimonios />
         </div>
       </main>
       <Footer />
