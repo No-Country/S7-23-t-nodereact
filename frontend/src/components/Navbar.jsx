@@ -5,8 +5,8 @@ import { useState } from 'react';
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
   return (
-    <div>
-       <nav className="w-full bg-gray-800 shadow">
+    <div className='my-20 absolute z-0'>
+       <nav className="w-full bg-font-text shadow fixed top-0">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -70,22 +70,22 @@ export default function Home() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               
-                <li className="text-white">
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
                   <Link href="/">
                     DESCUBRIR
                   </Link>
                 </li>
-                <li className="text-white">
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
                   <Link href="/blogs">
                     FINANCIAR
                   </Link>
                 </li>
-                <li className="text-white">
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
                   <Link href="/about">
                     COLABORAR
                   </Link>
                 </li>
-                <li className="text-white">
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
                   <Link href="/contact">
                     PUBLICAR CAMPAÑA
                   </Link>
