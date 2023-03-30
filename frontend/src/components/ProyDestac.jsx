@@ -1,6 +1,6 @@
 import React from "react";
 
-const NoveCard = () => {
+const ProyDestac = () => {
   return (
     <div className="w-[400px] h-[600px] bg-font-text">
       <div className="w-[400px] h-[266.7px] p-[10px]  ">
@@ -25,12 +25,12 @@ const NoveCard = () => {
             15%
           </span>
         </div>
-        <div className=" w-full h-[22px] rounded-[40px] bg-[#D9D9D9] mt-[12px] ">
-          <div className="w-[30%] h-[22px] bg-[#53B830] rounded-[40px] px-[10px]"></div>
+        <div className=" w-full h-[22px] rounded-[40px] bg-[#D9D9D9] mt-[12px]">
+          <div className="w-[30%] h-[22px] bg-[#53B830] rounded-[40px]"></div>
         </div>
       </div>
     </div>
   );
 };
 
-export default NoveCard;
+export default ProyDestac;
