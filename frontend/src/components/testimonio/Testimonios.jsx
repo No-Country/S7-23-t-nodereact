@@ -1,106 +1,55 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Image from "next/image";
 import style from "./testimonio.module.css";
 
 const Testimonios = () => {
-  // const [currentIndex, setCurrentIndex] = useState(0);
-
-  // const handleClickNext = () => {
-  //   setCurrentIndex((currentIndex + 1) % 3);
-  // };
-
-  // const handleClickPrev = () => {
-  //   setCurrentIndex((currentIndex + 2) % 3);
-  // };
-
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl">
-        <figure className="px-10 pt-10">
-          <img
-            src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-            className="rounded-xl"
-          />
-        </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
+      <section>
+        <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold">
+          QUE DICEN NUESTROS USUARIOS
+        </h2>
+        <div className={`${style.section} gap-10 my-7`}>
+          <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
+            <figure className="px-10 pt-10">
+              <Image
+                src="/avatar-girl .png"
+                alt="Shoes"
+                width={100}
+                height={100}
+                className="rounded-full absolute -top-16"
+              />
+            </figure>
+            <div className="card-body items-center text-center">
+              <p className="text-text font-Manrope font-medium text-lg">
+                Gracias a ideadev puede cumplir mi sueño de abrir mi propio
+                emprendimiento.
+              </p>
+              <h2 className="text-text font-Manrope text-lg">Ana,Chile!</h2>
+            </div>
+          </div>
+          <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
+            <figure className="px-10 pt-10">
+              <Image
+                src="/avatar-man.png"
+                alt="Shoes"
+                width={100}
+                height={100}
+                className="rounded-full absolute -top-16"
+              />
+            </figure>
+            <div className="card-body items-center text-center">
+              <p className="text-text font-Manrope text-lg">
+                Ideadev me dio la posibilidad de dar mis primeros pasos como
+                desarrollador. ¡Gracias!
+              </p>
+              <h2 className="text-text font-Manrope text-lg">
+                Juan,Puerto Rico!
+              </h2>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* <div className={`${style.slider}`}>
-        <Image
-          src="/oveja.png"
-          alt="oveja"
-          className={`${style.img}`}
-          width={500}
-          height={500}
-          style={{ transform: `translateX(-${(currentIndex - 1) * 100}%)` }}
-          // priority
-        />
-        <Image
-          src="/oveja.png"
-          alt="oveja"
-          className={`${style.img}`}
-          width={500}
-          height={500}
-          // priority
-        />
-        <Image
-          src="/oveja.png"
-          alt="oveja"
-          className={`${style.img}`}
-          width={500}
-          height={500}
-          style={{ transform: `translateX(-${(currentIndex - 1) * 100}%)` }}
-          priority
-        />
-        <Image
-          src="/oveja.png"
-          alt="oveja"
-          className={`${style.img}`}
-          width={500}
-          height={500}
-          style={{ transform: `translateX(-${(currentIndex - 1) * 100}%)` }}
-          priority
-        />
-        <Image
-          src="/oveja.png"
-          alt="oveja"
-          className={`${style.img}`}
-          width={500}
-          height={500}
-          style={{ transform: `translateX(-${(currentIndex - 1) * 100}%)` }}
-          priority
-        />
-        <Image
-          src="/oveja.png"
-          alt="oveja"
-          className={`${style.img}`}
-          width={500}
-          height={500}
-          style={{ transform: `translateX(-${(currentIndex - 1) * 100}%)` }}
-          priority
-        />
-      </div>
-      <div className="flex justify-center gap-2">
-        <button onClick={handleClickPrev}>Anterior</button>
-        <button onClick={handleClickNext}>Siguiente</button>
-      </div> */}
-
-      {/* <div className="flex flex-col w-full h-96 lg:flex-row gap-2 mx-auto bg-[#D9D9D9]">
-        <div className="grid flex-grow h-80 w-20 card bg-light-gray rounded-box place-items-center">
-          content
-        </div>
-
-        <div className="grid flex-grow h-80 w-20 card bg-light-gray rounded-box place-items-center">
-          content
-        </div>
-      </div> */}
+      </section>
     </>
   );
 };

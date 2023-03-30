@@ -4,9 +4,9 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
-import Testimonios from "@/components/Testimonios";
 import SliderMoveCard from "@/components/SliderMoveCard";
 import SliderDestacCard from "@/components/SliderDestacCard";
+import Testimonios from "@/components/testimonio/Testimonios";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -39,6 +39,7 @@ export default function Home() {
           </h2>
           <SliderDestacCard />
         </div>
+        <Testimonios />
       </main>
       <Footer />
     </>
