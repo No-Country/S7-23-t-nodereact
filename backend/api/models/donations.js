@@ -32,6 +32,11 @@ const userSchema = mongoose.mongoose.Schema({
         type: String,
         enum: ['monetary', 'time']
     }
+    // ,
+    // collaborate:{
+    //     type: String,
+    //     enum: ['frontend', 'backend', 'fullstack', 'UX', 'UI', 'dataScientist']
+    // }
 },
 {
     timestamps: true

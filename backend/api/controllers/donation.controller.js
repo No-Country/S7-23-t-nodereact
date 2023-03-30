@@ -48,4 +48,4 @@ const postDonation = async (req, res) => {
   }
 };
 
-export { userProfile, newUser, editUser, deleteUser };
+export { getDonation , postDonation };
