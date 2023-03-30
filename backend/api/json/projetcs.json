@@ -3,13 +3,19 @@
     "title": "Un plato caliente",
     "subtitle": "",
     "img": "",
-    "description": "Somos una ",
-    "autor": "",
-    "category": "",
+    "description": "prueba",
+    "autor": "yo",
+    "category": "artfffa",
     "totalAmount": 3200,
     "parcialAmount": 2500,
-    "devRequired": "",
-    "techRequired": "",
+    "devRequired": [{
+        "quantity": 2, "position": "back"
+    },
+{
+    "quantity": 2, "position": "back"
+}],
+  
+    "techRequired": ["FIgma", "Express"],
     "finaldate": "2023/12/20"
     
     },
