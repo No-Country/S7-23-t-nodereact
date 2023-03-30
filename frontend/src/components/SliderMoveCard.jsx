@@ -72,7 +72,7 @@ const SlideNextButton = () => {
 
   return (
     <button onClick={() => swiper.slideNext()}>
-      <i class="fa-solid fa-chevron-right text-[#000000] text-2xl  "></i>
+      <i className="fa-solid fa-chevron-right text-[#000000] text-2xl  "></i>
     </button>
   );
 };
@@ -82,7 +82,7 @@ const SlidePrevButton = () => {
 
   return (
     <button onClick={() => swiper.slidePrev()}>
-      <i class="fa-solid fa-chevron-left text-[#000000] text-2xl"></i>
+      <i className="fa-solid fa-chevron-left text-[#000000] text-2xl"></i>
     </button>
   );
 };
