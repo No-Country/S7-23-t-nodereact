@@ -5,7 +5,7 @@ const Footer = () => {
       <footer className="footer p-10 bg-primary-color text-base-content">
         <div>
           <Image
-            src="/logo.png"
+            src="/logo-ideadev.jpeg"
             alt="idea dev Logo"
             className=""
             width={100}

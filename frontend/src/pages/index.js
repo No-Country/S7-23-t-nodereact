@@ -17,18 +17,10 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className="w-[90%] m-auto ">
-<<<<<<< HEAD
-               <h1 className="text-3xl font-bold underline">hola next js</h1>
-        <h1 className="text-primary-color">Hola soy Marcos</h1>
-=======
->>>>>>> c3a5be744d772f3e3c2df238d2f74393bb126985
         <div className="flex justify-around flex-wrap">
           <NoveCard />
           <NoveCard />
           <NoveCard />
-<<<<<<< HEAD
-          
-=======
           <NoveCard />
         </div>
         <div className="flex justify-around flex-wrap">
@@ -36,7 +28,6 @@ export default function Home() {
           <NoveCard />
           <NoveCard />
           <NoveCard />
->>>>>>> c3a5be744d772f3e3c2df238d2f74393bb126985
         </div>
       </main>
       <Footer />

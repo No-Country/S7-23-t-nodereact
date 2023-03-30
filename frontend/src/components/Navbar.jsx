@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -7,15 +6,7 @@ export default function Home() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>
-      <Head>
-        <title>Create Next Responsive Navbar With Tailwind CSS</title>
-        <meta
-          name="description"
-          content="Create Next JS Responsive Menu with Tailwind CSS"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <nav className="w-full bg-gray-800 shadow">
+       <nav className="w-full bg-gray-800 shadow">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -23,12 +14,12 @@ export default function Home() {
               <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src='/logo-ideadev.jpeg'
+                    src='/logo.png'
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="/logo-ideadev.jpeg"
+                    src="/logo.png"
                     alt="Your Company"
                   />
                 </div>
@@ -104,11 +95,7 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <div className="flex justify-center items-center mt-8">
-        <h1 className="text-2xl font-bold text-purple-500">
-          Create Responsive Navbar Menu in Next js with Tailwind CSS
-        </h1>
-      </div>
+      
     </div>
   );
 }
