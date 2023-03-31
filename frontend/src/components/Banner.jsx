@@ -6,7 +6,7 @@ return (
 
     <div className="w-full h-1/2 my-20">
         <img
-          className="w-full h-full  z-10 "
+          className="w-full h-full  "
           src="/pexels-cottonbro-studio-5483077 1@2x.png"
           alt=""
         />
