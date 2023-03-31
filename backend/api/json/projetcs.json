@@ -27,8 +27,6 @@
     "category": "Criptomonedas",
     "totalAmount": 3200,
     "parcialAmount": 2500,
-    "devRequired": "",
-    "techRequired": "",
     "finaldate": "2023/12/20"
     
     },
@@ -42,7 +40,6 @@
     "totalAmount": 25000,
     "parcialAmount": 17500,
     "finaldate": "2023/12/20"
-    
     },
     {
     "title": "FIt Your Body",
@@ -53,10 +50,7 @@
     "category": "Deportes",
     "totalAmount": 15000,
     "parcialAmount": 2500,
-    "devRequired": "",
-    "techRequired": "",
     "finaldate": "2023/12/20"
-    
     },
     {
     "title": "Invest your idea",
@@ -67,10 +61,7 @@
     "category": "Criptomonedas",
     "totalAmount": 32000,
     "parcialAmount": 14000,
-    "devRequired": "",
-    "techRequired": "",
     "finaldate": "2023/12/20"
-    
     },
     {
     "title": "Turquia somos todos",
@@ -90,7 +81,6 @@
     }],
     "techRequired": "",
     "finaldate": "2023/12/20"
-    
     },
     {
     "title": "Conecta tu ciudad",
