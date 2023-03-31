@@ -93,6 +93,8 @@ export default function Home() {
               </ul>
             </div>
           </div>
+          <button class="rounded-full Kanit font-kanit  bg-font-text text-black"> Iniciar sesión </button>
+          <button class="rounded-full Kanit font-kanit  bg-accent-hover text-font-text"> Registrarse </button>
         </div>
       </nav>
       
