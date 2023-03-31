@@ -38,6 +38,11 @@ const getProjects = async (req, res) => {
         console.log(error.message)
       }
 };
+const getProjectById = async (req, res) => {
+    const {id} = req.params;
+    const project = await Project.findById(id, projection)
+    res.status(200).json(project)
+  }
 
 const postProject = async (req, res) => {
     const project = new Project(req.body)
@@ -49,4 +54,26 @@ const postProject = async (req, res) => {
     }
 }
 
-export {getProjects, postProject};
+const updateProject = async (req, res) => { 
+    const title = req.query.title
+    const data = req.body
+   //console.log(data)
+    var allProject = await Project.find({}, {projection});
+    try {
+      let projectByName = allProject.filter(e =>
+        e.title.toLowerCase().includes(title.toLowerCase())
+        );
+        
+        const forUpdateProject = await Project.findByIdAndUpdate(
+          {_id : projectByName[0]._id} , 
+          data, {
+          new: true
+        })
+        console.log(forUpdateProject)
+       res.json(forUpdateProject)
+    } catch (error) {
+      console.log(err.message)
+    }
+  }
+
+export {getProjects, postProject, getProjectById, updateProject};
