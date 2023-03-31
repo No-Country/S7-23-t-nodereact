@@ -21,15 +21,31 @@ const SliderMoveCard = () => {
           slidesPerView: 1.2,
           spaceBetween: 40,
         },
+        450: {
+          slidesPerView: 1.4,
+          spaceBetween: 40,
+        },
         600: {
           slidesPerView: 1.8,
-          spaceBetween: 30,
+          spaceBetween: 40,
+        },
+        700: {
+          slidesPerView: 2.2,
+          spaceBetween: 25,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 2.5,
           spaceBetween: 30,
         },
         1200: {
+          slidesPerView: 2.7,
+          spaceBetween: 20,
+        },
+        1500: {
+          slidesPerView: 3.2,
+          spaceBetween: 20,
+        },
+        1650: {
           slidesPerView: 4,
           spaceBetween: 20,
         },
