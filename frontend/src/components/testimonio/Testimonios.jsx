@@ -5,9 +5,6 @@ const Testimonios = () => {
   return (
     <>
       <section>
-        <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold">
-          QUE DICEN NUESTROS USUARIOS
-        </h2>
         <div className={`${style.section} gap-10 my-7`}>
           <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
             <figure className="px-10 pt-10">
