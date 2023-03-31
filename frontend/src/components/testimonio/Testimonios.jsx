@@ -9,7 +9,7 @@ const Testimonios = () => {
           <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
             <figure className="px-10 pt-10">
               <Image
-                src="/avatar-girl .png"
+                src="/avatar-girl.png"
                 alt="Shoes"
                 width={100}
                 height={100}
