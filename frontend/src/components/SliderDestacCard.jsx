@@ -1,11 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
-import NoveCard from "./NoveCard";
+import axios from "axios";
+import ProyDestac from "./ProyDestac";
 
 const SliderDestacCard = () => {
-  useEffect(() => {}, []);
+  const [projects, setProjects] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/projects")
+      .then((res) => setProjects(res.data))
+      .then((err) => console.log(err));
+  }, []);
 
   return (
     <Swiper
@@ -23,36 +31,43 @@ const SliderDestacCard = () => {
           slidesPerView: 1.2,
           spaceBetween: 40,
         },
+        450: {
+          slidesPerView: 1.4,
+          spaceBetween: 40,
+        },
         600: {
           slidesPerView: 1.8,
-          spaceBetween: 30,
+          spaceBetween: 40,
+        },
+        700: {
+          slidesPerView: 2.2,
+          spaceBetween: 25,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 2.5,
           spaceBetween: 30,
         },
         1200: {
+          slidesPerView: 2.7,
+          spaceBetween: 20,
+        },
+        1500: {
+          slidesPerView: 3.2,
+          spaceBetween: 20,
+        },
+        1650: {
           slidesPerView: 4,
           spaceBetween: 20,
         },
       }}
     >
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-
+      {projects?.map((project) => (
+        <SwiperSlide>
+          <div>
+            <ProyDestac project={project} />
+          </div>
+        </SwiperSlide>
+      ))}
       <div
         className="hidden sm:flex items-center absolute top-20 bottom-0 right-20  cursor-pointer 
 w-[50px] h-[50px] custom-bg  justify-center rounded-full z-20"
