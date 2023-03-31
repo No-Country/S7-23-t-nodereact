@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import NoveCard from "./NoveCard";
 
 const SliderDestacCard = () => {
+  useEffect(() => {}, []);
+
   return (
     <Swiper
       modules={[Navigation]}
