@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "./testimonio.module.css";
 
-const Testimonios = () => {
+const Testimonios2 = () => {
   return (
     <>
       <section>
@@ -53,4 +53,4 @@ const Testimonios = () => {
   );
 };
 
-export default Testimonios;
+export default Testimonios2;

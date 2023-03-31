@@ -1,20 +1,19 @@
-import Link from 'next/link';
-import { useState } from 'react';
-
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
   return (
-    <div className='my-20 absolute z-10'>
-       <nav className="w-full bg-font-text shadow fixed top-0">
+    <div className="my-20 absolute z-10">
+      <nav className="w-full bg-font-text shadow fixed top-0">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="#">
-              <div className="flex flex-shrink-0 items-center">
+                <div className="flex flex-shrink-0 items-center">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src='/logo.png'
+                    src="/logo.png"
                     alt="Your Company"
                   />
                   <img
@@ -65,39 +64,35 @@ export default function Home() {
           <div>
             <div
               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? 'block' : 'hidden'
+                navbar ? "block" : "hidden"
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/">
-                    DESCUBRIR
-                  </Link>
+                  <Link href="/">DESCUBRIR</Link>
                 </li>
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/blogs">
-                    FINANCIAR
-                  </Link>
+                  <Link href="/blogs">FINANCIAR</Link>
                 </li>
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/about">
-                    COLABORAR
-                  </Link>
+                  <Link href="/about">COLABORAR</Link>
                 </li>
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/contact">
-                    PUBLICAR CAMPAÑA
-                  </Link>
+                  <Link href="/contact">PUBLICAR CAMPAÑA</Link>
                 </li>
               </ul>
             </div>
           </div>
-          <button class="rounded-full Kanit font-kanit  bg-font-text text-black"> Iniciar sesión </button>
-          <button class="rounded-full Kanit font-kanit  bg-accent-hover text-font-text"> Registrarse </button>
+          <button className="rounded-full Kanit font-kanit  bg-font-text text-black">
+            {" "}
+            Iniciar sesión{" "}
+          </button>
+          <button className="rounded-full Kanit font-kanit  bg-accent-hover text-font-text">
+            {" "}
+            Registrarse{" "}
+          </button>
         </div>
       </nav>
-      
     </div>
   );
 }
