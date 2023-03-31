@@ -5,11 +5,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 .bg {
   background-color: white;
 }
+
 body {
   background-color: white;
+}
+
+.bg-svg svg {
+  fill: rgb(207, 197, 197);
 }
 
 .custom-bg {

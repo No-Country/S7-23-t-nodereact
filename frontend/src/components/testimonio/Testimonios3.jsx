@@ -5,14 +5,11 @@ const Testimonios3 = () => {
   return (
     <>
       <section>
-        <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold">
-          QUE DICEN NUESTROS USUARIOS
-        </h2>
         <div className={`${style.section} gap-10 my-7`}>
           <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
             <figure className="px-10 pt-10">
               <Image
-                src="/avatar-girl .png"
+                src="/avatar-girl-3.png"
                 alt="Shoes"
                 width={100}
                 height={100}
@@ -30,7 +27,7 @@ const Testimonios3 = () => {
           <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
             <figure className="px-10 pt-10">
               <Image
-                src="/avatar-man.png"
+                src="/avatar-man-3.png"
                 alt="Shoes"
                 width={100}
                 height={100}

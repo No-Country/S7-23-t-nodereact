@@ -8,7 +8,7 @@ import Testimonios3 from "./Testimonios3";
 const TestimonioEslider = () => {
   return (
     <>
-      <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold">
+      <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold py-10">
         QUE DICEN NUESTROS USUARIOS
       </h2>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
@@ -21,20 +21,6 @@ const TestimonioEslider = () => {
         <SwiperSlide>
           <Testimonios3 />
         </SwiperSlide>
-        {/* <SwiperSlide>
-          <Testimonios />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Testimonios />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Testimonios />
-        </SwiperSlide> */}
-        {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide> */}
       </Swiper>
     </>
   );
