@@ -35,10 +35,11 @@ const postDonation = async (req, res) => {
         amount, {
         new: true
       })
-//Actualiza el estado de la donación
+//Actualiza el estado de la donación cuando pago ok
     const updateCompletion = await Donation.findByIdAndUpdate(
         {_id : donation._id},
-        {completed: 'completed'}
+        {completed: 'completed'},
+        {new: true}
     )
 
     res.status(201).json(newDonation)
@@ -47,5 +48,13 @@ const postDonation = async (req, res) => {
     res.status(400).json(error.message);
   }
 };
+
+// acceptWorkDonation
+const acceptWorkDonation = await Donation.findByIdAndUpdate(
+  {_id : donation._id},
+  {completed: 'completed'},
+  {new: true}
+)
+
 
 export { getDonation , postDonation };
