@@ -107,43 +107,55 @@
     "finaldate": "2023/06/20"
     },
     {
-    "title": "",
-    "subtitle": "",
-    "img": "",
-    "description": "",
-    "autor": "",
-    "category": "",
-    "totalAmount": 3200,
-    "parcialAmount": 2500,
-    "devRequired": "",
-    "finaldate": "2023/12/20"
-    
+    "title": "ArgExchange",
+    "subtitle": "Fintech de divisas",
+    "img": "https://res.cloudinary.com/dvz5m6b4o/image/upload/v1680306381/fintech_hivrcn.jpg",
+    "description": "Somos una fintech de cambio de divisas y para poder lanzar nuestro sitio necesitamos ayuda para finalizar el Frontend",
+    "autor": "rafael84barreiro",
+    "category": "Criptomonedas",
+    "devRequired": [
+    {
+    "quantity": 2, "position": "Front End"
     },
     {
-        "title": "",
-    "subtitle": "",
-    "img": "",
-    "description": "",
-    "autor": "",
-    "category": "",
-    "totalAmount": 3200,
-    "parcialAmount": 2500,
-    "devRequired": "",
+    "quantity": 1, "position": "UX/UI"
+    }],
     "finaldate": "2023/12/20"
-    
     },
     {
-        "title": "",
-    "subtitle": "",
-    "img": "",
-    "description": "",
-    "autor": "",
-    "category": "",
-    "totalAmount": 3200,
-    "parcialAmount": 2500,
-    "devRequired": "",
+    "title": "Social Network",
+    "subtitle": "Analisis de datos",
+    "img": "https://res.cloudinary.com/dvz5m6b4o/image/upload/v1680306696/powerBI_esoc5c.png",
+    "description": "Confeccionar los paneles de datos en Power BI de toda la organización, tomando la información de nuestra base de datos y crear simulaciones para analizar el sentimiento de nuestra comunidad.",
+    "autor": "rafael84barreiro",
+    "category": "Redes Sociales",
+    "devRequired": [
+        {
+        "quantity": 1, "position": "Data Science"
+        },
+        {
+        "quantity": 1, "position": "UX/UI"
+        }],
     "finaldate": "2023/12/20"
-    
+    },
+    {
+    "title": "Jugemos en equipo",
+    "subtitle": "Un lugar para jugar con amigos",
+    "img": "",
+    "description": "Quieres hacer tu propio torneo de PS5? con nuestra App podrás llevar todas las estadísticas de los partidos con tus amigos, así como crear tu propio torneo y enviarles una invitación a su celu, ya no hay excusas para no juntarse a jugar un buen torneo de fútbol. Para eso necesitamos tu colaboración.",
+    "autor": "rafael84barreiro",
+    "category": "Video Juegos",
+    "totalAmount": 17000,
+    "parcialAmount": 17000,
+    "devRequired": [
+        {
+        "quantity": 1, "position": "FontEnd"
+        },
+        {
+        "quantity": 1, "position": "UX/UI"
+        }],
+    "techRequired": ["React", "Angular", "Vue", "Figma"],
+    "finaldate": "2023/08/20"
     },
     {
         "title": "",
