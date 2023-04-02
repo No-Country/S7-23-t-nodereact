@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import Search from "./Search";
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
@@ -61,7 +62,15 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div
+              className={` mt-8 md:block md:pb-0 md:mt-0 ${
+                navbar ? "block" : "hidden"
+              }`}
+            >
+          <Search />
+          </div>
           <div>
+                    
             <div
               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
                 navbar ? "block" : "hidden"
@@ -83,14 +92,20 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <button className="rounded-full Kanit font-kanit  bg-font-text text-black">
+          <div
+              className={`pb-3 flex space-x-4 mt-8 md:block md:pb-0 md:mt-0 ${
+                navbar ? "block" : "hidden"
+              }`}
+            >
+          <button className="rounded-full Kanit font-kanit p-2 border-accent-hover border-4 bg-font-text text-black">
             {" "}
             Iniciar sesión{" "}
           </button>
-          <button className="rounded-full Kanit font-kanit  bg-accent-hover text-font-text">
+          <button className="rounded-full Kanit font-kanit p-2 border-accent-hover border-4 bg-accent-hover text-font-text">
             {" "}
             Registrarse{" "}
           </button>
+          </div>
         </div>
       </nav>
     </div>
