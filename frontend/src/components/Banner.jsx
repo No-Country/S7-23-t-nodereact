@@ -7,14 +7,13 @@ return (
     <div className="w-full h-1/2 my-20">
         <img
           className="w-full h-full  "
-          src="/pexels-cottonbro-studio-5483077 1@2x.png"
+          src="/Banner.png"
           alt=""
         />
-       {/* <img
-          className="w-full h-full  z-20  "
-          src="/Vector 2.png"
-          alt=""
-        />*/}
+        <button className="rounded-full Kanit font-kanit p-2 border-accent-hover border-4 bg-accent-hover text-font-text">
+            {" "}
+            PUBLICAR CAMPAÑA{" "}
+          </button>
 
     </div>
 )
