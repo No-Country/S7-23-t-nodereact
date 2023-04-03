@@ -47,5 +47,27 @@ const deleteUser = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+async function updateFullAccount(req, res) {
+  try {
+    const user = await User.findById(req.params.id);
 
-export { userProfile, newUser, editUser, deleteUser };
+    // Verifica si el usuario tiene todos los campos requeridos
+    const isFullAccount = !!user.name && !!user.userName && !!user.email && !!user.celphone &&  !!user.information &&  !!user.role;
+
+    if (isFullAccount) {
+      user.fullAcount = true;
+      await user.save();
+
+      return res.status(200).json({ message: 'Cuenta Completa' });
+    }
+
+    return res.status(400).json({ message: 'Cuenta incompleta' });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error });
+  }
+}
+
+
+
+export { userProfile, newUser, editUser, deleteUser, updateFullAccount};
