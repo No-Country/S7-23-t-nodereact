@@ -11,4 +11,5 @@ router.put("/edit/:id",validatorHandler(idValidation,'params'), editUser);
 router.put('/:id/fullaccount', updateFullAccount);
 router.delete("/:id",validatorHandler(idValidation,'params'), deleteUser);
 
+
 export default router;
