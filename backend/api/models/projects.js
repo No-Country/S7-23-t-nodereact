@@ -20,7 +20,7 @@ const userSchema = mongoose.mongoose.Schema({
         type: String,
         require: true,
         minLength: [20, 'Must be at least 20 characters long, {VALUE} is not long enough'],
-        maxLength: [300, 'Must be at most 300 characters long, {VALUE} is not supported']
+        
     },
     autor: {
         type: mongoose.Schema.Types.String,
@@ -38,12 +38,21 @@ const userSchema = mongoose.mongoose.Schema({
         type: Number,
         default: 0
     },
+   
     devRequired: {
-        type:[String],
+        type:[{
+            quantity: Number,
+            position: String
+        }],
+        default: []
+    },
+    techRequired:{
+        type: [String],
+        default: []
     },
     colaborators:{
         type:[String],
-    },
+    },//ux
     status: {
         type: String,
         enum: ['active', 'paused', 'finished', 'deleted' ],
