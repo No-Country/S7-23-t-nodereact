@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import Search from "./Search";
+import Despegable from "@/components/Desplegable";
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
   return (
-    <div className="my-20 absolute z-10">
+    <div className="my-20 absolute z-40">
       <nav className="w-full bg-font-text shadow fixed top-0">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
@@ -77,17 +78,17 @@ export default function Home() {
               }`}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/">DESCUBRIR</Link>
+                <li className="text-white l font-bold  text-[#000000] manroper font-Manrope">
+                <Despegable />
                 </li>
-                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/blogs">FINANCIAR</Link>
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
+                  <Link href="/financiar">FINANCIAR</Link>
                 </li>
-                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/about">COLABORAR</Link>
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
+                  <Link href="/colaborar">COLABORAR</Link>
                 </li>
-                <li className="text-white font-bold  text-[#000000] manroper font-Manrope">
-                  <Link href="/contact">PUBLICAR CAMPAÑA</Link>
+                <li className="text-white font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
+                  <Link href="/publicarCampaña">PUBLICAR CAMPAÑA</Link>
                 </li>
               </ul>
             </div>
@@ -97,11 +98,11 @@ export default function Home() {
                 navbar ? "block" : "hidden"
               }`}
             >
-          <button className="rounded-full Kanit font-kanit p-2 border-accent-hover border-4 bg-font-text text-black">
+          <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
             {" "}
             Iniciar sesión{" "}
           </button>
-          <button className="rounded-full Kanit font-kanit p-2 border-accent-hover border-4 bg-accent-hover text-font-text">
+          <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-color-accent text-font-text hover:border-accent-hover hover:bg-accent-hover">
             {" "}
             Registrarse{" "}
           </button>
