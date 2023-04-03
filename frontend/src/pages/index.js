@@ -10,6 +10,7 @@ import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
 import Onbording from "@/components/Onbording/Onbording";
 import Script from 'next/script'
 
+
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
         />
       </Head>
       <Navbar />
-      <main className="w-[90%] m-auto ">
-        <div className="flex justify-around flex-wrap">
-          <Banner />
+
+      <main className="w-[100%] m-auto ">
+        <div className="flex justify-around flex-wrap"> 
+            <Banner />
         </div>
         <Onbording />
         <div className="relative">
