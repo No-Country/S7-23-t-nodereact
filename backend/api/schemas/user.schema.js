@@ -21,6 +21,6 @@ email:email.required(),
 type:type.required(),
 picture:picture.required(),
 userName:username.required(),
-status:status.required()
+acountStatus:status.required()
 })
 
