@@ -33,13 +33,13 @@ export default function Home() {
         </div>
         <Onbording />
         <div className="relative">
-          <h2 className="font-bold text-4xl text-text font-Kanit my-4">
+          <h2 className="font-bold   text-2xl sm:text-3xl lg:text-4xl  text-text font-Kanit my-4">
             NOVEDADES
           </h2>
           <SliderMoveCard />
         </div>
         <div className="relative">
-          <h2 className="font-bold text-4xl text-text font-Kanit my-4">
+          <h2 className="font-bold   text-2xl  sm:text-4xl text-text font-Kanit my-4">
             PROYECTOS DESTACADOS
           </h2>
           <SliderDestacCard />

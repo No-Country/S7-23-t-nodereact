@@ -18,7 +18,6 @@ const SliderDestacCard = () => {
   return (
     <Swiper
       modules={[Navigation]}
-      navigation
       style={{ position: "unset" }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
@@ -51,6 +50,10 @@ const SliderDestacCard = () => {
           slidesPerView: 2.7,
           spaceBetween: 20,
         },
+        1440: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
         1500: {
           slidesPerView: 3.2,
           spaceBetween: 20,
@@ -70,13 +73,13 @@ const SliderDestacCard = () => {
       ))}
       <div
         className="hidden sm:flex items-center absolute top-20 bottom-0 right-20  cursor-pointer 
-w-[50px] h-[50px] custom-bg  justify-center rounded-full z-20"
+w-[50px] h-[50px] custom-bg  justify-center rounded-full z-[8]"
       >
         <SlideNextButton />
       </div>
       <div
         className="hidden sm:flex items-center absolute top-20 bottom-0 left-5 cursor-pointer
-w-[50px] h-[50px] custom-bg justify-center rounded-full z-20"
+w-[50px] h-[50px] custom-bg justify-center rounded-full z-[8]"
       >
         <SlidePrevButton />
       </div>
