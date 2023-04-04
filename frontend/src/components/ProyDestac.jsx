@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ProyDestac = ({ project }) => {
+  const [first, setfirst] = useState(true);
   console.log(project);
   return (
     <div className="w-[320px] h-[37.5rem] lg:w-[400px] bg-font-text">
@@ -23,11 +24,29 @@ const ProyDestac = ({ project }) => {
             5 colaboradores
           </span>
           <span className="font-bold text-2xl text-[#000000]  font-Manrope">
-            15%
+            {project.parcialAmount === 0
+              ? 0
+              : Math.ceil((project.parcialAmount * 100) / project.totalAmount)}
+            %
           </span>
         </div>
-        <div className=" w-[95%] m-auto h-[22px] rounded-[40px] bg-[#D9D9D9] mt-[12px] ">
-          <div className="w-[30%] h-[22px] bg-[#53B830] rounded-[40px] px-[10px]"></div>
+        <div
+          className={`w-[95%] mx-auto h-[22px] rounded-[40px] bg-[#D9D9D9] mt-[12px]`}
+        >
+          <div
+            style={{
+              width: `${
+                project.parcialAmount === 0
+                  ? 0
+                  : Math.ceil(
+                      (project.parcialAmount * 100) / project.totalAmount
+                    )
+              }%`,
+            }}
+            className={`${
+              project.parcialAmount === 0 ? "h-0" : "h-[22px]"
+            } bg-[#53B830] rounded-[40px] px-[10px]`}
+          ></div>
         </div>
       </div>
     </div>
