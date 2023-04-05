@@ -64,14 +64,13 @@ export default function Home() {
             </div>
           </div>
           <div
-              className={` mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? "block" : "hidden"
-              }`}
-            >
-          <Search />
+            className={` mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block" : "hidden"
+            }`}
+          >
+            <Search />
           </div>
           <div>
-                    
             <div
               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
                 navbar ? "block" : "hidden"
@@ -79,7 +78,7 @@ export default function Home() {
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-white l font-bold  text-[#000000] manroper font-Manrope">
-                <Despegable />
+                  <Despegable />
                 </li>
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
                   <Link href="/financiar">FINANCIAR</Link>
@@ -94,6 +93,7 @@ export default function Home() {
             </div>
           </div>
           <div
+<<<<<<< Updated upstream
               className={`pb-3 flex-initial space-x-1 mt-8 md:block md:pb-0 md:mt-0 ${
                 navbar ? "block" : "hidden"
               }`}
@@ -106,6 +106,20 @@ export default function Home() {
             {" "}
             Registrarse{" "}
           </button>
+=======
+            className={`pb-3 flex space-x-4 mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block" : "hidden"
+            }`}
+          >
+            <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
+              {" "}
+              Iniciar sesión{" "}
+            </button>
+            <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-color-accent text-font-text hover:border-accent-hover hover:bg-accent-hover">
+              {" "}
+              Registrarse{" "}
+            </button>
+>>>>>>> Stashed changes
           </div>
         </div>
       </nav>

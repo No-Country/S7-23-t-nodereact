@@ -5,16 +5,17 @@ import "swiper/css";
 import axios from "axios";
 import ProyDestac from "./ProyDestac";
 
-const SliderDestacCard = () => {
-  const [projects, setProjects] = useState();
+const SliderDestacCard = ({ data }) => {
+  // const [projects, setProjects] = useState();
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/projects")
-      .then((res) => setProjects(res.data))
-      .then((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/projects")
+  //     .then((res) => setProjects(res.data))
+  //     .then((err) => console.log(err));
+  // }, []);
 
+  console.log(data);
   return (
     <Swiper
       modules={[Navigation]}
@@ -64,7 +65,7 @@ const SliderDestacCard = () => {
         },
       }}
     >
-      {projects?.map((project) => (
+      {data?.map((project) => (
         <SwiperSlide>
           <div>
             <ProyDestac project={project} />
@@ -107,4 +108,15 @@ const SlidePrevButton = () => {
   );
 };
 
+export async function getStaticProps() {
+  const URL = "http://localhost:5000/api/projects";
+  const response = await fetch(URL);
+  const data = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 export default SliderDestacCard;

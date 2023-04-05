@@ -5,8 +5,8 @@ import styles from "./onboarding.module.css";
 const AnimationOnbordin = () => {
   return (
     <>
-      <div className={`${styles.grow} bg-primary-color h-96`}>
-        <h2 className="w-full mx-28 pt-20 tracking-tight flex font-bold font-Kanit text-font-text text-5xl">
+      <div className="bg-primary-color h-96">
+        <h2 className="w-full  pt-20 tracking-tight flex font-bold font-Kanit text-font-text text-5xl">
           En
           <Image
             src="/logo-ideadev.jpeg"
