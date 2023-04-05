@@ -2,7 +2,7 @@ import React from "react";
 
 const NoveCard = () => {
   return (
-    <div className="w-[320px] h-[37.5rem] lg:w-[400px] bg-font-text">
+    <div className="w-[320px]   h-[37.5rem] lg:w-[370px] bg-font-text">
       <div className="w-full h-[266.7px] p-[10px]  ">
         <img
           className="w-full h-full object-cover rounded-[20px] "

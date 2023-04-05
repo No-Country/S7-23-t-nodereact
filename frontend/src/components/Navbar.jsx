@@ -93,33 +93,20 @@ export default function Home() {
             </div>
           </div>
           <div
-<<<<<<< Updated upstream
-              className={`pb-3 flex-initial space-x-1 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? "block" : "hidden"
-              }`}
-            >
-          <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
-            {" "}
-            Iniciar sesión{" "}
-          </button>
-          <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-color-accent text-font-text hover:border-accent-hover hover:bg-accent-hover">
-            {" "}
-            Registrarse{" "}
-          </button>
-=======
-            className={`pb-3 flex space-x-4 mt-8 md:block md:pb-0 md:mt-0 ${
+            className={`pb-3 flex-initial space-x-1 mt-8 md:block md:pb-0 md:mt-0 ${
               navbar ? "block" : "hidden"
             }`}
           >
-            <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
-              {" "}
-              Iniciar sesión{" "}
-            </button>
-            <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-color-accent text-font-text hover:border-accent-hover hover:bg-accent-hover">
-              {" "}
-              Registrarse{" "}
-            </button>
->>>>>>> Stashed changes
+            <Link href={"/login"}>
+              <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
+                Iniciar sesión
+              </button>
+            </Link>
+            <Link href={"/register"}>
+              <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-color-accent text-font-text hover:border-accent-hover hover:bg-accent-hover">
+                Registrarse
+              </button>
+            </Link>
           </div>
         </div>
       </nav>
