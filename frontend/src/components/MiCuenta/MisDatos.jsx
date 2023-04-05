@@ -3,7 +3,7 @@ import Image from "next/image";
 const MisDatos = () => {
     return (
         <div className="relative w-full h-screen inset-0 my-1 bg-transparent flex items-start justify-center">
-            <div className="flex flex-col h-auto px-10 py-24 bg-white shadow w-72">
+            <div className="flex flex-col h-4/5 px-10 py-24 bg-white  w-72">
                 <div className=" space-y-1">
                     <div className="flex items-center">
                     <figure className="relative fit-c px-0 pt-5 w-40 h-40">
@@ -22,33 +22,33 @@ const MisDatos = () => {
                             <li className="rounded-sm">
                                 <a
                                     href="#"
-                                    className="flex items-center p-2 space-x-3 rounded-md"
+                                    className="flex items-center pb-6 space-x-3 border-b border-l-text"
                                 >
-                                    <span>Datos Personales</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Datos Personales</span>
                                 </a>
                             </li>
                             <li className="rounded-sm">
                                 <a
                                     href="#"
-                                    className="flex items-center p-2 space-x-3 rounded-md"
+                                    className="flex items-center space-x-3 pb-6 border-b border-l-text"
                                 >
-                                    <span>Mis Campañas</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Mis Campañas</span>
                                 </a>
                             </li>
                             <li className="rounded-sm">
                                 <a
                                     href="#"
-                                    className="flex items-center p-2 space-x-3 rounded-md"
+                                    className="flex items-center  space-x-3 pb-6  border-b border-l-text"
                                 >
-                                    <span>Mis Financiamientos</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Mis Financiamientos</span>
                                 </a>
                             </li>
                             <li className="rounded-sm">
                                 <a
                                     href="#"
-                                    className="flex items-center p-2 space-x-3 rounded-md"
+                                    className="flex items-center  space-x-3 pb-6  border-b border-l-text"
                                 >
-                                    <span>Mis Colaboraciones</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Mis Colaboraciones</span>
                                 </a>
                             </li>
                             
@@ -56,10 +56,10 @@ const MisDatos = () => {
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto mt-12">                
+            <div className="container h-full mx-auto mt-0">                
                    
-                    <div className="w-full h-auto px-4 py-5 bg-white rounded-lg shadow">
-                        <div className="text-sm font-medium text-gray-500 truncate">
+                    <div className="w-full h-4/5 px-4 py-5 bg-white rounded-lg ">
+                        <div className="text-sm font-medium text-gray-500 truncate  ">
                              ACA SECCIONES
                         </div>
                        
