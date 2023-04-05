@@ -7,8 +7,8 @@ export default function Home() {
   const [navbar, setNavbar] = useState(false);
   return (
     <div className="my-20 absolute z-40">
-      <nav className="w-full bg-font-text shadow fixed top-0">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <nav className="w-full  bg-font-text shadow fixed top-0 ">
+        <div className="justify-between h-20 px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="#">
@@ -94,7 +94,7 @@ export default function Home() {
             </div>
           </div>
           <div
-              className={`pb-3 flex space-x-4 mt-8 md:block md:pb-0 md:mt-0 ${
+              className={`pb-3 flex-initial space-x-1 mt-8 md:block md:pb-0 md:mt-0 ${
                 navbar ? "block" : "hidden"
               }`}
             >

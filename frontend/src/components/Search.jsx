@@ -4,7 +4,7 @@ export default function Search () {
                         
             <input type="search" placeholder="Buscar" className=" relative peer z-10 bg-transparent w-12 h-12 rounded-full  outline-none
             pl-12 pr-4
-            focus:w-full border-lime-300 cursor-text "            
+            focus:w-screen border-lime-300 cursor-text "            
             />
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
             className="absolute inset-y-0 my-auto w8 h-8 border-r border-transparent peer-focus:border-dark-gray pr-2  ">
