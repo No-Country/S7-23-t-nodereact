@@ -4,12 +4,10 @@ import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
-import SliderMoveCard from "@/components/SliderMoveCard";
-import SliderDestacCard from "@/components/SliderDestacCard";
+import SliderMoveCard from "@/components/sliderMoveCard/SliderMoveCard";
+import SliderDestacCard from "@/components/sliderDestacCard/SliderDestacCard";
 import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
 import Onbording from "@/components/Onbording/Onbording";
-import Script from "next/script";
-import Script from "next/script";
 import MisDatos from "@/components/MiCuenta/MisDatos";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +29,7 @@ export default function Home({ data }) {
         <Banner />
       </div>
 
-      <main className="w-[90%] m-auto ">
+      <main className="  w-[95%]  sm:w-[90%] md:w-[80%] lg:w-[85%]   m-auto ">
         <Onbording />
         <div className="relative">
           <h2 className="font-bold   text-2xl sm:text-3xl lg:text-4xl  text-text font-Kanit my-4">

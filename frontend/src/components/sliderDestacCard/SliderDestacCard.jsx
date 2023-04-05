@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
-import NoveCard from "./NoveCard";
+import axios from "axios";
+import ProyDestac from "./ProyDestac";
 
-const SliderMoveCard = () => {
+const SliderDestacCard = ({ data }) => {
+  console.log(data);
   return (
     <Swiper
       modules={[Navigation]}
@@ -20,65 +22,53 @@ const SliderMoveCard = () => {
           slidesPerView: 1.2,
           spaceBetween: 40,
         },
-        450: {
-          slidesPerView: 1.4,
-          spaceBetween: 40,
-        },
-        600: {
-          slidesPerView: 1.8,
+        410: {
+          slidesPerView: 1.5,
           spaceBetween: 40,
         },
         700: {
-          slidesPerView: 2.2,
-          spaceBetween: 25,
+          slidesPerView: 1.9,
+          spaceBetween: 20,
         },
         900: {
-          slidesPerView: 2.5,
+          slidesPerView: 2,
           spaceBetween: 30,
         },
-        1200: {
-          slidesPerView: 2.7,
+
+        1100: {
+          slidesPerView: 2.3,
           spaceBetween: 20,
         },
-        1440: {
+        1280: {
           slidesPerView: 3,
-          spaceBetween: 10,
+          spaceBetween: 8,
         },
-        1500: {
+        1400: {
           slidesPerView: 3.2,
-          spaceBetween: 20,
+          spaceBetween: 30,
         },
         1650: {
           slidesPerView: 4,
-          spaceBetween: 20,
+          spaceBetween: 30,
         },
       }}
     >
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-
+      {data?.map((project) => (
+        <SwiperSlide>
+          <div>
+            <ProyDestac project={project} />
+          </div>
+        </SwiperSlide>
+      ))}
       <div
         className="hidden sm:flex items-center absolute top-20 bottom-0 right-20  cursor-pointer 
-  w-[50px] h-[50px] custom-bg  justify-center rounded-full z-[8]"
+w-[50px] h-[50px] custom-bg  justify-center rounded-full z-[8]"
       >
         <SlideNextButton />
       </div>
       <div
         className="hidden sm:flex items-center absolute top-20 bottom-0 left-5 cursor-pointer
-   w-[50px] h-[50px] custom-bg justify-center rounded-full z-[8]"
+w-[50px] h-[50px] custom-bg justify-center rounded-full z-[8]"
       >
         <SlidePrevButton />
       </div>
@@ -106,4 +96,15 @@ const SlidePrevButton = () => {
   );
 };
 
-export default SliderMoveCard;
+export async function getStaticProps() {
+  const URL = "http://localhost:5000/api/projects";
+  const response = await fetch(URL);
+  const data = await response.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+export default SliderDestacCard;
