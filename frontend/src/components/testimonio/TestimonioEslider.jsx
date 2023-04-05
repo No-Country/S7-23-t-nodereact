@@ -8,7 +8,7 @@ import Testimonios3 from "./Testimonios3";
 const TestimonioEslider = () => {
   return (
     <>
-      <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold py-10">
+      <h2 className="py-7 text-center text-3xl text-text font-Manrope font-bold">
         QUE DICEN NUESTROS USUARIOS
       </h2>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">

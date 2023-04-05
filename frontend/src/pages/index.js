@@ -9,6 +9,7 @@ import SliderDestacCard from "@/components/SliderDestacCard";
 import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
 import Onbording from "@/components/Onbording/Onbording";
 import Script from 'next/script'
+import MisDatos from "@/components/MiCuenta/MisDatos";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -47,6 +48,7 @@ export default function Home() {
         <TestimonioEslider />
       </main>
       <Footer />
+      <MisDatos />
     </>
   );
 }
