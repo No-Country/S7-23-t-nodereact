@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const MisDatos = () => {
     return (
-        <div className="relative w-full h-screen inset-0 my-20 bg-transparent flex items-center justify-center">
-            <div className="flex flex-col h-auto p-10 bg-white shadow w-60">
-                <div className="space-y-2">
+        <div className="relative w-full h-screen inset-0 my-1 bg-transparent flex items-start justify-center">
+            <div className="flex flex-col h-auto px-10 py-24 bg-white shadow w-72">
+                <div className=" space-y-1">
                     <div className="flex items-center">
-                    <figure className="relative px-5 pt-5">
+                    <figure className="relative fit-c px-0 pt-5 w-40 h-40">
                         <Image
                             src="/avatar-man.png"
                             alt="Shoes"
@@ -18,7 +18,7 @@ const MisDatos = () => {
                     </figure>
                     </div>
                     <div className="flex-1">
-                        <ul className="pt-2 pb-4 space-y-1 text-sm">
+                        <ul className="pt-2 pb-4 space-y-6 text-sm">
                             <li className="rounded-sm">
                                 <a
                                     href="#"
