@@ -1,15 +1,15 @@
 import Image from "next/image";
 import style from "./testimonio.module.css";
 
-const Testimonios = () => {
+const Testimonios = ({ card }) => {
   return (
     <>
-      <section>
-        <div className={`${style.section} gap-10 my-7`}>
-          <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
+      <section className="w-[100%] m-auto">
+        <div className={`${style.section} my-7`}>
+          <div className="card w-80 h-52 bg-light-gray shadow-2xl">
             <figure className="px-10 pt-10">
               <Image
-                src="/avatar-girl.png"
+                src={card.image}
                 alt="Shoes"
                 width={100}
                 height={100}
@@ -17,31 +17,10 @@ const Testimonios = () => {
               />
             </figure>
             <div className="card-body items-center text-center">
-              <p className="text-text font-Manrope font-medium text-lg">
-                Gracias a ideadev puede cumplir mi sueño de abrir mi propio
-                emprendimiento.
+              <p className="text-text font-Manrope font-medium text-base">
+                {card.description}
               </p>
-              <h2 className="text-text font-Manrope text-lg">Ana,Chile!</h2>
-            </div>
-          </div>
-          <div className="card w-2/5 h-56 bg-light-gray shadow-xl">
-            <figure className="px-10 pt-10">
-              <Image
-                src="/avatar-man.png"
-                alt="Shoes"
-                width={100}
-                height={100}
-                className="rounded-full absolute -top-16"
-              />
-            </figure>
-            <div className="card-body items-center text-center">
-              <p className="text-text font-Manrope text-lg">
-                Ideadev me dio la posibilidad de dar mis primeros pasos como
-                desarrollador. ¡Gracias!
-              </p>
-              <h2 className="text-text font-Manrope text-lg">
-                Juan,Puerto Rico!
-              </h2>
+              <h2 className="text-text font-Manrope text-base">{card.name}</h2>
             </div>
           </div>
         </div>

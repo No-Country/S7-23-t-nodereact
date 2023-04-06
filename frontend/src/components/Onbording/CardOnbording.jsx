@@ -4,12 +4,14 @@ import styles from "./onboarding.module.css";
 const CardOnbording = () => {
   return (
     <>
-      <section className="w-full">
-        <h3 className=" ml-16 tracking-tight flex font-bold font-Kanit text-text text-5xl w-[83%] leading-loose">
+      <div className="p-10">
+        <h3 className="text-center  tracking-tight font-bold font-Kanit text-text text-sm xl:text-4xl leading-loose">
           RECAUDA FONDOS O COLABORA EN PROYECTOS APLICAR SOLO TOMA UNOS MINUTOS
         </h3>
-        <div className=" flex justify-around gap-9 my-10">
-          <article className={`${styles.article} card w-96`}>
+      </div>
+      <section className="w-[70%] sm:w-[80%] md:w-[80%] lg:w-[85%] m-auto">
+        <div className=" flex flex-col sm:flex-row justify-around gap-9 my-10 gro">
+          <article className={`${styles.article} w-[full] sm:w-96 `}>
             <figure>
               <Image
                 src="/onboarding-1.png"
@@ -21,7 +23,7 @@ const CardOnbording = () => {
               />
             </figure>
           </article>
-          <article className={`${styles.article} card w-96`}>
+          <article className={`${styles.article} w-[full] sm:w-96 `}>
             <figure>
               <Image
                 src="/onboarding-2.png"
@@ -33,7 +35,7 @@ const CardOnbording = () => {
               />
             </figure>
           </article>
-          <article className={`${styles.article} card w-96`}>
+          <article className={`${styles.article} w-[full] sm:w-96 `}>
             <figure>
               <Image
                 src="/onboarding-3.png"
