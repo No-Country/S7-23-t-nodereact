@@ -9,17 +9,3 @@
   -webkit-transform: translatey(20px);
   -moz-transform: translatey(20px);
 }
-
-.grow {
-  transition: 0.5s, color 0.1s;
-  -webkit-transition: 0.5s, color 0.1s;
-  -moz-transition: 0.5s, color 0.1s;
-}
-
-.grow:hover {
-  transform: scale3d(1.1, 1.1, 0.3);
-  -webkit-transform: scale3d(1.1, 1.1, 0.3);
-  -moz-transform: scale3d(1.1, 1.1, 0.3);
-  -ms-transform: scale3d(1.1, 1.1, 0.3);
-  -o-transform: scale3d(1.1, 1.1, 0.3);
-}

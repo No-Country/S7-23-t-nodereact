@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Ana, Chile",
+    "description": "Gracias a ideadev puede cumplir mi sueño de abrir mi propio emprendimiento.",
+    "image": "/avatar-girl.png"
+  },
+  {
+    "id": 2,
+    "name": "Juan,Puerto Rico",
+    "description": "Ideadev me dio la posibilidad de dar mis primeros pasos como desarrollador. ¡gracias!",
+    "image": "/avatar-man.png"
+  },
+  {
+    "id": 3,
+    "name": "Luciano, Argentina",
+    "description": "¡Gracias por ayudarme a financiar mi proyecto!",
+    "image": "/avatar-man-2.png"
+  },
+  {
+    "id": 4,
+    "name": "Laura, Uruguay",
+    "description": "¡Cumplieron mi sueño! Y gané mucha experiencia.",
+    "image": "/avatar-girl-2.png"
+  },
+  {
+    "id": 5,
+    "name": "María, Perú",
+    "description": "Ideadev es lo mejor. Todos deberían conocerla.",
+    "image": "/avatar-girl-3.png"
+  },
+  {
+    "id": 6,
+    "name": "Ernesto, Venezuela",
+    "description": "Ideadev me dio la posibilidad de dar mis primeros pasos como desarrollador. ¡Gracias! ",
+    "image": "/avatar-man-3.png"
+  }
+]

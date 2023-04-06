@@ -29,8 +29,8 @@ export default function Home({ data }) {
         <Banner />
       </div>
 
+      <Onbording />
       <main className="  w-[95%]  sm:w-[90%] md:w-[80%] lg:w-[85%]   m-auto ">
-        <Onbording />
         <div className="relative">
           <h2 className="font-bold   text-2xl sm:text-3xl lg:text-4xl  text-text font-Kanit my-4">
             NOVEDADES
