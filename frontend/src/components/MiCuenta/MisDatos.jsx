@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DatosPersonales from "./DatosPersonales";
 
 const MisDatos = () => {
     return (
@@ -60,7 +61,7 @@ const MisDatos = () => {
                    
                     <div className="w-full h-4/5 px-4 py-5 bg-white rounded-lg ">
                         <div className="text-sm font-medium text-gray-500 truncate  ">
-                             ACA SECCIONES
+                             <DatosPersonales />
                         </div>
                        
                     </div>
