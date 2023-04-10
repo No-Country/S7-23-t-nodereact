@@ -7,7 +7,7 @@
 
 # IdeaDev
 
-¿Y qué es?
+¿Y qué es un Crowfunding?
 
   El crowdfunding (también conocido como financiamiento colectivo) es un modelo de financiamiento en línea que permite a personas
   y organizaciones recaudar fondos de una gran cantidad de individuos a través de plataformas de internet.
@@ -50,8 +50,16 @@
 
 | Developer          | Rol                     | LinkedIn                                                   | GitHub                                    |
 | ------------------ | ----------------------- | ---------------------------------------------------------- | ----------------------------------------- |
-|
+| Martina Nimcowicz  | Diseño UI - UX          | https://www.linkedin.com/in/martinanimco                   |                                           |
 | Matias Cañadas     | PM & Scrum Master       | https://www.linkedin.com/in/matiascanadas                  | https://github.com/Hotbones               |
+| Raisa Orellano     | Back end                | https://www.linkedin.com/in/raisa-orellana-rios            | https://github.com/Raisa320               |
+| Rafael Barreiro    | Back end                | https://www.linkedin.com/in/rafael84barreiro/              | https://github.com/                       |
+| Agustin Soleti     | Back end                | https://www.linkedin.com/in/aguusoleti/                    | https://github.com/                       |
+| Tomas Garcia       | Back end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
+| Tomas Garcia       | Front end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
+| Tomas Garcia       | Front end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
+| Tomas Garcia       | Front end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
+
 
 
 ## Tecnologías usadas:
