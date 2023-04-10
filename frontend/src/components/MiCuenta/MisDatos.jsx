@@ -7,7 +7,7 @@ import MisColaboraciones from "./MisColaboracion";
 
 const MisDatos = () => {
     return (
-        <div className="relative w-full h-screen inset-0 my-1 bg-transparent flex items-start justify-center">
+        <div className="relative w-full h-screen inset-0 my-4 bg-transparent flex items-start justify-center">
             <div className="flex flex-col h-4/5 px-10 py-24 bg-white  w-72">
                 <div className=" space-y-1">
                     <div className="flex items-center">
@@ -65,7 +65,7 @@ const MisDatos = () => {
                    
                     <div className="w-full h-4/5 px-4 py-5 bg-white rounded-lg ">
                         <div className="text-sm font-medium text-gray-500 truncate  ">
-                            <MisFinanciamientos />
+                            <MisColaboraciones/>
                         </div>
                        
                     </div>
