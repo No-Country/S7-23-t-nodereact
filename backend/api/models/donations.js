@@ -23,31 +23,12 @@ const userSchema = mongoose.mongoose.Schema({
         minLength: [5, 'Must be at least 5 characters long, {VALUE} is not long enough'],
         maxLength: [200, 'Must be at most 200 characters long, {VALUE} is not supported']
     },
-    // information: {
-    //     type:
-    //         {
-    //             mail: String, 
-    //             linkedin: String, 
-    //             github: String, 
-        // tecnologias
-        //  rol [UX, UI...]
-            // ,
-    // collaborate:{
-    //     type: String,
-    //     enum: ['frontend', 'backend', 'fullstack', 'UX', 'UI', 'dataScientist',...]
-    // }
-    //             motivation: String,  comentario
-    //             portfolio: String      // not required
-    //         },
-    //     // default:
-    // }
-    // ,    //estado perfil completo
     completed: {
         type: String,
-        enum: ['completed', 'rejected', 'pending'],
+        enum: ['completed', 'rejected', 'pending','accepted'],
         default: 'pending'
     },
-    class:{
+    type:{ 
         type: String,
         enum: ['monetary', 'time']
     }
