@@ -65,7 +65,7 @@ const MisDatos = () => {
                    
                     <div className="w-full h-4/5 px-4 py-5 bg-white rounded-lg ">
                         <div className="text-sm font-medium text-gray-500 truncate  ">
-                            <MisColaboraciones/>
+                            <DatosPersonales/>
                         </div>
                        
                     </div>
