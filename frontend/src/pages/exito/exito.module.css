@@ -1,0 +1,16 @@
+.box {
+    display: flex;
+    background-image: url("/waves-haikei-4.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+    .box {
+        display: flex;
+        background-image: url("/waves-haikei-4.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 10%;
+    }
+}
