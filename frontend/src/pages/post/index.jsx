@@ -1,6 +1,33 @@
+import { useState } from "react";
+
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
+
 const FormularioColaborar = () => {
+  const [formulario, setFormulario] = useState({
+    titulo: "",
+    subtitulo: "",
+    descripcion: "",
+    categoria: "",
+    financiamiento: false,
+    colaboradores: false,
+    fecha: "",
+    imagen: null,
+  });
+
+  const handleChange = (event) => {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    setFormulario({ ...formulario, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // aquí se puede procesar la información del formulario
+    console.log(formulario);
+  };
   return (
     <Layout>
       <h2 className="font-Manrope font-extrabold text-text mt-4 text-center">
@@ -15,6 +42,9 @@ const FormularioColaborar = () => {
           </label>
           <input
             type="text"
+            name="titulo"
+            value={formulario.titulo}
+            onChange={handleChange}
             placeholder="ingresa titulo"
             className="input input-lg w-[90%] bg-light-gray"
           />
@@ -25,6 +55,9 @@ const FormularioColaborar = () => {
           </label>
           <input
             type="text"
+            name="subtitulo"
+            value={formulario.subtitulo}
+            onChange={handleChange}
             placeholder="ingresa sub titulo"
             className="input input-lg w-[90%] bg-light-gray"
           />
@@ -34,15 +67,23 @@ const FormularioColaborar = () => {
             </span>
           </label>
           <textarea
-            className="textarea textarea-ghost bg-light-gray w-[90%]"
+            name="descripcion"
+            value={formulario.descripcion}
+            onChange={handleChange}
             placeholder="Ingresa descripcion de la campaña"
+            className="textarea textarea-ghost bg-light-gray w-[90%]"
           ></textarea>
           <label className="label">
             <span className="label-text text-text font-Manrope font-extrabold">
               ¿Cuál es la categoría de tu campaña?
             </span>
           </label>
-          <select className="select w-[90%] bg-light-gray select-text">
+          <select
+            name="categoria"
+            value={formulario.categoria}
+            onChange={handleChange}
+            className="select w-[90%] bg-light-gray select-text"
+          >
             <option>elegir categoria</option>
             <option className="w-50%">Alimentación</option>
             <option className="w-50%">Comunidad</option>

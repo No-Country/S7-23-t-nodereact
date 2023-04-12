@@ -65,7 +65,7 @@ const feedingDetail = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href="/formulario">
+              <Link href="/discover">
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                 lg:h-[50px]"
