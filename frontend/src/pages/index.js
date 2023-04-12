@@ -9,9 +9,11 @@ import SliderDestacCard from "@/components/sliderDestacCard/SliderDestacCard";
 import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
 import Onbording from "@/components/Onbording/Onbording";
 import MisDatos from "@/components/MiCuenta/MisDatos";
+import Banner2 from "@/components/Banner2";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
-export default function Home({ data }) {
+export default function Home({ order, proy }) {
   return (
     <>
       <Head>
@@ -25,23 +27,21 @@ export default function Home({ data }) {
         ></script>
       </Head>
       <Navbar />
-      <div className="flex justify-around flex-wrap">
-        <Banner />
-      </div>
-
+      <Banner2 />
+      <div className="flex justify-around flex-wrap"></div>
       <Onbording />
       <main className="  w-[95%]  sm:w-[90%] md:w-[80%] lg:w-[85%]   m-auto ">
         <div className="relative">
           <h2 className="font-bold   text-2xl sm:text-3xl lg:text-4xl  text-text font-Kanit my-4">
             NOVEDADES
           </h2>
-          <SliderMoveCard />
+          <SliderMoveCard proy={proy} />
         </div>
         <div className="relative">
           <h2 className="font-bold   text-2xl  sm:text-4xl text-text font-Kanit my-4">
             PROYECTOS DESTACADOS
           </h2>
-          <SliderDestacCard data={data} />
+          <SliderDestacCard data={order} />
         </div>
         <TestimonioEslider />
       </main>
@@ -52,13 +52,17 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const URL = "http://localhost:5000/api/projects";
-  const response = await fetch(URL);
-  const data = await response.json();
+  const res = await axios.get("http://localhost:5000/api/projects");
+  const data = res.data;
+  const order = data.sort(
+    (a, b) => b.parcialAmount / b.totalAmount - a.parcialAmount / a.totalAmount
+  );
+  const proy = data.slice(data.length - 4, data.length);
 
   return {
     props: {
-      data,
+      order,
+      proy,
     },
   };
 }
