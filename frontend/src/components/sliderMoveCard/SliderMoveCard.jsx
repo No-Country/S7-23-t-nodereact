@@ -4,7 +4,8 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import NoveCard from "./NoveCard";
 
-const SliderMoveCard = () => {
+const SliderMoveCard = ({ proy }) => {
+  console.log(proy);
   return (
     <Swiper
       modules={[Navigation]}
@@ -51,21 +52,11 @@ const SliderMoveCard = () => {
         },
       }}
     >
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <NoveCard />
-      </SwiperSlide>
+      {proy?.map((moves) => (
+        <SwiperSlide>
+          <NoveCard moves={moves} />
+        </SwiperSlide>
+      ))}
 
       <div
         className="hidden sm:flex items-center absolute top-20 bottom-0 right-20  cursor-pointer 
@@ -102,5 +93,17 @@ const SlidePrevButton = () => {
     </button>
   );
 };
+
+export async function getStaticProps() {
+  const URL = "http://localhost:5000/api/projects";
+  const response = await fetch(URL);
+  const nove = await response.json();
+
+  return {
+    props: {
+      nove,
+    },
+  };
+}
 
 export default SliderMoveCard;

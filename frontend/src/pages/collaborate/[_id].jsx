@@ -1,10 +1,9 @@
 import Layout from "@/components/Layout/Layout";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import style from "../financiar/financiar.module.css";
-import Link from "next/link";
 
-const detailsFinanciar = ({ datas }) => {
+const collaborateDetails = ({ datas }) => {
   const router = useRouter();
 
   console.log(router.query);
@@ -14,7 +13,7 @@ const detailsFinanciar = ({ datas }) => {
       <div className="w-[95%] mx-auto  ">
         <h1
           className=" text-2xl  font-Manrope  font-extrabold  mt-7 sm:mt-10 text-text
-        sm:text-3xl  md:text-4xl  lg:text-5xl"
+          sm:text-3xl  md:text-4xl  lg:text-5xl"
         >
           {datas.title}
         </h1>
@@ -22,7 +21,7 @@ const detailsFinanciar = ({ datas }) => {
         <div className="sm:flex sm:gap-5 sm:mt-6 md:gap-3  xl:gap-16  ">
           <div
             className="w-full  sm:rounded-[15px] sm:shadow-2xl 
-          sm:basis-[60%]  min-[878px]:basis-[60%] min-[878px]:h-[320px] lg:basis-[70%]  lg:h-[400px]  "
+            sm:basis-[60%]  min-[878px]:basis-[60%] min-[878px]:h-[320px] lg:basis-[70%]  lg:h-[400px]  "
           >
             <img
               className="w-full sm:h-full sm:w-full  bg-cover rounded-[15px]"
@@ -33,8 +32,8 @@ const detailsFinanciar = ({ datas }) => {
 
           <div
             className=" sm:border-[2px] sm:border-[#dfdada] sm:rounded-[15px] sm:shadow-2xl   
-           sm:p-4 sm:basis-[50%] min-[878px]:basis-[40%]   lg:w-[300px] lg:basis-[40%]  lg:h-[400px]  
-           "
+             sm:p-4 sm:basis-[50%] min-[878px]:basis-[40%]   lg:w-[300px] lg:basis-[40%]  lg:h-[400px]  
+             "
           >
             <div className="w-[100%]  flex justify-between px-1  mt-2 lg:mt-6">
               <span className="font-bold text-lg text-[#000000]  font-Manrope lg:text-2xl">
@@ -66,17 +65,17 @@ const detailsFinanciar = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href={`/financiar/financiar/${datas._id}`}>
+              <Link href={`/formulario`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
-              min-[878px]:mt-10  lg:h-[50px]"
+                min-[878px]:mt-10  lg:h-[50px]"
                 >
                   <img
                     className="w-[30px] h-[30px] bg-color-accent"
-                    src="/VectorPig.svg"
+                    src="/hands.svg"
                     alt=""
                   />
-                  FINANCIAR
+                  COLABORAR
                 </button>
               </Link>
               <h2 className="text-text font-bold text-lg mt-3 font-Manrope  min-[878px]:mt-10  lg:text-2xl  ">
@@ -150,7 +149,7 @@ const detailsFinanciar = ({ datas }) => {
             </div>
             <button
               className="w-[120px] h-[40px] flex justify-center items-center text-text font-semibold font-Kanit text-sm p-3 border-2
-             border-color-accent lg:text-xl rounded-[20px] lg:w-[160px]"
+               border-color-accent lg:text-xl rounded-[20px] lg:w-[160px]"
             >
               CONTACTAR
             </button>
@@ -175,4 +174,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default detailsFinanciar;
+export default collaborateDetails;

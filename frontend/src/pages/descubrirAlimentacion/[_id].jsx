@@ -1,10 +1,9 @@
 import Layout from "@/components/Layout/Layout";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import style from "../financiar/financiar.module.css";
-import Link from "next/link";
 
-const detailsFinanciar = ({ datas }) => {
+const feedingDetail = ({ datas }) => {
   const router = useRouter();
 
   console.log(router.query);
@@ -21,11 +20,11 @@ const detailsFinanciar = ({ datas }) => {
 
         <div className="sm:flex sm:gap-5 sm:mt-6 md:gap-3  xl:gap-16  ">
           <div
-            className="w-full  sm:rounded-[15px] sm:shadow-2xl 
+            className="w-full  h-full  sm:rounded-[15px] sm:shadow-2xl 
           sm:basis-[60%]  min-[878px]:basis-[60%] min-[878px]:h-[320px] lg:basis-[70%]  lg:h-[400px]  "
           >
             <img
-              className="w-full sm:h-full sm:w-full  bg-cover rounded-[15px]"
+              className="w-full  h-full sm:h-full sm:w-full  bg-cover rounded-[15px]"
               src={datas.img}
               alt=""
             />
@@ -66,10 +65,23 @@ const detailsFinanciar = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href={`/financiar/financiar/${datas._id}`}>
+              <Link href="/formulario">
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
-              min-[878px]:mt-10  lg:h-[50px]"
+                lg:h-[50px]"
+                >
+                  <img
+                    className="w-[30px] h-[30px] bg-color-accent"
+                    src="/hands.svg"
+                    alt=""
+                  />
+                  COLABORAR
+                </button>
+              </Link>
+              <Link href={`/descubrirAlimentacion/feeding/${datas._id}`}>
+                <button
+                  className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
+                lg:h-[50px]"
                 >
                   <img
                     className="w-[30px] h-[30px] bg-color-accent"
@@ -79,6 +91,7 @@ const detailsFinanciar = ({ datas }) => {
                   FINANCIAR
                 </button>
               </Link>
+
               <h2 className="text-text font-bold text-lg mt-3 font-Manrope  min-[878px]:mt-10  lg:text-2xl  ">
                 ¡Con tu ayuda estamos más cerca de alcanzar nuestro objetivo!
               </h2>
@@ -118,10 +131,7 @@ const detailsFinanciar = ({ datas }) => {
         <hr className="text-text  w-full" />
         <div className="flex flex-col gap-5 my-4 lg:my-7">
           <p className="text-base font-normal font-Manrope text-text text-justify lg:text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ut
-            possimus ab odio, amet architecto rem beatae iste sint repudiandae
-            velit est minima deserunt reiciendis saepe id optio aperiam
-            corporis.
+            {datas.description}
           </p>
 
           <p className="text-base font-normal font-Manrope text-text text-justify lg:text-2xl ">
@@ -170,9 +180,9 @@ export async function getServerSideProps({ query }) {
 
   return {
     props: {
-      datas: datas,
+      datas,
     },
   };
 }
 
-export default detailsFinanciar;
+export default feedingDetail;
