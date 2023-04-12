@@ -7,7 +7,7 @@ import Banner from "@/components/Banner";
 import SliderMoveCard from "@/components/sliderMoveCard/SliderMoveCard";
 import SliderDestacCard from "@/components/sliderDestacCard/SliderDestacCard";
 import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
-import Onbording from "@/components/Onbording/Onbording";
+import Onboarding from "@/components/Onboarding/Onboarding";
 import MisDatos from "@/components/MiCuenta/MisDatos";
 import Banner2 from "@/components/Banner2";
 import axios from "axios";
@@ -27,9 +27,17 @@ export default function Home({ order, proy }) {
         ></script>
       </Head>
       <Navbar />
+<<<<<<< Updated upstream
       <Banner2 />
       <div className="flex justify-around flex-wrap"></div>
       <Onbording />
+=======
+      <div className="flex justify-around flex-wrap">
+        <Banner />
+      </div>
+
+      <Onboarding />
+>>>>>>> Stashed changes
       <main className="  w-[95%]  sm:w-[90%] md:w-[80%] lg:w-[85%]   m-auto ">
         <div className="relative">
           <h2 className="font-bold   text-2xl sm:text-3xl lg:text-4xl  text-text font-Kanit my-4">
