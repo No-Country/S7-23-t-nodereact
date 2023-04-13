@@ -7,7 +7,8 @@
 
 # IdeaDev
 
-![IdeaDev](https://user-images.githubusercontent.com/105388226/231859237-a9403ff4-8bc4-4ede-a963-08d8edebc0b0.png)
+![IdeaDev](https://user-images.githubusercontent.com/105388226/231872059-00ba97c5-ae15-417f-a024-a1ab869b265c.png)
+
 
 ¿Y qué es un Crowfunding?
 
@@ -93,7 +94,7 @@
 
 # IdeaDev
 
-![IdeaDev](https://user-images.githubusercontent.com/105388226/231859334-6fdecb7e-9ac8-4e7b-813a-a48afe207fa0.png)
+![IdeaDev](https://user-images.githubusercontent.com/105388226/231872059-00ba97c5-ae15-417f-a024-a1ab869b265c.png)
 
 
 And what is?
