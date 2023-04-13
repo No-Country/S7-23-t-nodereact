@@ -9,9 +9,9 @@ const getDonationByUser = async (req, res) => {
   const { id } = req.params;
   console.log(id)
   try {
-    const donation = await Donation.find({ userId: id});
-    console.log(donation)
 
+    const donation = await Donation.find({ userId : { $eq:`${id}` } });
+ 
     if (donation) {
       console.log(donation)
       res.status(200).json(donation);
@@ -19,6 +19,7 @@ const getDonationByUser = async (req, res) => {
       res.status(404).json({ message: "Donaciones no encontradas" });
     }
   } catch (error) {
+    console.log(error.message)
     res.status(500).json({ message: "Error al buscar las donaciones solicitadas" });
   }
 };
