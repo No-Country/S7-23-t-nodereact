@@ -7,8 +7,8 @@ const financiarId = ({ datas }) => {
   return (
     <Layout>
       <div
-        className="w-[95%] mx-auto mt-20 sm:w-[90%] md:w-[80%] lg:w-[78%]   sm:border-[2px] sm:border-[#dfdada] sm:rounded-[15px] sm:shadow-2xl   
-           sm:p-4 md:my-10  "
+        className="w-[95%] mx-auto mt-24  mb-10 sm:w-[90%] md:w-[80%] lg:w-[78%]   sm:border-[2px] sm:border-[#dfdada] sm:rounded-[15px] sm:shadow-2xl   
+           sm:p-4 md:mt-[112px]   md:mb-10   "
       >
         <Link href={`/financiar/${datas._id}`}>
           <img className="my-6 cursor-pointer" src="/arrow.svg" alt="" />

@@ -11,7 +11,7 @@ const detailsFinanciar = ({ datas }) => {
 
   return (
     <Layout>
-      <div className="w-[95%] mx-auto  ">
+      <div className="w-[95%] mx-auto  mt-[112px]  mb-10 ">
         <h1
           className=" text-2xl  font-Manrope  font-extrabold  mt-7 sm:mt-10 text-text
         sm:text-3xl  md:text-4xl  lg:text-5xl"

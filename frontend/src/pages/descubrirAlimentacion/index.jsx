@@ -7,7 +7,7 @@ const index = ({ filter }) => {
   console.log(filter);
   return (
     <>
-      <div className="relative flex justify-center items-center">
+      <div className="relative flex justify-center items-center mt-20">
         <img
           className="w-full h-[316px] object-cover"
           src="/feeding.png"

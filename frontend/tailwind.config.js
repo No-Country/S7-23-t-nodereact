@@ -14,6 +14,7 @@ module.exports = {
       Manrope: ["manrope", "sans-serif"],
       Kanit: ["kanit", "sans-serif"],
     },
+
     colors: {
       "primary-color": "#0703D9",
       "color-accent": "#DA3E52",
