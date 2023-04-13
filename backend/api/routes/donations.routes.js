@@ -1,12 +1,12 @@
 import express from "express";
-import {getDonation, postDonation, acceptWorkDonation} from "../controllers/donation.controller.js";
+import {getDonationByUser, postDonation, acceptWorkDonation} from "../controllers/donation.controller.js";
 
 const router = express.Router();
 
 router.post("/", postDonation);
 
-router.get("/", getDonation);
+router.get("/:id", getDonationByUser);
 
-router.put("/", acceptWorkDonation);
+router.put("/:id", acceptWorkDonation);
 
 export default router;
