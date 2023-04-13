@@ -1,5 +1,12 @@
-import mercadopago from "mercadopago";
-import Project from "../models/projects.js";
+import Project from '../models/projects.js'
+import dotenv from "dotenv";
+import mercadopago from "mercadopago"
+dotenv.config();
+
+mercadopago.configure({
+  access_token: process.env.ACCESS_TOKEN,
+});
+
 
 const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 };
 
@@ -97,23 +104,24 @@ const PayCard = async (req, res) => {
       },
     ],
     back_urls: {
-      success: `https://www.google.com`,
-      failure: `https://www.google.com`,
-      pending: `https://www.google.com`,
+      "success": "http://localhost:3000",
+			"failure": "http://localhost:3000",
+			"pending": "http://localhost:3000"
     },
     auto_return: "approved",
   };
   mercadopago.preferences
-    .create(preference)
-    .then(function (response) {
-      // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
-      console.log(response)
-
-      res.status(200).json(response.body.init_point);
-    })
-    .catch(function (error) {
-      console.log(error.message);
-    });
-};
-
+  .create(preference)
+  .then(function (response) {
+    // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
+  // console.log(response)
+  
+    res.status(200).json(response.body.init_point);
+   
+  
+  })
+  .catch(function (error) {
+    console.log(error.message);
+  });
+}
 export { getProjects, postProject, getProjectById, updateProject,PayCard };
