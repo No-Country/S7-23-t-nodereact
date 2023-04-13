@@ -7,6 +7,8 @@
 
 # IdeaDev
 
+![IdeaDev](https://user-images.githubusercontent.com/105388226/231859237-a9403ff4-8bc4-4ede-a963-08d8edebc0b0.png)
+
 ¿Y qué es un Crowfunding?
 
   El crowdfunding (también conocido como financiamiento colectivo) es un modelo de financiamiento en línea que permite a personas
@@ -56,9 +58,9 @@
 | Rafael Barreiro    | Back end                | https://www.linkedin.com/in/rafael84barreiro/              | https://github.com/                       |
 | Agustin Soleti     | Back end                | https://www.linkedin.com/in/aguusoleti/                    | https://github.com/                       |
 | Tomas Garcia       | Back end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
-| Tomas Garcia       | Front end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
-| Tomas Garcia       | Front end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
-| Tomas Garcia       | Front end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
+| Jorge Diaz         | Front end               | https://www.linkedin.com/in/espinoza-jorgeluis             | https://github.com/                       |
+| Victor Fernandez   | Front end               | https://www.linkedin.com/in/victor-h-fernandez-p           | https://github.com/                       |
+| Juanse Giannattasio| Front end               | https://www.linkedin.com/in/juan-sebastian-giannattasio/   | https://github.com/Juanse2310             |
 
 
 
@@ -68,21 +70,18 @@
 
 <p align="left">
 <img src="https://avatars.githubusercontent.com/u/5155369?s=200&v=4"  width=10% height=10%>
-<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png"  width=10% height=10%>
 <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"  width=10% height=10%>
 
 </p> 
 <p align="left">
 <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png"  width=10% height=10%>
 <img src="https://user-images.githubusercontent.com/69209369/116448711-ccedd500-a82f-11eb-8a08-b53db08f6156.png" width=10% height=10%>
-<img src="https://vitejs.dev/logo-with-shadow.png" width=10% height=10%>
 </p>
 
         En el Backend:
 
 <p align="left">
 <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"  width=10% height=10%> 
-<img src="https://github.com/sequelize/sequelize/raw/main/logo.svg"  width=10% height=10%>
 <img src="https://www.postgresql.org/media/img/about/press/elephant.png" width=8% height=8%>
 </p>
 
@@ -93,6 +92,9 @@
 <a name="EN"></a>
 
 # IdeaDev
+
+![IdeaDev](https://user-images.githubusercontent.com/105388226/231859334-6fdecb7e-9ac8-4e7b-813a-a48afe207fa0.png)
+
 
 And what is?
 
@@ -131,5 +133,42 @@ What examples are there?
      have a positive impact on your life or the world in general. By participating in crowdfunding, the community can help
      give life to projects that otherwise would not have been possible. In addition, crowdfunding can also foster the spirit
      entrepreneurship and innovation in society.
+
+## ROLES Selected S7-23-t-nodereact
+
+| Developer          | Rol                     | LinkedIn                                                   | GitHub                                    |
+| ------------------ | ----------------------- | ---------------------------------------------------------- | ----------------------------------------- |
+| Martina Nimcowicz  | Diseño UI - UX          | https://www.linkedin.com/in/martinanimco                   |                                           |
+| Matias Cañadas     | PM & Scrum Master       | https://www.linkedin.com/in/matiascanadas                  | https://github.com/Hotbones               |
+| Raisa Orellano     | Back end                | https://www.linkedin.com/in/raisa-orellana-rios            | https://github.com/Raisa320               |
+| Rafael Barreiro    | Back end                | https://www.linkedin.com/in/rafael84barreiro/              | https://github.com/                       |
+| Agustin Soleti     | Back end                | https://www.linkedin.com/in/aguusoleti/                    | https://github.com/                       |
+| Tomas Garcia       | Back end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
+| Jorge Diaz         | Front end               | https://www.linkedin.com/in/espinoza-jorgeluis             | https://github.com/                       |
+| Victor Fernandez   | Front end               | https://www.linkedin.com/in/victor-h-fernandez-p           | https://github.com/                       |
+| Juanse Giannattasio| Front end               | https://www.linkedin.com/in/juan-sebastian-giannattasio/   | https://github.com/Juanse2310             |
+
+
+
+## Technologies used:
+
+        In Frontend:
+
+<p align="left">
+<img src="https://avatars.githubusercontent.com/u/5155369?s=200&v=4"  width=10% height=10%>
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"  width=10% height=10%>
+
+</p> 
+<p align="left">
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png"  width=10% height=10%>
+<img src="https://user-images.githubusercontent.com/69209369/116448711-ccedd500-a82f-11eb-8a08-b53db08f6156.png" width=10% height=10%>
+</p>
+
+        In Backend:
+
+<p align="left">
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"  width=10% height=10%> 
+<img src="https://www.postgresql.org/media/img/about/press/elephant.png" width=8% height=8%>
+</p>
 
 [Back to the init](#beginning)
