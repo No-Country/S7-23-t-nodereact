@@ -12,28 +12,32 @@
 
 ¿Y qué es un Crowfunding?
 
-  El crowdfunding (también conocido como financiamiento colectivo) es un modelo de financiamiento en línea que permite a personas
-  y organizaciones recaudar fondos de una gran cantidad de individuos a través de plataformas de internet.
+  El crowdfunding (también conocido como financiamiento colectivo) es un modelo de financiamiento en línea 
+  que permite a personas y organizaciones recaudar fondos de una gran cantidad de individuos a través 
+  de plataformas de internet.
 
 ¿Cómo funciona?
 
-  Los proyectos de crowdfunding se financian mediante pequeñas contribuciones de una gran cantidad de personas. Por lo general,
-  los proyectos se publican en una plataforma de crowdfunding, donde los patrocinadores pueden leer sobre el proyecto y hacer contribuciones. 
-  Los proyectos de crowdfunding pueden ser para cualquier cosa, desde un nuevo producto o servicio hasta un proyecto creativo o una causa benéfica.
+  Los proyectos de crowdfunding se financian mediante pequeñas contribuciones de una gran cantidad de personas.
+  Por lo general, los proyectos se publican en una plataforma de crowdfunding, donde los patrocinadores pueden 
+  leer sobre el proyecto y hacer contribuciones. 
+  Los proyectos de crowdfunding pueden ser para cualquier cosa, desde un nuevo producto o servicio hasta 
+  un proyecto creativo o una causa benéfica.
 
 ¿Qué ejemplos hay?
 
-  Existen diferentes tipos de crowdfunding, como el de recompensa (los patrocinadores reciben una recompensa por su contribución), 
-  el de préstamos (los patrocinadores reciben un retorno financiero), el de capital (los patrocinadores reciben una participación 
-  en la empresa o proyecto) y el de donaciones (los patrocinadores hacen una donación sin esperar nada a cambio).
+  Existen diferentes tipos de crowdfunding, como el de recompensa (los patrocinadores reciben una 
+  recompensa por su contribución), el de préstamos (los patrocinadores reciben un retorno financiero), 
+  el de capital (los patrocinadores reciben una participación en la empresa o proyecto) y el de donaciones 
+  (los patrocinadores hacen una donación sin esperar nada a cambio).
 
 # Descripción del proyecto
 
   ## Para los creadores de proyectos: 
-    El crowdfunding ofrece a los creadores de proyectos la posibilidad de financiar sus ideas de una manera que anteriormente 
-    no estaba disponible. Les brinda una plataforma para presentar sus proyectos a una audiencia global y recaudar fondos de 
-    una manera eficiente. Además, el crowdfunding también les brinda una forma de obtener retroalimentación y validar su idea 
-    antes de invertir grandes cantidades de dinero en su proyecto.
+    El crowdfunding ofrece a los creadores de proyectos la posibilidad de financiar sus ideas de una manera 
+    que anteriormente no estaba disponible. Les brinda una plataforma para presentar sus proyectos a una 
+    audiencia global y recaudar fondos de una manera eficiente. Además, el crowdfunding también les brinda 
+    una forma de obtener retroalimentación y validar su idea antes de invertir grandes cantidades de dinero en su proyecto.
 
   ## Para los patrocinadores: 
     El crowdfunding ofrece a los patrocinadores la posibilidad de apoyar proyectos en los que creen y obtener recompensas exclusivas.
