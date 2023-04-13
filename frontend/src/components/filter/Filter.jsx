@@ -16,7 +16,7 @@ const Filter = () => {
   };
 
   return (
-    <div className="flex justify-between    sm:justify-end my-8 sm:gap-x-6 ">
+    <div className="flex justify-between sm:justify-end my-10 sm:gap-x-6 ">
       <div className="relative ">
         <div className="flex justify-between">
           <button

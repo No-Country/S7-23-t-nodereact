@@ -7,9 +7,9 @@ const index = ({ data }) => {
   console.log(data);
   return (
     <Layout>
-      <div className="w-[98%] mx-auto  my-20   ">
+      <div className="w-[98%] mx-auto  mt-[112px]  mb-10 ">
         <Filter />
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3  ">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3   ">
           {data.map((collaborate) => (
             <CardCollaborate key={collaborate._id} collaborate={collaborate} />
           ))}
