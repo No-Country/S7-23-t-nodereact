@@ -105,7 +105,7 @@ const PayCard = async (req, res) => {
       },
     ],
     back_urls: {
-      "success": "http://localhost:3000",
+      "success": `http://localhost:5000/api/projects/success/${card._id}/${datos.amount}`,
 			"failure": "http://localhost:3000",
 			"pending": "http://localhost:3000"
     },
@@ -116,13 +116,19 @@ const PayCard = async (req, res) => {
   .then(function (response) {
     // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
   // console.log(response)
-  
     res.status(200).json(response.body.init_point);
-   
-  
   })
   .catch(function (error) {
     console.log(error.message);
   });
 }
-export { getProjects, postProject, getProjectById, updateProject,PayCard };
+
+const Success = async(req,res)=>{
+  const { id, amount } = req.params;
+  console.log(id)
+  console.log(amount)
+  const card = await Project.findById(id, projection);
+console.log("HOLA")
+  console.log(card)
+}
+export { getProjects, postProject, getProjectById, updateProject,PayCard,Success };
