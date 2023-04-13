@@ -1,55 +1,58 @@
 import Donation from "../models/donations.js";
 import Project from "../models/projects.js";
-import { findElement, findOneElement } from "../utils/users.utils.js";
+import User from "../models/users.js"
 
 const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 }
 
-const getDonation = async (req, res) => {
-  const query = req.query;
-  const profile = await findElement(query);
+const getDonationByUser = async (req, res) => {
+  //Recibe el id del usuario del que se queiren conocer las donaciones realizadas
+  const { id } = req.params;
+  console.log(id)
   try {
+    const donation = await Donation.find({ userId: id});
+    console.log(donation)
 
-    if (profile) {
-      res.json(profile);
+    if (donation) {
+      console.log(donation)
+      res.status(200).json(donation);
     } else {
-      res.status(404).json({ message: "Donación no encontrada" });
+      res.status(404).json({ message: "Donaciones no encontradas" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Error al buscar la donación solicitada" });
+    res.status(500).json({ message: "Error al buscar las donaciones solicitadas" });
   }
 };
+
 //Nueva donacion
 const postDonation = async (req, res) => {
+  //Recibe los campos obligatorios para la creación de una donación (inclido el comentario)
     const donation = new Donation(req.body);
-    console.log("Donacion")
-    console.log(donation)
+
     // var allProjects = await Project.find({}, {projection});
-    console.log(donation.projectId);
+
     let projectByName = await Project.findById(donation.projectId);
-    console.log(projectByName)
-    // .filter(e =>
-    //     e.title.includes(donation.projectId)) 
        
   try {
-    console.log(projectByName.parcialAmount)
+
     const amount = {
         parcialAmount: parseInt(donation.amount) + parseInt(projectByName.parcialAmount)
     }
-    console.log(amount)
+
 //Actualiza el parcialAmount del proyecto
     const updateProject = await Project.findByIdAndUpdate(
         {_id : donation.projectId} , 
         amount, {
         new: true
       })
-      console.log(updateProject)
+
 //Actualiza el estado de la donación cuando pago ok
-    const updateCompletion = await Donation.findByIdAndUpdate(
-        {_id : donation._id.valueOf()},
-        {completed: 'completed'},
-        {new: true}
-    )
-    console.log(updateCompletion)
+    // const updateCompletion = await Donation.findByIdAndUpdate(
+    //     {_id : donation._id.valueOf()},
+    //     {completed: 'completed'},
+    //     {new: true}
+    // )
+    donation.completed='completed';
+
     const newDonation = await donation.save();
 
     res.status(201).json(newDonation)
@@ -61,12 +64,13 @@ const postDonation = async (req, res) => {
 
 // acceptWorkDonation
 const acceptWorkDonation = async (req, res) => {
+  //Recibe el Id de la donación de tiempo que se quiere aceptar
   const { id } = req.params;
 
   try {
     const acceptedDonation = await Donation.findByIdAndUpdate(
-      {_id : donation._id},
-      {completed: 'completed'},
+      {_id : id},
+      {completed: 'accepted'},
       {new: true}
     );
     res.status(200).json(acceptedDonation);
@@ -76,5 +80,23 @@ const acceptWorkDonation = async (req, res) => {
   }
 };
 
+// // acceptMonetaryDonation
+// const acceptMonetaryDonation = async (req, res) => {
+//   //Recibe el Id de la donación de tiempo que se quiere aceptar
+//   const { id } = req.params;
 
-export { getDonation , postDonation, acceptWorkDonation };
+//   try {
+//     const acceptedDonation = await Donation.findByIdAndUpdate(
+//       {_id : id},
+//       {completed: 'acceptedcompleted'},
+//       {new: true}
+//     );
+//     res.status(200).json(acceptedDonation);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(400).json(error.message);
+//   }
+// };
+
+
+export { getDonationByUser , postDonation, acceptWorkDonation };
