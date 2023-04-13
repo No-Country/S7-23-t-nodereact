@@ -66,12 +66,13 @@ const postDonation = async (req, res) => {
 // acceptWorkDonation
 const acceptWorkDonation = async (req, res) => {
   //Recibe el Id de la donación de tiempo que se quiere aceptar
-  const { id } = req.params;
-
+  const { id } = req.params; 
+  // Viene en un JSON como: {"completed": "accepted"} o "rejected"
+  const acceptReject = req.body; 
   try {
     const acceptedDonation = await Donation.findByIdAndUpdate(
       {_id : id},
-      {completed: 'accepted'},
+      {completed: `${acceptReject.completed}`},
       {new: true}
     );
     res.status(200).json(acceptedDonation);
