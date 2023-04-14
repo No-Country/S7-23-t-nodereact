@@ -65,7 +65,7 @@ const collaborateDetails = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href={`/discover2`}>
+              <Link href={`/collaborate/form/${datas._id}`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                 min-[878px]:mt-10  lg:h-[50px]"

@@ -5,8 +5,7 @@ import React from "react";
 
 const feedingDetail = ({ datas }) => {
   const router = useRouter();
-
-  console.log(router.query);
+  console.log(router);
 
   return (
     <Layout>
@@ -65,7 +64,7 @@ const feedingDetail = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href="/discover">
+              <Link href={`/descubrirAlimentacion/discover/${datas._id}`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                 lg:h-[50px]"

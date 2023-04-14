@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout/Layout";
+import Link from "next/link";
 
 const FormularioFinanciar = () => {
   return (
@@ -118,9 +119,12 @@ const FormularioFinanciar = () => {
               className="bg-white text-blue-600 border border-blue-600 rounded px-4 py-2 file-input-error"
             />
           </div>
-          <button className="btn btn-wide text-text hover:text-font-text bg-color-accent">
+          <Link
+            href={"/exito"}
+            className="btn btn-wide text-text hover:text-font-text bg-color-accent"
+          >
             Publicar campaña
-          </button>
+          </Link>
         </form>
       </div>
     </Layout>
