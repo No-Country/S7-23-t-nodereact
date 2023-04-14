@@ -1,13 +1,12 @@
-import Project from '../models/projects.js'
+import Project from "../models/projects.js";
 import dotenv from "dotenv";
-import mercadopago from "mercadopago"
+import mercadopago from "mercadopago";
+import Donation from "../models/donations.js";
 dotenv.config();
 
 mercadopago.configure({
   access_token: process.env.ACCESS_TOKEN,
 });
-
-
 
 const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 };
 
@@ -87,15 +86,54 @@ const updateProject = async (req, res) => {
   }
 };
 const PayCard = async (req, res) => {
-  const { id } = req.params;
+  // const { id } = req.params;
   const datos = req.body;
-  const card = await Project.findById(id, projection);
+  try {
+    console.log("Soy proyect id")
+  console.log(datos.projectId)
+  const project = await Project.findById(datos.projectId, projection);
+  const donation = new Donation(datos);
+  console.log("soy proyect");
+  console.log(project);
+  console.log("soy donation");
+  console.log(donation)
+  console.log("hola")
+
+  // console.log(donation);
+
+  // const amount = {
+  //       parcialAmount: parseInt(donation.amount) + parseInt(project.parcialAmount)
+  //   }
+
+  //Actualiza el parcialAmount del proyecto
+  // const updateProject = await Project.findByIdAndUpdate(
+  //     {_id : donation.projectId} ,
+  //     amount, {
+  //     new: true
+  //   })
+
+  //Actualiza el estado de la donación cuando pago ok
+  // const updateCompletion = await Donation.findByIdAndUpdate(
+  //     {_id : donation._id.valueOf()},
+  //     {completed: 'completed'},
+  //     {new: true}
+  // )
+  // donation.completed='completed';
+
+   const newDonation = await donation.save();
+
+  // res.status(201).json(newDonation)
+  // } catch (error) {
+  //   console.log(error);
+  //   res.status(400).json(error.message);
+  // }
+
   let preference = {
     transaction_amount: parseInt(datos.amount * 1.15), //sumo el 15% comision de ML
     items: [
       {
-        id: card._id,
-        title: card.title,
+        id: project._id,
+        title: project.title,
         unit_price: datos.amount,
         quantity: 1,
         payer: {
@@ -105,30 +143,42 @@ const PayCard = async (req, res) => {
       },
     ],
     back_urls: {
-      "success": `http://localhost:5000/api/projects/success/${card._id}/${datos.amount}`,
-			"failure": "http://localhost:3000",
-			"pending": "http://localhost:3000"
+      success: `http://localhost:5000/completed/${donation._id}`,
+      failure: `http://localhost:5000/failure/${donation._id}`,
+      pending: "http://localhost:3000",
     },
     auto_return: "approved",
   };
   mercadopago.preferences
-  .create(preference)
-  .then(function (response) {
-    // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
-  // console.log(response)
-    res.status(200).json(response.body.init_point);
-  })
-  .catch(function (error) {
-    console.log(error.message);
-  });
-}
+    .create(preference)
+    .then(function (response) {
+      // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
+      // console.log(response)
+      res.status(200).json(response.body.init_point);
+    })
+    .catch(function (error) {
+      console.log(error.message);
+    });
+  } catch (error) {
+    console.log(error)
+  }
+};
 
-const Success = async(req,res)=>{
+const Success = async (req, res) => {
   const { id, amount } = req.params;
-  console.log(id)
-  console.log(amount)
-  const card = await Project.findById(id, projection);
-console.log("HOLA")
-  console.log(card)
-}
-export { getProjects, postProject, getProjectById, updateProject,PayCard,Success };
+  console.log(id);
+  const project = await Project.findById(id, projection);
+  try {
+    res.status(200).json("http://localhost:3000");
+  } catch (error) {
+    res.json(error);
+  }
+};
+export {
+  getProjects,
+  postProject,
+  getProjectById,
+  updateProject,
+  PayCard,
+  Success,
+};

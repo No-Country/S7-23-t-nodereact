@@ -81,22 +81,19 @@ const acceptWorkDonation = async (req, res) => {
 };
 
 // // acceptMonetaryDonation
-// const acceptMonetaryDonation = async (req, res) => {
-//   //Recibe el Id de la donación de tiempo que se quiere aceptar
-//   const { id } = req.params;
+const failure = async (req, res) => {
+  //Recibe el Id de la donación de tiempo que se quiere aceptar
+  const { id } = req.params;
 
-//   try {
-//     const acceptedDonation = await Donation.findByIdAndUpdate(
-//       {_id : id},
-//       {completed: 'acceptedcompleted'},
-//       {new: true}
-//     );
-//     res.status(200).json(acceptedDonation);
-//   } catch (error) {
-//     console.log(error);
-//     res.status(400).json(error.message);
-//   }
-// };
+  try {
+    const acceptedDonation = await Donation.findByIdAndDelete({_id : id} );
+    res.status(200).json(acceptedDonation);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error.message);
+  }
+};
 
 
-export { getDonationByUser , postDonation, acceptWorkDonation };
+
+export { getDonationByUser , postDonation, acceptWorkDonation,failure};
