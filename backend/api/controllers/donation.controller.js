@@ -9,9 +9,9 @@ const getDonationByUser = async (req, res) => {
   const { id } = req.params;
   console.log(id)
   try {
-    const donation = await Donation.find({ userId: id});
-    console.log(donation)
 
+    const donation = await Donation.find({ userId : { $eq:`${id}` } });
+ 
     if (donation) {
       console.log(donation)
       res.status(200).json(donation);
@@ -19,6 +19,7 @@ const getDonationByUser = async (req, res) => {
       res.status(404).json({ message: "Donaciones no encontradas" });
     }
   } catch (error) {
+    console.log(error.message)
     res.status(500).json({ message: "Error al buscar las donaciones solicitadas" });
   }
 };
@@ -65,12 +66,13 @@ const postDonation = async (req, res) => {
 // acceptWorkDonation
 const acceptWorkDonation = async (req, res) => {
   //Recibe el Id de la donación de tiempo que se quiere aceptar
-  const { id } = req.params;
-
+  const { id } = req.params; 
+  // Viene en un JSON como: {"completed": "accepted"} o "rejected"
+  const acceptReject = req.body; 
   try {
     const acceptedDonation = await Donation.findByIdAndUpdate(
       {_id : id},
-      {completed: 'accepted'},
+      {completed: `${acceptReject.completed}`},
       {new: true}
     );
     res.status(200).json(acceptedDonation);
