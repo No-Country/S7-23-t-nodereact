@@ -11,7 +11,7 @@ const Form = ({ datas }) => {
     <Layout>
       <div className="block w-[95%] md:w-[60%] h-[70%] mx-auto mt-28 mb-10 bg-font-text  shadow-sm shadow-text rounded-lg">
         <Link href={`/collaborate/${datas._id}`}>
-          <img className="my-6 cursor-pointer" src="/arrow.svg" alt="" />
+          <img className="m-5 pt-5 cursor-pointer" src="/arrow.svg" alt="" />
         </Link>
         <div className="w-[90%] mx-auto card lg:card-side bg-transparent pt-5">
           <figure>

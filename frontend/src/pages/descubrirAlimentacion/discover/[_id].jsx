@@ -10,6 +10,9 @@ const Discover = ({ datas }) => {
   return (
     <Layout>
       <div className="block w-[80%] md:w-[60%] h-[70%] mx-auto mt-28 mb-10 bg-font-text  shadow-sm shadow-text rounded-lg">
+        <Link href={`/descubrirAlimentacion/${datas._id}`}>
+          <img className="m-5 pt-5 cursor-pointer" src="/arrow.svg" alt="" />
+        </Link>
         <div className="w-[90%] mx-auto card lg:card-side bg-transparent pt-5">
           <figure>
             <Image
@@ -25,7 +28,7 @@ const Discover = ({ datas }) => {
               Vas a colaborar en la campaña
             </p>
             <h2 className="font-extrabold text-text font-Manrope">
-              Ayúdanos a crear nuestra primera biotienda online
+              {datas.title}
             </h2>
             <p className="font-bold text-text font-Manrope">
               Tu colaboración será recibida por Lisa Martínez
@@ -36,58 +39,55 @@ const Discover = ({ datas }) => {
           Completa los datos para ponerte en contacto con lisa
         </h2>
         <form className="bg-font-text form-control gap-4 h-[100%] w-[100%] flex py-8 rounded-md items-center">
-          <div className="flex justify-between gap-1 w-[90%]">
+          <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 w-[100%] lg:w-[90%]">
             <input
               type="tex"
               placeholder="Nombre"
-              className="input input-lg w-[45%] bg-light-gray text-text"
+              className="input input-lg w-[90%] lg:w-[45%] bg-light-gray text-text border-1 border-[#000000]"
             />
 
             <input
               type="text"
               placeholder="Apellido"
-              className="input input-lg w-[45%] bg-light-gray text-text"
+              className="input input-lg w-[90%] lg:w-[45%] bg-light-gray text-text border-1 border-[#000000]"
             />
           </div>
-          <div className="flex justify-between gap-1 w-[90%]">
+          <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-4 w-[100%] lg:w-[90%]">
             <input
               type="text"
               placeholder="Ciudad"
-              className="input input-lg w-[45%] bg-light-gray text-text"
+              className="input input-lg w-[90%] lg:w-[45%] bg-light-gray text-text border-1 border-[#000000]"
             />
 
             <input
               type="text"
               placeholder="Pais"
-              className="input input-lg w-[45%] bg-light-gray text-text"
+              className="input input-lg w-[90%] lg:w-[45%] bg-light-gray text-text border-1 border-[#000000]"
             />
           </div>
+
           <input
             type="email"
             placeholder="Email"
-            className="input input-lg w-[90%] bg-light-gray text-text"
+            className="input input-lg w-[90%] bg-light-gray text-text border-1 border-[#000000]"
           />
-
           <input
             type="text"
             placeholder="linkedin"
-            className="input input-lg w-[90%] bg-light-gray text-text"
+            className="input input-lg w-[90%] bg-light-gray text-text border-1 border-[#000000]"
           />
-
           <input
             type="text"
             placeholder="Github"
-            className="input input-lg w-[90%] bg-light-gray text-text"
+            className="input input-lg w-[90%] bg-light-gray text-text border-1 border-[#000000]"
           />
-
           <input
             type="text"
             placeholder="Portafolio"
-            className="input input-lg w-[90%] bg-light-gray text-text"
+            className="input input-lg w-[90%] bg-light-gray text-text border-1 border-[#000000]"
           />
-
           <textarea
-            className="textarea textarea-ghost bg-light-gray w-[90%]"
+            className="textarea textarea-ghost bg-light-gray w-[90%] border-1 border-[#000000]"
             placeholder="Cuenta por qué quieres participar en este proyecto"
           ></textarea>
           <Link
