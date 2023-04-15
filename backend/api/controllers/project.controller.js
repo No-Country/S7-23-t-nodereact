@@ -88,12 +88,11 @@ const updateProject = async (req, res) => {
 const PayCard = async (req, res) => {
   const datos = req.body;
   try {
-    console.log("Soy proyect id");
-    console.log(datos.projectId);
+    if(donation.amount<=0){
+      res.status(400).json({amount:"Invalid"})
+    }
     const project = await Project.findById(datos.projectId, projection);
     const donation = new Donation(datos);
-console.log("soy donacion antes ")
-console.log(donation)
     const amount = {
       parcialAmount:
         parseInt(donation.amount) + parseInt(project.parcialAmount),
