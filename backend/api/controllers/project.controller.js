@@ -123,7 +123,7 @@ const PayCard = async (req, res) => {
       ],
       back_urls: {
         success: `http://localhost:5000/api/donations/completed/${donation._id}`,
-        failure: `http://localhost:5000/api/donation/failure/${donation._id}`,
+        failure: `http://localhost:5000/api/donations/failure/${donation._id}`,
         pending: "http://localhost:3000",
       },
       auto_return: "approved",
