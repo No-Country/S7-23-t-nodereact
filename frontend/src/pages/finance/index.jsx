@@ -4,7 +4,6 @@ import Filter from "@/components/filter/Filter";
 import React from "react";
 
 const index = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <div className="w-[98%] mx-auto    mt-[112px]  ">

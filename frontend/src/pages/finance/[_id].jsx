@@ -1,14 +1,8 @@
 import Layout from "@/components/Layout/Layout";
-import { useRouter } from "next/router";
 import React from "react";
-import style from "../financiar/financiar.module.css";
 import Link from "next/link";
 
 const detailsFinanciar = ({ datas }) => {
-  const router = useRouter();
-
-  console.log(router.query);
-
   return (
     <Layout>
       <div className="w-[95%] mx-auto  mt-[112px]  mb-10 ">
@@ -66,7 +60,7 @@ const detailsFinanciar = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href={`/financiar/financiar/${datas._id}`}>
+              <Link href={`/finance/financeFinance/${datas._id}`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
               min-[878px]:mt-10  lg:h-[50px]"

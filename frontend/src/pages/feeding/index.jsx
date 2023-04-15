@@ -4,7 +4,6 @@ import Filter from "@/components/filter/Filter";
 import React from "react";
 
 const index = ({ filter }) => {
-  console.log(filter);
   return (
     <>
       <div className="relative flex justify-center items-center mt-20">
