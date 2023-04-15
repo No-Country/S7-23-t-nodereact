@@ -4,9 +4,6 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const feedingDetail = ({ datas }) => {
-  const router = useRouter();
-  console.log(router);
-
   return (
     <Layout>
       <div className="w-[95%] mx-auto  mt-[112px]  mb-10   ">
@@ -64,7 +61,7 @@ const feedingDetail = ({ datas }) => {
               ></div>
             </div>
             <div className="flex flex-col-reverse">
-              <Link href={`/descubrirAlimentacion/discover/${datas._id}`}>
+              <Link href={`/feeding/feedingForm/${datas._id}`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                 lg:h-[50px]"
@@ -77,7 +74,7 @@ const feedingDetail = ({ datas }) => {
                   COLABORAR
                 </button>
               </Link>
-              <Link href={`/descubrirAlimentacion/feeding/${datas._id}`}>
+              <Link href={`/feeding/feedingFinance/${datas._id}`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                 lg:h-[50px]"

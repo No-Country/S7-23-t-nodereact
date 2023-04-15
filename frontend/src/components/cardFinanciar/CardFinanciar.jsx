@@ -3,7 +3,7 @@ import React from "react";
 
 const CardFinanciar = ({ financiar }) => {
   return (
-    <Link href={`/financiar/${financiar._id}`}>
+    <Link href={`/finance/${financiar._id}`}>
       <div className="w-full   h-[570px] lg:w-[100%]   cursor-pointer   border-[2px] border-[#dfdada] rounded-[15px] shadow-2xl">
         <div className="w-full h-[266.7px] p-[10px]  ">
           <img

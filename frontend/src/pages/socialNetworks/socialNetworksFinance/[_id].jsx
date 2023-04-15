@@ -2,7 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import React from "react";
 
-const feedingDetail = ({ datas }) => {
+const socialNetworksFinance = ({ datas }) => {
   return (
     <Layout>
       <div
@@ -85,4 +85,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default feedingDetail;
+export default socialNetworksFinance;

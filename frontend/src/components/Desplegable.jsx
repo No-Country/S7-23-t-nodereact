@@ -3,7 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const solutions = [
-  { name: "Alimentacion", href: "/descubrirAlimentacion" },
+  { name: "Alimentacion", href: "/feeding" },
   { name: "Comunidad", href: "/community" },
   { name: "Criptomonedas", href: "/cryptocurrencies" },
   { name: "Crowfunding", href: "#" },
