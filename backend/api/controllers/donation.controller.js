@@ -95,10 +95,7 @@ const completed = async (req, res) => {
       { new: true }
     );
 
-    res.status(200).json({
-      donation: "Completed",
-      link: "http://localhost:3000/acepted",
-    });
+    res.redirect(302, "http://localhost:3000/exito2");
   } catch (error) {
     res.json(error);
   }
@@ -132,10 +129,7 @@ console.log(amount)
 
     const rejectedDonation = await Donation.findByIdAndDelete({ _id: id });
 
-    res.status(200).json({
-      donation: "failure",
-      link: "http://localhost:3000/failure",
-    });
+    res.redirect(302, "http://localhost:3000");
   } catch (error) {
     console.log(error);
     res.status(400).json(error.message);

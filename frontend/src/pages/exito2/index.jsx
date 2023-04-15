@@ -21,7 +21,7 @@ const exito2 = () => {
                 Volver a inicio
               </Link>
               <Link
-                href="/post"
+                href="http://localhost:3000/feeding/"
                 className=" ml-9 btn bg-color-accent text-font-text hover:bg-font-text hover:text-text rounded-md border-0"
               >
                 Ver campaña

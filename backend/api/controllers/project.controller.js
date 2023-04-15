@@ -86,6 +86,7 @@ const updateProject = async (req, res) => {
   }
 };
 const PayCard = async (req, res) => {
+  const {id}= req.query
   const datos = req.body;
   try {
     if(datos.amount<=0){
@@ -94,8 +95,7 @@ const PayCard = async (req, res) => {
     const project = await Project.findById(datos.projectId, projection);
     const donation = new Donation(datos);
     const amount = {
-      parcialAmount:
-        parseInt(donation.amount) + parseInt(project.parcialAmount),
+      parcialAmount: parseInt(donation.amount) + parseInt(project.parcialAmount),
     };
 
     const updateProject = await Project.findByIdAndUpdate(
