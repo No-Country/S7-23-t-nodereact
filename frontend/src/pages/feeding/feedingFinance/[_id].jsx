@@ -2,14 +2,14 @@ import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import React from "react";
 
-const feedingDetail = ({ datas }) => {
+const feedingFinance = ({ datas }) => {
   return (
     <Layout>
       <div
         className="w-[95%] mx-auto mt-24  mb-10 sm:w-[90%] md:w-[80%] lg:w-[78%]   sm:border-[2px] sm:border-[#dfdada] sm:rounded-[15px] sm:shadow-2xl   
         sm:p-4 md:mt-[112px]   md:mb-10 "
       >
-        <Link href={`/descubrirAlimentacion/${datas._id}`}>
+        <Link href={`/feeding/${datas._id}`}>
           <img className="my-6 cursor-pointer" src="/arrow.svg" alt="" />
         </Link>
         <div className="sm:flex sm:gap-6 ">
@@ -85,4 +85,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default feedingDetail;
+export default feedingFinance;

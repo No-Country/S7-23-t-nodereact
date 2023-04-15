@@ -4,10 +4,6 @@ import { useRouter } from "next/router";
 import React from "react";
 
 const collaborateDetails = ({ datas }) => {
-  const router = useRouter();
-
-  console.log(router.query);
-
   return (
     <Layout>
       <div className="w-[95%] mx-auto mt-[112px]  mb-10  ">

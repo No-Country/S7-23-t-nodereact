@@ -3,7 +3,7 @@ import React from "react";
 
 const CardAlimentacion = ({ feeding }) => {
   return (
-    <Link href={`/descubrirAlimentacion/${feeding._id}`}>
+    <Link href={`/feeding/${feeding._id}`}>
       <div className="w-full   h-[570px] lg:w-[100%]   cursor-pointer   border-[2px] border-[#dfdada] rounded-[15px] shadow-2xl">
         <div className="w-full h-[266.7px] p-[10px]  ">
           <img

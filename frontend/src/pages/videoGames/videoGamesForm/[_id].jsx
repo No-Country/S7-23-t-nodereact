@@ -1,12 +1,8 @@
 import Layout from "@/components/Layout/Layout";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const videoGamesForm = ({ datas }) => {
-  const router = useRouter();
-  console.log(datas);
-
   return (
     <Layout>
       <div className="block w-[80%] md:w-[60%] h-[70%] mx-auto mt-28 mb-10 bg-font-text  shadow-sm shadow-text rounded-lg">
@@ -92,7 +88,7 @@ const videoGamesForm = ({ datas }) => {
           ></textarea>
           <Link
             href={"/exito2"}
-            className="w-[90%] mt-8 btn btn-wide text-font-text hover:text-font-text bg-color-accent rounded-md border-0"
+            className="w-[90%] mt-8 btn  text-font-text hover:text-font-text bg-color-accent rounded-md border-0"
           >
             ENVIAR
           </Link>
