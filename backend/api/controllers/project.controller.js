@@ -1,4 +1,5 @@
 import Project from "../models/projects.js";
+import Donation from "../models/donations.js";
 import dotenv from "dotenv";
 import mercadopago from "mercadopago";
 dotenv.config();
@@ -85,40 +86,59 @@ const updateProject = async (req, res) => {
   }
 };
 const PayCard = async (req, res) => {
-  const { id } = req.params;
   const datos = req.body;
-  const card = await Project.findById(id, projection);
-  let preference = {
-    transaction_amount: parseInt(datos.amount * 1.15), //sumo el 15% comision de ML
-    items: [
+  try {
+    console.log("Soy proyect id");
+    console.log(datos.projectId);
+    const project = await Project.findById(datos.projectId, projection);
+    const donation = new Donation(datos);
+
+    const amount = {
+      parcialAmount:
+        parseInt(donation.amount) + parseInt(project.parcialAmount),
+    };
+
+    const updateProject = await Project.findByIdAndUpdate(
+      { _id: donation.projectId },
+      amount,
       {
-        id: card._id,
-        title: card.title,
-        unit_price: datos.amount,
-        quantity: 1,
-        payer: {
-          email: datos.email,
-          name: datos.nickname,
+        new: true,
+      }
+    );
+    const newDonation = await donation.save();
+
+    let preference = {
+      transaction_amount: parseInt(datos.amount * 1.15), //sumo el 15% comision de ML
+      items: [
+        {
+          id: project._id,
+          title: project.title,
+          unit_price: datos.amount,
+          quantity: 1,
+          payer: {
+            email: datos.email,
+            name: datos.nickname,
+          },
         },
+      ],
+      back_urls: {
+        success: `http://localhost:5000/api/donations/completed/${donation._id}`,
+        failure: `http://localhost:5000/failure/${donation._id}`,
+        pending: "http://localhost:3000",
       },
-    ],
-    back_urls: {
-      success: `http://localhost:5000/api/projects/success/${card._id}/${datos.amount}`,
-      failure: "http://localhost:3000",
-      pending: "http://localhost:3000",
-    },
-    auto_return: "approved",
-  };
-  mercadopago.preferences
-    .create(preference)
-    .then(function (response) {
-      // En esta instancia deberás asignar el valor dentro de response.body.id por el ID de preferencia solicitado en el siguiente paso
-      // console.log(response)
-      res.status(200).json(response.body.init_point);
-    })
-    .catch(function (error) {
-      console.log(error.message);
-    });
+      auto_return: "approved",
+    };
+    mercadopago.preferences
+      .create(preference)
+      .then(function (response) {
+        res.status(200).json(response.body.init_point);
+      })
+      .catch(function (error) {
+        console.log(error.message);
+      });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const Success = async (req, res) => {
