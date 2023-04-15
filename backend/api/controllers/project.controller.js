@@ -88,7 +88,7 @@ const updateProject = async (req, res) => {
 const PayCard = async (req, res) => {
   const datos = req.body;
   try {
-    if(donation.amount<=0){
+    if(datos.amount<=0){
       res.status(400).json({amount:"Invalid"})
     }
     const project = await Project.findById(datos.projectId, projection);
