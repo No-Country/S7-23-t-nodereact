@@ -85,37 +85,56 @@ const acceptWorkDonation = async (req, res) => {
   }
 };
 
-
 const completed = async (req, res) => {
   const { id } = req.params;
-  console.log(id)
-try {
-  const donation = await Donation.findByIdAndUpdate(
-    { _id: id },
-    { completed: "completed" },
-    { new: true }
+  console.log(id);
+  try {
+    const donation = await Donation.findByIdAndUpdate(
+      { _id: id },
+      { completed: "completed" },
+      { new: true }
     );
-    console.log("soy donacion despues ")
-    console.log(donation)
 
     res.status(200).json({
-      donation:"Completed",
-      link:"http://localhost:3000/acepted"
+      donation: "Completed",
+      link: "http://localhost:3000/acepted",
     });
-} catch (error) {
-  res.json(error)  
-}
+  } catch (error) {
+    res.json(error);
+  }
 };
 
 const failure = async (req, res) => {
   //Recibe el Id de la donación de tiempo que se quiere aceptar
   const { id } = req.params;
+  let donation = await Donation.findById({ _id: id });
+  console.log(donation);
+  let projectByName = await Project.findById(donation.projectId);
+  console.log("Proyecto 1");
+  console.log(projectByName);
 
   try {
-    const acceptedDonation = await Donation.findByIdAndDelete({ _id: id });
+    const amount = {
+      parcialAmount:
+        parseInt(projectByName.parcialAmount) - parseInt(donation.amount),
+    };
+console.log(amount)
+    //Actualiza el parcialAmount del proyecto
+    const updateProject = await Project.findByIdAndUpdate(
+      { _id: donation.projectId },
+      amount,
+      {
+        new: true,
+      }
+    );
+    console.log("Proyecto 2");
+    console.log(updateProject.parcialAmount);
+
+    const rejectedDonation = await Donation.findByIdAndDelete({ _id: id });
+
     res.status(200).json({
-      donation:"failure",
-      link:"http://localhost:3000/failure"
+      donation: "failure",
+      link: "http://localhost:3000/failure",
     });
   } catch (error) {
     console.log(error);
