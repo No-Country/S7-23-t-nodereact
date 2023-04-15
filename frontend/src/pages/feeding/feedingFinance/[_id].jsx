@@ -1,8 +1,52 @@
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
-import React from "react";
+import { parse } from "postcss";
+import React, { useState } from "react";
 
 const feedingFinance = ({ datas }) => {
+  const [amount, setInputValue] = useState(100);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleButtonClick = async () => {
+    if (isLoading) return; // Evitar que el usuario envíe varias solicitudes mientras se está procesando una.
+
+    setIsLoading(true);
+    const payUrl = `http://localhost:5000/api/projects/pay/${datas._id}`;
+    console.log(datas._id)
+
+    try {
+      
+   
+    const response = await fetch(payUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        projectId: datas._id,
+        amount: parseInt(amount),
+        userId:"642ae88a3e2ddb5011988a86",
+      }),
+    });
+    console.log(response)
+    const responseData = await response.json();
+    window.location.href = responseData;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 10000); // Deshabilitar temporalmente el botón durante 10 segundos después de enviar la solicitud.
+  }
+};
+  
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+
+
   return (
     <Layout>
       <div
@@ -41,6 +85,8 @@ const feedingFinance = ({ datas }) => {
             className=" bg-font-text  text-text w-full text-right h-[54px] text-lg pr-3 rounded-[30px]  font-Kanit font-semibold border-2 border-text outline-none     "
             placeholder="300"
             type="text"
+            value={amount}
+          onChange={handleInputChange}
           />
           <span className="absolute top-3 left-4 text-lg text-text font-Manrope font-bold">
             $
@@ -66,6 +112,7 @@ const feedingFinance = ({ datas }) => {
             className="w-full h-full rounded-[40px] object-contain"
             src="/pago.png"
             alt=""
+            onClick={handleButtonClick}
           />
         </button>
       </div>
