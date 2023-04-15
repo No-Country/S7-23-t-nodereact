@@ -147,7 +147,7 @@ What examples are there?
 | Matias Cañadas     | PM & Scrum Master       | https://www.linkedin.com/in/matiascanadas                  | https://github.com/Hotbones               |
 | Raisa Orellano     | Back end                | https://www.linkedin.com/in/raisa-orellana-rios            | https://github.com/Raisa320               |
 | Rafael Barreiro    | Back end                | https://www.linkedin.com/in/rafael84barreiro/              | https://github.com/                       |
-| Agustin Soleti     | Back end                | https://www.linkedin.com/in/aguusoleti/                    | https://github.com/                       |
+| Agustin Soleti     | Back end                | https://www.linkedin.com/in/aguusoleti/                    | https://github.com/aguusoleti                       |
 | Tomas Garcia       | Back end                | https://www.linkedin.com/in/tomas-garcia-gonzalo/          | https://github.com/                       |
 | Jorge Diaz         | Front end               | https://www.linkedin.com/in/espinoza-jorgeluis             | https://github.com/                       |
 | Victor Fernandez   | Front end               | https://www.linkedin.com/in/victor-h-fernandez-p           | https://github.com/                       |
