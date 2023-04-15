@@ -92,7 +92,8 @@ const PayCard = async (req, res) => {
     console.log(datos.projectId);
     const project = await Project.findById(datos.projectId, projection);
     const donation = new Donation(datos);
-
+console.log("soy donacion antes ")
+console.log(donation)
     const amount = {
       parcialAmount:
         parseInt(donation.amount) + parseInt(project.parcialAmount),

@@ -88,13 +88,16 @@ const acceptWorkDonation = async (req, res) => {
 
 const completed = async (req, res) => {
   const { id } = req.params;
+  console.log(id)
 try {
   const donation = await Donation.findByIdAndUpdate(
-    { _id: donation._id.valueOf() },
+    { _id: id },
     { completed: "completed" },
     { new: true }
     );
-  
+    console.log("soy donacion despues ")
+    console.log(donation)
+
     res.status(200).json({
       donation:"Completed",
       link:"http://localhost:3000/acepted"
