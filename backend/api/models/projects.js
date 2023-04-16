@@ -66,6 +66,7 @@ const userSchema = mongoose.mongoose.Schema({
         type: Date,
     },
 },
+
 {
     timestamps: true,
   }
