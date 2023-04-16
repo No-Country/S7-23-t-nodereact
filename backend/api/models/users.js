@@ -10,6 +10,14 @@ const userSchema = mongoose.Schema({
     trim: true,
     unique: true,
   },
+  city: {
+    type: String,
+    trim: true,
+  },
+  country: {
+    type: String,
+    trim: true,
+  },
   email: {
     type: String,
     trim: true,

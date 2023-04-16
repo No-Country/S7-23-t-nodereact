@@ -51,7 +51,11 @@ const userSchema = mongoose.mongoose.Schema({
         default: []
     },
     colaborators:{
-        type:[String],
+        type:[{
+            quantity: Number,
+            position: String
+        }],
+        default: []
     },//ux
     status: {
         type: String,
@@ -62,6 +66,7 @@ const userSchema = mongoose.mongoose.Schema({
         type: Date,
     },
 },
+
 {
     timestamps: true,
   }
