@@ -94,6 +94,18 @@ const completed = async (req, res) => {
       { completed: "completed" },
       { new: true }
     );
+    const project = await Project.findById(donation.projectId, projection);
+    const amount = {
+      parcialAmount:
+        parseInt(donation.amount) + parseInt(project.parcialAmount),
+    };
+    const updateProject = await Project.findByIdAndUpdate(
+      { _id: donation.projectId },
+      amount,
+      {
+        new: true,
+      }
+    );
 
     res.redirect(302, "http://localhost:3000/exito2");
   } catch (error) {
@@ -115,7 +127,7 @@ const failure = async (req, res) => {
       parcialAmount:
         parseInt(projectByName.parcialAmount) - parseInt(donation.amount),
     };
-console.log(amount)
+    console.log(amount);
     //Actualiza el parcialAmount del proyecto
     const updateProject = await Project.findByIdAndUpdate(
       { _id: donation.projectId },

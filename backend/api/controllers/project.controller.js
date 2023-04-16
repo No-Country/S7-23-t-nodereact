@@ -92,19 +92,9 @@ const PayCard = async (req, res) => {
     if(datos.amount<=0){
       res.status(400).json({amount:"Invalid"})
     }
-    const project = await Project.findById(datos.projectId, projection);
     const donation = new Donation(datos);
-    const amount = {
-      parcialAmount: parseInt(donation.amount) + parseInt(project.parcialAmount),
-    };
-
-    const updateProject = await Project.findByIdAndUpdate(
-      { _id: donation.projectId },
-      amount,
-      {
-        new: true,
-      }
-    );
+    const project = await Project.findById(donation.projectId, projection);
+    
     const newDonation = await donation.save();
 
     let preference = {
