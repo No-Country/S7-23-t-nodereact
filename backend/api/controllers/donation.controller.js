@@ -7,18 +7,15 @@ const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 };
 const getDonationByUser = async (req, res) => {
   //Recibe el id del usuario del que se queiren conocer las donaciones realizadas
   const { id } = req.params;
-  console.log(id);
   try {
     const donation = await Donation.find({ userId: { $eq: `${id}` } });
 
     if (donation) {
-      console.log(donation);
       res.status(200).json(donation);
     } else {
       res.status(404).json({ message: "Donaciones no encontradas" });
     }
   } catch (error) {
-    console.log(error.message);
     res
       .status(500)
       .json({ message: "Error al buscar las donaciones solicitadas" });
@@ -61,7 +58,6 @@ const postDonation = async (req, res) => {
 
     res.status(201).json(newDonation);
   } catch (error) {
-    console.log(error);
     res.status(400).json(error.message);
   }
 };
@@ -80,14 +76,12 @@ const acceptWorkDonation = async (req, res) => {
     );
     res.status(200).json(acceptedDonation);
   } catch (error) {
-    console.log(error);
     res.status(400).json(error.message);
   }
 };
 
 const completed = async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   try {
     const donation = await Donation.findByIdAndUpdate(
       { _id: id },
@@ -117,17 +111,13 @@ const failure = async (req, res) => {
   //Recibe el Id de la donación de tiempo que se quiere aceptar
   const { id } = req.params;
   let donation = await Donation.findById({ _id: id });
-  console.log(donation);
   let projectByName = await Project.findById(donation.projectId);
-  console.log("Proyecto 1");
-  console.log(projectByName);
 
   try {
     const amount = {
       parcialAmount:
         parseInt(projectByName.parcialAmount) - parseInt(donation.amount),
     };
-    console.log(amount);
     //Actualiza el parcialAmount del proyecto
     const updateProject = await Project.findByIdAndUpdate(
       { _id: donation.projectId },
@@ -136,14 +126,11 @@ const failure = async (req, res) => {
         new: true,
       }
     );
-    console.log("Proyecto 2");
-    console.log(updateProject.parcialAmount);
 
     const rejectedDonation = await Donation.findByIdAndDelete({ _id: id });
 
     res.redirect(302, "http://localhost:3000");
   } catch (error) {
-    console.log(error);
     res.status(400).json(error.message);
   }
 };
