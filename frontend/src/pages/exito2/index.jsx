@@ -1,8 +1,11 @@
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import style from "./exito2.module.css";
+import { useSelector } from "react-redux";
 
 const exito2 = () => {
+  const amount = useSelector((state) => state.amount);
+
   return (
     <>
       <Layout>
@@ -11,7 +14,7 @@ const exito2 = () => {
         >
           <div className="h-[100%] my-auto py-4">
             <h1 className="text-text text-2xl font-bold mt-5">
-              ¡Felicitaciones! Tu colaboración ha sido enviada con éxito.
+              ¡Felicitaciones! Tu colaboración ha sido enviada con éxito de ${" "}
             </h1>
             <div className="flex justify-center mt-10">
               <Link

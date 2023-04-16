@@ -21,7 +21,7 @@ const cryptocurrenciesFinance = ({ datas }) => {
               {datas.title}
             </h2>
             <p className="hidden sm:block font-Manrope font-bold text-sm text-text mt-4 sm:text-lg sm:font-bold sm:my-0 lg:text-xl xl:text-xl">
-              Tu financiación será recibida por Lisa Martínez
+              Tu financiación será recibida por {datas.autor}
             </p>
           </div>
 
