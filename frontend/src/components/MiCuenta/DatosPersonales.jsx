@@ -13,7 +13,7 @@ const DatosPersonales = () => {
                                     href="#"
                                     className=" col-start-1 col-end-3  items-center pb-6 space-x-3 border-b border-l-text"
                                 >
-                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Nombre de usuario</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope  active:text-accent-hover">Nombre de usuario</span>
                                                                 
                                 </div>
                                 <div
@@ -51,7 +51,7 @@ const DatosPersonales = () => {
                                     href="#"
                                     className="col-start-1 col-end-3 items-center space-x-3 pb-6 border-b border-l-text"
                                 >
-                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Email</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope  active:text-accent-hover">Email</span>
                                                                         
                                 </div>
                                 <div
@@ -87,7 +87,7 @@ const DatosPersonales = () => {
                                     href="#"
                                     className="col-start-1 col-end-3 items-center  space-x-3 pb-6  border-b border-l-text"
                                 >
-                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Fecha de Nacimiento</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope  active:text-accent-hover">Fecha de Nacimiento</span>
                                     
                                 </div>
                                 <div
@@ -123,7 +123,7 @@ const DatosPersonales = () => {
                                     href="#"
                                     className="col-start-1 col-end-3 items-center  space-x-3 pb-6  border-b border-l-text"
                                 >
-                                    <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">Pais</span>
+                                    <span className="font-bold  text-[#000000] manroper font-Manrope  active:text-accent-hover">Pais</span>
                                     
                                 </div>
                                 <div
