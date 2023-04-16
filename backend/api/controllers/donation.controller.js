@@ -118,6 +118,7 @@ const failure = async (req, res) => {
       parcialAmount:
         parseInt(projectByName.parcialAmount) - parseInt(donation.amount),
     };
+    console.log(amount);
     //Actualiza el parcialAmount del proyecto
     const updateProject = await Project.findByIdAndUpdate(
       { _id: donation.projectId },

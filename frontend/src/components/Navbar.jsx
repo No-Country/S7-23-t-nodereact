@@ -2,9 +2,15 @@ import Link from "next/link";
 import { useState } from "react";
 import Search from "./Search";
 import Despegable from "@/components/Desplegable";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
+  const { user, error, isLoading } = useUser();
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+  console.log(user);
+
   return (
     <div className="my-20 absolute z-40">
       <nav className="w-full  bg-font-text shadow fixed top-0 ">
@@ -97,16 +103,21 @@ export default function Home() {
               navbar ? "block" : "hidden"
             }`}
           >
-            <Link href={"/login"}>
-              <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
-                Iniciar sesión
-              </button>
-            </Link>
-            <Link href={"/register"}>
-              <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-color-accent text-font-text hover:border-accent-hover hover:bg-accent-hover">
-                Registrarse
-              </button>
-            </Link>
+            {user ? (
+              <>
+                <div className="flex">
+                  <h1>welcome {user.name}</h1>
+                  <img src={user.picture} />
+                  <a href="/api/auth/logout">Logout</a>
+                </div>
+              </>
+            ) : (
+              <Link href={"/api/auth/login"}>
+                <button className="rounded-full Kanit font-kanit font-medium py-2 px-3 border-color-accent border-2 bg-font-text text-black hover:border-accent-hover hover:bg-accent-hover hover:text-font-text">
+                  Iniciar sesión
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </nav>

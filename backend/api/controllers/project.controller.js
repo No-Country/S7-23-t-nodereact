@@ -86,15 +86,15 @@ const updateProject = async (req, res) => {
   }
 };
 const PayCard = async (req, res) => {
-  const {id}= req.query
+  const { id } = req.query;
   const datos = req.body;
   try {
-    if(datos.amount<=0){
-      res.status(400).json({amount:"Invalid"})
+    if (datos.amount <= 0) {
+      res.status(400).json({ amount: "Invalid" });
     }
     const donation = new Donation(datos);
     const project = await Project.findById(donation.projectId, projection);
-    
+
     const newDonation = await donation.save();
 
     let preference = {
@@ -131,12 +131,4 @@ const PayCard = async (req, res) => {
   }
 };
 
-
-export {
-  getProjects,
-  postProject,
-  getProjectById,
-  updateProject,
-  PayCard,
-
-};
+export { getProjects, postProject, getProjectById, updateProject, PayCard };

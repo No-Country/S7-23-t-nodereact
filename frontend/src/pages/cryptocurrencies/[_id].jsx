@@ -129,14 +129,28 @@ const cryptocurrenciesDetail = ({ datas }) => {
         </div>
         <hr className="text-text  w-full" />
         <div className="flex flex-col gap-5 my-4 lg:my-7">
-          <p className="text-base font-normal font-Manrope text-text text-justify lg:text-2xl">
+          <p className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
             {datas.description}
           </p>
-
-          <p className="text-base font-normal font-Manrope text-text text-justify lg:text-2xl ">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque amet
-            eligendi dolores accusantium exercitationem? Facilis quaerat quas
-          </p>
+          {datas.devRequired[0] ? (
+            <>
+              <p className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl ">
+                Necesitamos:
+              </p>
+              {datas.devRequired.map((dev) => (
+                <ul className="flex gap-2 list-disc ml-12">
+                  <li className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
+                    {dev.quantity}
+                  </li>
+                  <span className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
+                    {dev.position}
+                  </span>
+                </ul>
+              ))}
+            </>
+          ) : (
+            ""
+          )}
         </div>
         <hr className="text-text my-6 w-full " />
 
@@ -147,7 +161,7 @@ const cryptocurrenciesDetail = ({ datas }) => {
 
           <div className=" flex flex-col gap-3">
             <h2 className="font-bold font-Manrope text-text text-lg mx-1 lg:text-2xl">
-              Lisa Martínez
+              {datas.autor}
             </h2>
             <div className="flex flex-col">
               <span className="font-normal font-Manrope text-text text-lg mx-1 lg:text-2xl">

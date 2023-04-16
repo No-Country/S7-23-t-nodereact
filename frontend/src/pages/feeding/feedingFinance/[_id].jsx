@@ -1,51 +1,65 @@
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
-import { parse } from "postcss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { amountGlobal } from "../../../../store/slices/amount.slice";
 
 const feedingFinance = ({ datas }) => {
-  const [amount, setInputValue] = useState(100);
+  const [amount, setInputValue] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [partialTotal, setpartialTotal] = useState(0);
+
+  const dispatch = useDispatch();
 
   const handleButtonClick = async () => {
     if (isLoading) return; // Evitar que el usuario envíe varias solicitudes mientras se está procesando una.
 
     setIsLoading(true);
     const payUrl = `http://localhost:5000/api/projects/pay/${datas._id}`;
-    console.log(datas._id)
+    console.log(datas._id);
 
-    try {
-      
-   
-    const response = await fetch(payUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        projectId: datas._id,
-        amount: parseInt(amount),
-        userId:"642ae88a3e2ddb5011988a86",
-      }),
-    });
-    console.log(response)
-    const responseData = await response.json();
-    window.location.href = responseData;
-  } catch (error) {
-    console.error(error);
-  } finally {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 10000); // Deshabilitar temporalmente el botón durante 10 segundos después de enviar la solicitud.
-  }
-};
-  
+    if (amount < partialTotal) {
+      dispatch(amountGlobal({ amount, projectId: datas._id }));
+      localStorage.setItem(
+        "amount2",
+        JSON.stringify({ amount, projectId: datas._id })
+      );
+      try {
+        const response = await fetch(payUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            projectId: datas._id,
+            amount: parseInt(amount),
+            userId: "642ae88a3e2ddb5011988a86",
+          }),
+        });
+        console.log(response);
+        const responseData = await response.json();
+        window.open(`${responseData}`, "_blank");
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 5000); // Deshabilitar temporalmente el botón durante 10 segundos después de enviar la solicitud.
+      }
+    }
+  };
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
+  const diferences = () => {
+    setpartialTotal(datas.totalAmount - datas.parcialAmount);
+  };
 
+  useEffect(() => {
+    diferences();
+  }, [amount]);
 
   return (
     <Layout>
@@ -65,7 +79,7 @@ const feedingFinance = ({ datas }) => {
               {datas.title}
             </h2>
             <p className="hidden sm:block font-Manrope font-bold text-sm text-text mt-4 sm:text-lg sm:font-bold sm:my-0 lg:text-xl xl:text-xl">
-              Tu financiación será recibida por Lisa Martínez
+              Tu financiación será recibida por {datas.autor}
             </p>
           </div>
 
@@ -86,7 +100,7 @@ const feedingFinance = ({ datas }) => {
             placeholder="300"
             type="text"
             value={amount}
-          onChange={handleInputChange}
+            onChange={handleInputChange}
           />
           <span className="absolute top-3 left-4 text-lg text-text font-Manrope font-bold">
             $
@@ -97,16 +111,32 @@ const feedingFinance = ({ datas }) => {
         </h3>
         <div className="flex justify-between my-5 ">
           <span className="text-lg font-bold font-Manrope text-text">
-            Tu financiación
+            Total a recaudar
           </span>
           <span className="text-lg font-bold font-Manrope text-text  ">
-            $3.000
+            ${datas.totalAmount}
+          </span>
+        </div>
+        <div className="flex justify-between my-5 ">
+          <span className="text-lg font-bold font-Manrope text-text">
+            monto recaudado
+          </span>
+          <span className="text-lg font-bold font-Manrope text-text  ">
+            ${datas.parcialAmount}
           </span>
         </div>
         <p className="font-Manrope font-bold my-5 text-text text-base">
           ¡Gracias a esta financiación estamos más cerca de llegar a nuestro
           objetivo!
         </p>
+        {amount < partialTotal ? (
+          <div></div>
+        ) : (
+          <div className="text-lg text-color-accent font-bold text-center">
+            el monto no puede superar el monto total
+          </div>
+        )}
+
         <button className="w-full my-6 sm:h-[65px] bg-[#009EE3] px-10 py-2 rounded-[40px]">
           <img
             className="w-full h-full rounded-[40px] object-contain"
