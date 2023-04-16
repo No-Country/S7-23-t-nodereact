@@ -131,19 +131,12 @@ const PayCard = async (req, res) => {
   }
 };
 
-const Success = async (req, res) => {
-  const { id, amount } = req.params;
-  console.log(id);
-  console.log(amount);
-  const card = await Project.findById(id, projection);
-  console.log("HOLA");
-  console.log(card);
-};
+
 export {
   getProjects,
   postProject,
   getProjectById,
   updateProject,
   PayCard,
-  Success,
+
 };
