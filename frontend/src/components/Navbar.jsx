@@ -123,7 +123,7 @@ export default function Home({ users }) {
                   <Link href="/collaborate">COLABORAR</Link>
                 </li>
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
-                  <Link href="/post2">PUBLICAR CAMPAÑA</Link>
+                  <Link href="/post2/xd">PUBLICAR CAMPAÑA</Link>
                 </li>
               </ul>
             </div>
