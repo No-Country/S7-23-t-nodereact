@@ -26,6 +26,9 @@ const userSchema = mongoose.mongoose.Schema({
         type: mongoose.Schema.Types.String,
         ref: 'User'
     },
+    autorImg: {
+        type: String
+    }, 
     category: {
         type: mongoose.Schema.Types.String,
         ref: 'Categories'
