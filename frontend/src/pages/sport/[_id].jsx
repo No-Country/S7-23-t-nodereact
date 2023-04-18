@@ -186,7 +186,7 @@ const sportDetail = ({ datas }) => {
 
         <div className="flex gap-2 my-5">
           <div className="w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full ">
-            <img className="w-full h-full" src="/img.png" alt="" />
+            <img className="w-full h-full" src={datas.autorImg} alt="" />
           </div>
 
           <div className=" flex flex-col gap-3">
