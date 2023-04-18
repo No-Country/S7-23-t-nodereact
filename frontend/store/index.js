@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import amount from "./slices/amount.slice";
+import user from "./slices/users.slice";
+import userAll from "./slices/getUsers.slice";
 export default configureStore({
   reducer: {
-    amount,
+    user,
+    userAll,
   },
 });

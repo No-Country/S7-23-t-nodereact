@@ -19,18 +19,10 @@ const CardAlimentacion = ({ feeding }) => {
           <span className=" w-full h-[70px] font-normal text-[24px] line-clamp-2 px-[10px] mt-[10px]  font-Manrope">
             {feeding.description}
           </span>
-          <div className="w-[93%]  flex justify-between px-[10px]  mt-6">
-            <span className="font-bold text-2xl text-[#000000]  font-Manrope">
-              5 colaboradores
-            </span>
-            <span className="font-bold text-2xl text-[#000000]  font-Manrope">
-              {feeding.parcialAmount === 0
-                ? 0
-                : Math.ceil(
-                    (feeding.parcialAmount * 100) / feeding.totalAmount
-                  )}
-              %
-            </span>
+          <div className="w-[93%] px-[10px]  mt-6">
+            <p className="font-bold text-2xl text-[#000000]  font-Manrope text-center">
+              ${feeding.parcialAmount} recaudados de ${feeding.totalAmount}
+            </p>
           </div>
 
           <div

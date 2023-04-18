@@ -3,6 +3,22 @@ import Link from "next/link";
 import React from "react";
 
 const cryptocurrenciesDetail = ({ datas }) => {
+  const devRequiredLeft = datas?.devRequired.map((dev) => {
+    const collaborator = datas?.colaborators.find(
+      (c) => c.position === dev.position
+    );
+    if (collaborator) {
+      const obj = {
+        ...dev,
+        quantity: dev.quantity - collaborator.quantity,
+      };
+      return obj;
+    }
+    return dev;
+  });
+
+  console.log(devRequiredLeft);
+
   return (
     <Layout>
       <div className="w-[95%] mx-auto  mt-[112px]  mb-10   ">
@@ -30,15 +46,16 @@ const cryptocurrenciesDetail = ({ datas }) => {
            sm:p-4 sm:basis-[50%] min-[878px]:basis-[40%]   lg:w-[300px] lg:basis-[40%]  lg:h-[400px]  
            "
           >
-            <div className="w-[100%]  flex justify-between px-1  mt-2 lg:mt-6">
-              <span className="font-bold text-lg text-[#000000]  font-Manrope lg:text-2xl">
-                5 colaboradores
-              </span>
-              <span className="font-bold text-lg text-[#000000]  font-Manrope lg:text-2xl">
-                {datas.parcialAmount === 0
-                  ? 0
-                  : Math.ceil((datas.parcialAmount * 100) / datas.totalAmount)}
-                %
+            <div className="w-[100%]    px-1  mt-2 lg:mt-6">
+              {/* { 
+
+ datas.devRequired.reduce((a, b) => a.quantity + b.quantity)
+
+ 
+} */}
+
+              <span className="font-bold text-lg text-[#000000]  font-Manrope lg:text-2xl text-center">
+                ${datas.parcialAmount} recaudados de ${datas.totalAmount}
               </span>
             </div>
             <div
@@ -59,39 +76,57 @@ const cryptocurrenciesDetail = ({ datas }) => {
                 } bg-[#53B830] rounded-[40px] px-[10px]`}
               ></div>
             </div>
+            {devRequiredLeft[0] && (
+              <h2 className="flex gap-2 font-Manrope font-bold text-text text-base">
+                Restan:
+                {devRequiredLeft.map((dev) => (
+                  <>
+                    {" "}
+                    <span
+                      className="flex  font-Manrope font-bold text-text text-base"
+                      key={dev._id}
+                    >
+                      {dev.quantity} {dev.position}
+                    </span>
+                  </>
+                ))}
+              </h2>
+            )}
             <div className="flex flex-col-reverse">
-              <Link
-                href={`/cryptocurrencies/cryptocurrenciesForm/${datas._id}`}
-              >
-                <button
-                  className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
+              {datas.devRequired[0] && (
+                <>
+                  <Link href={`/community/communityForm/${datas._id}`}>
+                    <button
+                      className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                 lg:h-[50px]"
-                >
-                  <img
-                    className="w-[30px] h-[30px] bg-color-accent"
-                    src="/hands.svg"
-                    alt=""
-                  />
-                  COLABORAR
-                </button>
-              </Link>
-              <Link
-                href={`/cryptocurrencies/cryptocurrenciesFinance/${datas._id}`}
-              >
-                <button
-                  className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
-                lg:h-[50px]"
-                >
-                  <img
-                    className="w-[30px] h-[30px] bg-color-accent"
-                    src="/VectorPig.svg"
-                    alt=""
-                  />
-                  FINANCIAR
-                </button>
-              </Link>
+                    >
+                      <img
+                        className="w-[30px] h-[30px] bg-color-accent"
+                        src="/hands.svg"
+                        alt=""
+                      />
+                      COLABORAR
+                    </button>
+                  </Link>
+                </>
+              )}
 
-              <h2 className="text-text font-bold text-lg mt-3 font-Manrope  min-[878px]:mt-10  lg:text-2xl  ">
+              {datas.totalAmount >= 1 && (
+                <Link href={`/community/communityFinance/${datas._id}`}>
+                  <button
+                    className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
+                 lg:h-[50px]"
+                  >
+                    <img
+                      className="w-[30px] h-[30px] bg-color-accent"
+                      src="/VectorPig.svg"
+                      alt=""
+                    />
+                    FINANCIAR
+                  </button>
+                </Link>
+              )}
+              <h2 className="text-text font-bold text-lg mt-2 font-Manrope  min-[878px]:mt-2  lg:text-2xl">
                 ¡Con tu ayuda estamos más cerca de alcanzar nuestro objetivo!
               </h2>
             </div>
@@ -132,7 +167,7 @@ const cryptocurrenciesDetail = ({ datas }) => {
           <p className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
             {datas.description}
           </p>
-          {datas.devRequired[0] ? (
+          {datas.devRequired[0] && (
             <>
               <p className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl ">
                 Necesitamos:
@@ -148,8 +183,6 @@ const cryptocurrenciesDetail = ({ datas }) => {
                 </ul>
               ))}
             </>
-          ) : (
-            ""
           )}
         </div>
         <hr className="text-text my-6 w-full " />

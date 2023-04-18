@@ -4,14 +4,18 @@ import MisCampanas from "./MisCampanas";
 import MisFinanciamientos from "./MisFinanciamientos";
 import MisColaboraciones from "./MisColaboracion";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-const MisDatos = ({renderComponent}) => {
-    const [componentToRender, setComponentToRender] = useState(null);  
- 
-  function handleRenderComponent(component) {
-    const componentToRender = renderComponent(component);
+const MisDatos = ({ renderComponent, data }) => {
+  const [componentToRender, setComponentToRender] = useState(null);
+
+  function handleRenderComponent(component, props) {
+    const componentToRender = renderComponent(component, props);
     setComponentToRender(componentToRender);
   }
+
+  const users = useSelector((state) => state.user);
+
   return (
     <div className="relative w-full h-screen inset-0 my-4 bg-transparent flex items-start justify-center">
       <div className="flex flex-col h-4/5 px-10 py-24 bg-white  w-72">
@@ -19,7 +23,7 @@ const MisDatos = ({renderComponent}) => {
           <div className="flex items-center">
             <figure className="relative fit-c px-0 pt-5 w-40 h-40">
               <Image
-                src="/avatar-man.png"
+                src={users.picture}
                 alt="Shoes"
                 width={150}
                 height={150}
@@ -32,9 +36,8 @@ const MisDatos = ({renderComponent}) => {
             <ul className="pt-2 pb-4 space-y-6 text-sm">
               <li className="rounded-sm">
                 <a
-                  
                   className="flex items-center pb-6 space-x-3 border-b border-l-text"
-                  onClick={() => renderComponent('DatosPersonales')}
+                  onClick={() => renderComponent("DatosPersonales")}
                 >
                   <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
                     Datos Personales
@@ -43,9 +46,8 @@ const MisDatos = ({renderComponent}) => {
               </li>
               <li className="rounded-sm">
                 <a
-                  
                   className="flex items-center space-x-3 pb-6 border-b border-l-text"
-                  onClick={() => renderComponent('MisCampanas')}
+                  onClick={() => renderComponent("MisCampanas")}
                 >
                   <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
                     Mis Campañas
@@ -54,9 +56,8 @@ const MisDatos = ({renderComponent}) => {
               </li>
               <li className="rounded-sm">
                 <a
-                  
                   className="flex items-center  space-x-3 pb-6  border-b border-l-text"
-                  onClick={() => renderComponent('MisFinanciamientos')}
+                  onClick={() => renderComponent("MisFinanciamientos")}
                 >
                   <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
                     Mis Financiamientos
@@ -65,9 +66,8 @@ const MisDatos = ({renderComponent}) => {
               </li>
               <li className="rounded-sm">
                 <a
-                 
                   className="flex items-center  space-x-3 pb-6  border-b border-l-text"
-                  onClick={() => renderComponent('MisColaboraciones')}
+                  onClick={() => renderComponent("MisColaboraciones")}
                 >
                   <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
                     Mis Colaboraciones
