@@ -1,15 +1,45 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from "./Search";
 import Despegable from "@/components/Desplegable";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { useDispatch } from "react-redux";
+import { userGlobal } from "../../store/slices/users.slice";
 
-export default function Home() {
+export default function Home({ users }) {
   const [navbar, setNavbar] = useState(false);
   const { user, error, isLoading } = useUser();
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
-  console.log(user);
+
+  const dispatch = useDispatch();
+
+  dispatch(userGlobal(users));
+  console.log(users);
+
+  function postUser() {
+    const URL = "http://localhost:5000/api/users/new";
+    if (user) {
+    }
+    var dbUser = {
+      userName: user?.name,
+      name: user?.name,
+      email: user?.email,
+      picture: user?.picture,
+    };
+    dispatch(userGlobal(dbUser));
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(dbUser),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => console.error("Error:", error))
+      .then((response) => console.log("Success:", response));
+  }
+  postUser();
 
   return (
     <div className="my-20 absolute z-40">
