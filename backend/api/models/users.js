@@ -33,7 +33,6 @@ const userSchema = mongoose.Schema({
   },
   type: {
     type: String,
-    required: true,
     default: "user",
     enum: ["user", "admin"],
   },
@@ -45,7 +44,6 @@ const userSchema = mongoose.Schema({
   },
   fullAcount:{
     type:String,
-    required:true,
     default:false,
     enum:[true,false]
   },
@@ -55,7 +53,6 @@ const userSchema = mongoose.Schema({
   },
   acountStatus: {
     type: String,
-    required: true,
     default: "active",
     enum: ["active", "suspended", "banned"],
   },
