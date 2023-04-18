@@ -2,7 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { amountGlobal } from "../../../../store/slices/amount.slice";
+import { amountGlobal } from "../../../../store/slices/users.slice";
 
 const feedingFinance = ({ datas }) => {
   const [amount, setInputValue] = useState(0);
@@ -19,11 +19,6 @@ const feedingFinance = ({ datas }) => {
     console.log(datas._id);
 
     if (amount < partialTotal) {
-      dispatch(amountGlobal({ amount, projectId: datas._id }));
-      localStorage.setItem(
-        "amount2",
-        JSON.stringify({ amount, projectId: datas._id })
-      );
       try {
         const response = await fetch(payUrl, {
           method: "POST",
@@ -44,6 +39,11 @@ const feedingFinance = ({ datas }) => {
       } finally {
         setTimeout(() => {
           setIsLoading(false);
+          dispatch(amountGlobal({ amount, projectId: datas._id }));
+          localStorage.setItem(
+            "amount2",
+            JSON.stringify({ amount, projectId: datas._id })
+          );
         }, 5000); // Deshabilitar temporalmente el botón durante 10 segundos después de enviar la solicitud.
       }
     }

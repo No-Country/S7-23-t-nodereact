@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "../../components/Footer";
 import Head from "next/head";
@@ -17,13 +17,13 @@ const Index = ({ children }) => {
   const renderActiveComponent = () => {
     switch (activeComponent) {
       case "DatosPersonales":
-        return <DatosPersonales/>;
+        return <DatosPersonales />;
       case "MisCampanas":
-        return <MisCampanas/>;
+        return <MisCampanas />;
       case "MisColaboraciones":
-        return <MisColaboraciones/>;
+        return <MisColaboraciones />;
       case "MisFinanciamientos":
-        return <MisFinanciamientos/>;
+        return <MisFinanciamientos />;
       default:
         return null;
     }
@@ -44,16 +44,12 @@ const Index = ({ children }) => {
       <div className="min-h-screen flex flex-col justify-between ">
         <Navbar />
 
-        <div style={{ display: "flex", marginTop:"100px" }}>
-          <div >
-            <MisDatos renderComponent={renderComponent}  />
+        <div style={{ display: "flex", marginTop: "100px" }}>
+          <div>
+            <MisDatos renderComponent={renderComponent} data={data} />
           </div>
-          <div style={{ flex: 4}}>
-             {renderActiveComponent()}
-          </div>
+          <div style={{ flex: 4 }}>{renderActiveComponent()}</div>
         </div>
-
-       
 
         <main className="w-[95%]  sm:w-[90%] md:w-[90%] mx-auto  lg:w-[85%]  lg:max-w-[1240px]  lg:mx-auto  ">
           {children}

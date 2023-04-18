@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,10 +9,10 @@ import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
 import Onboarding from "@/components/Onboarding/Onboarding";
 import MisDatos from "@/components/MiCuenta/MisDatos";
 import Banner2 from "@/components/Banner2";
-import axios from "axios"
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
-export default function Home({ order, proy }) {
+export default function Home({ order, proy, users }) {
   return (
     <>
       <Head>
@@ -26,7 +25,7 @@ export default function Home({ order, proy }) {
           crossorigin="anonymous"
         ></script>
       </Head>
-      <Navbar />
+      <Navbar users={users} />
       <Banner2 />
       <div className="flex justify-around flex-wrap"></div>
       <Onboarding />
@@ -52,17 +51,22 @@ export default function Home({ order, proy }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get("http://localhost:5000/api/projects");
-  const data = res.data;
-  const order = data.sort(
+  const [project, user] = await Promise.all([
+    await axios.get("http://localhost:5000/api/projects"),
+    await axios.get("http://localhost:5000/api/users/profile"),
+  ]);
+  const projects = project.data;
+  const users = user.data;
+  const order = projects.sort(
     (a, b) => b.parcialAmount / b.totalAmount - a.parcialAmount / a.totalAmount
   );
-  const proy = data.slice(data.length - 4, data.length);
+  const proy = projects.slice(projects.length - 4, projects.length);
 
   return {
     props: {
       order,
       proy,
+      users,
     },
   };
 }

@@ -1,11 +1,22 @@
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 
 const communityDetail = ({ datas }) => {
-  const router = useRouter();
-  console.log(router);
+  const devRequiredLeft = datas?.devRequired.map((dev) => {
+    const collaborator = datas?.colaborators.find(
+      (c) => c.position === dev.position
+    );
+    if (collaborator) {
+      const obj = {
+        ...dev,
+        quantity: dev.quantity - collaborator.quantity,
+      };
+      return obj;
+    }
+    return dev;
+  });
 
   return (
     <Layout>
@@ -63,7 +74,60 @@ const communityDetail = ({ datas }) => {
                 } bg-[#53B830] rounded-[40px] px-[10px]`}
               ></div>
             </div>
+            {devRequiredLeft[0] && (
+              <h2 className="flex gap-2 font-Manrope font-bold text-text text-base">
+                Restan:
+                {devRequiredLeft.map((dev) => (
+                  <>
+                    {" "}
+                    <span
+                      className="flex  font-Manrope font-bold text-text text-base"
+                      key={dev._id}
+                    >
+                      {dev.quantity} {dev.position}
+                    </span>
+                  </>
+                ))}
+              </h2>
+            )}
             <div className="flex flex-col-reverse">
+              {datas.devRequired[0] && (
+                <>
+                  <Link href={`/community/communityForm/${datas._id}`}>
+                    <button
+                      className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
+                lg:h-[50px]"
+                    >
+                      <img
+                        className="w-[30px] h-[30px] bg-color-accent"
+                        src="/hands.svg"
+                        alt=""
+                      />
+                      COLABORAR
+                    </button>
+                  </Link>
+                </>
+              )}
+
+              {datas.parcialAmount >= 1 && (
+                <>
+                  <Link href={`/community/communityFinance/${datas._id}`}>
+                    <button
+                      className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
+                 lg:h-[50px]"
+                    >
+                      <img
+                        className="w-[30px] h-[30px] bg-color-accent"
+                        src="/VectorPig.svg"
+                        alt=""
+                      />
+                      FINANCIAR
+                    </button>
+                  </Link>
+                </>
+              )}
+
+              {/* 
               <Link href={`/community/communityForm/${datas._id}`}>
                 <button
                   className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
@@ -89,9 +153,9 @@ const communityDetail = ({ datas }) => {
                   />
                   FINANCIAR
                 </button>
-              </Link>
+              </Link> */}
 
-              <h2 className="text-text font-bold text-lg mt-3 font-Manrope  min-[878px]:mt-10  lg:text-2xl  ">
+              <h2 className="text-text font-bold text-lg mt-2 font-Manrope  min-[878px]:mt-2  lg:text-2xl">
                 ¡Con tu ayuda estamos más cerca de alcanzar nuestro objetivo!
               </h2>
             </div>
@@ -127,47 +191,58 @@ const communityDetail = ({ datas }) => {
             </span>
           </div>
         </div>
+
         <hr className="text-text  w-full" />
         <div className="flex flex-col gap-5 my-4 lg:my-7">
-          <p className="text-base font-normal font-Manrope text-text text-justify lg:text-2xl">
+          <p className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
             {datas.description}
           </p>
+          {datas.devRequired[0] && (
+            <>
+              <p className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl ">
+                Necesitamos:
+              </p>
+              {datas.devRequired.map((dev) => (
+                <ul className="flex gap-2 list-disc ml-12">
+                  <li className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
+                    {dev.quantity}
+                  </li>
+                  <span className="text-base font-bold font-Manrope text-text text-justify lg:text-2xl">
+                    {dev.position}
+                  </span>
+                </ul>
+              ))}
+            </>
+          )}
+          <hr className="text-text my-6 w-full " />
 
-          <p className="text-base font-normal font-Manrope text-text text-justify lg:text-2xl ">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque amet
-            eligendi dolores accusantium exercitationem? Facilis quaerat quas
-          </p>
-        </div>
-        <hr className="text-text my-6 w-full " />
-
-        <div className="flex gap-2 my-5">
-          <div className="w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full ">
-            <img className="w-full h-full" src="/img.png" alt="" />
-          </div>
-
-          <div className=" flex flex-col gap-3">
-            <h2 className="font-bold font-Manrope text-text text-lg mx-1 lg:text-2xl">
-              Lisa Martínez
-            </h2>
-            <div className="flex flex-col">
-              <span className="font-normal font-Manrope text-text text-lg mx-1 lg:text-2xl">
-                Organizadora
-              </span>
-              <span className="font-normal font-Manrope text-text text-lg mx-1 lg:text-2xl">
-                Colombia
-              </span>
+          <div className="flex gap-2 my-5">
+            <div className="w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full ">
+              <img className="w-full h-full" src="/img.png" alt="" />
             </div>
-            <button
-              className="w-[120px] h-[40px] flex justify-center items-center text-text font-semibold font-Kanit text-sm p-3 border-2
+
+            <div className=" flex flex-col gap-3">
+              <h2 className="font-bold font-Manrope text-text text-lg mx-1 lg:text-2xl">
+                {datas.autor}
+              </h2>
+              <div className="flex flex-col">
+                <span className="font-normal font-Manrope text-text text-lg mx-1 lg:text-2xl">
+                  Organizadora
+                </span>
+                <span className="font-normal font-Manrope text-text text-lg mx-1 lg:text-2xl">
+                  Colombia
+                </span>
+              </div>
+              <button
+                className="w-[120px] h-[40px] flex justify-center items-center text-text font-semibold font-Kanit text-sm p-3 border-2
              border-color-accent lg:text-xl rounded-[20px] lg:w-[160px]"
-            >
-              CONTACTAR
-            </button>
+              >
+                CONTACTAR
+              </button>
+            </div>
           </div>
         </div>
       </div>
-
-      <div></div>
     </Layout>
   );
 };
