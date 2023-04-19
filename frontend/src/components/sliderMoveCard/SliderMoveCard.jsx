@@ -52,8 +52,8 @@ const SliderMoveCard = ({ proy }) => {
         },
       }}
     >
-      {proy?.map((moves) => (
-        <SwiperSlide>
+      {proy?.map((moves, index) => (
+        <SwiperSlide key={index}>
           <NoveCard moves={moves} />
         </SwiperSlide>
       ))}

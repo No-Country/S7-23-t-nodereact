@@ -123,7 +123,7 @@ const FormularioFinanciar = () => {
             <option>Alimentación</option>
             <option>Comunidad</option>
             <option>Criptomonedas</option>
-            <option>Crowfunding"</option>
+            <option>Crowfunding</option>
             <option>Deporte</option>
             <option>Diseño</option>
             <option>Educación</option>

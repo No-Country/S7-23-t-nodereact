@@ -20,7 +20,7 @@ const DatosPersonales = () => {
       <ul className="mt-8 pt-2 pb-4 space-y-6 text-sm ">
         <li className="rounded-sm w-4/5 grid grid-cols-5">
           <div
-            href="#"
+            href="/"
             className=" col-start-1 col-end-3  items-center pb-6 space-x-3 border-b border-l-text"
           >
             <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
@@ -28,7 +28,7 @@ const DatosPersonales = () => {
             </span>
           </div>
           <div
-            href="#"
+            href="/"
             className=" col-start-3 col-end-5 items-center pb-6 space-x-3 border-b border-l-text"
           >
             <span className="font-bold">
@@ -60,7 +60,7 @@ const DatosPersonales = () => {
         </li>
         <li className="rounded-sm w-4/5 grid grid-cols-5">
           <div
-            href="#"
+            href="/"
             className="col-start-1 col-end-3 items-center space-x-3 pb-6 border-b border-l-text"
           >
             <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
@@ -68,7 +68,7 @@ const DatosPersonales = () => {
             </span>
           </div>
           <div
-            href="#"
+            href="/"
             className="col-start-3 col-end-5 items-center space-x-3 pb-6 border-b border-l-text"
           >
             <span className="font-bold">
@@ -99,7 +99,7 @@ const DatosPersonales = () => {
         </li>
         <li className="rounded-sm w-4/5 grid grid-cols-5">
           <div
-            href="#"
+            href="/"
             className="col-start-1 col-end-3 items-center  space-x-3 pb-6  border-b border-l-text"
           >
             <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
@@ -107,7 +107,7 @@ const DatosPersonales = () => {
             </span>
           </div>
           <div
-            href="#"
+            href="/"
             className="col-start-3 col-end-5 items-center  space-x-3 pb-6  border-b border-l-text"
           >
             <span className="font-bold">
@@ -138,7 +138,7 @@ const DatosPersonales = () => {
         </li>
         <li className="rounded-sm w-4/5 grid grid-cols-5">
           <div
-            href="#"
+            href="/"
             className="col-start-1 col-end-3 items-center  space-x-3 pb-6  border-b border-l-text"
           >
             <span className="font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
@@ -146,7 +146,7 @@ const DatosPersonales = () => {
             </span>
           </div>
           <div
-            href="#"
+            href="/"
             className="col-start-3 col-end-5 items-center  space-x-3 pb-6  border-b border-l-text"
           >
             <span className="font-bold">
