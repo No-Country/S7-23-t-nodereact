@@ -7,7 +7,7 @@ import SliderMoveCard from "@/components/sliderMoveCard/SliderMoveCard";
 import SliderDestacCard from "@/components/sliderDestacCard/SliderDestacCard";
 import TestimonioEslider from "@/components/testimonio/TestimonioEslider";
 import Onboarding from "@/components/Onboarding/Onboarding";
-import MisDatos from "@/components/MiCuenta/MisDatos";
+// import MisDatos from "@/components/MiCuenta/MisDatos";
 import Banner2 from "@/components/Banner2";
 import axios from "axios";
 import Script from "next/script";
@@ -48,7 +48,7 @@ export default function Home({ order, proy, users }) {
         <TestimonioEslider />
       </main>
       <Footer />
-      <MisDatos />
+      {/* <MisDatos /> */}
 
     </>
   );
@@ -56,8 +56,8 @@ export default function Home({ order, proy, users }) {
 
 export async function getStaticProps() {
   const [project, user] = await Promise.all([
-    await axios.get(`${process.env.BACK_URL}api/projects`),
-    await axios.get(`${process.env.BACK_URL}api/users/profile`),
+    await axios.get(`${process.env.NEXT_PUBLIC_BACK_URL}api/projects`),
+    await axios.get(`${process.env.NEXT_PUBLIC_BACK_URL}api/users/profile`),
   ]);
   const projects = project.data;
   const users = user.data;

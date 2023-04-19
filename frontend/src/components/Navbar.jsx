@@ -16,31 +16,33 @@ export default function Home({ users }) {
   const dispatch = useDispatch();
 
   dispatch(userGlobal(users));
-  console.log(users);
+  // console.log(users);
 
-  function postUser() {
-    const URL = `${process.env.BACK_URL}api/users/new`;
-    if (user) {
-    }
-    var dbUser = {
-      userName: user?.name,
-      name: user?.name,
-      email: user?.email,
-      picture: user?.picture,
-    };
-    dispatch(userGlobal(dbUser));
-    fetch(URL, {
-      method: "POST",
-      body: JSON.stringify(dbUser),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => console.error("Error:", error));
-    // .then((response) => console.log("Success:", response));
-  }
-  postUser();
+  // function postUser() {
+  //   const URL = `${process.env.NEXT_PUBLIC_BACK_URL}api/users/new`;
+  //   if (user) {
+  //   }
+  //   var dbUser = {
+  //     userName: user?.name,
+  //     name: user?.name,
+  //     email: user?.email,
+  //     picture: user?.picture,
+  //   };
+  //   dispatch(userGlobal(dbUser));
+  //   fetch(URL, {
+  //     method: "POST",
+  //     body: JSON.stringify(dbUser),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .catch((error) => console.error("Error:", error));
+  //   // .then((response) => console.log("Success:", response));
+  // }
+  // useEffect(() => {
+  //   postUser();
+  // }, [user, dispatch]);
 
   return (
     <div className="my-20 absolute z-40">
