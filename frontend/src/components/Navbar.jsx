@@ -5,6 +5,7 @@ import Despegable from "@/components/Desplegable";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useDispatch } from "react-redux";
 import { userGlobal } from "../../store/slices/users.slice";
+import Image from "next/image";
 
 export default function Home({ users }) {
   const [navbar, setNavbar] = useState(false);
@@ -18,7 +19,7 @@ export default function Home({ users }) {
   console.log(users);
 
   function postUser() {
-    const URL = "http://localhost:5000/api/users/new";
+    const URL = `${process.env.BACK_URL}api/users/new`;
     if (user) {
     }
     var dbUser = {
@@ -123,7 +124,7 @@ export default function Home({ users }) {
                   <Link href="/collaborate">COLABORAR</Link>
                 </li>
                 <li className="text-white font-bold  text-[#000000] manroper font-Manrope hover:text-color-accent active:text-accent-hover">
-                  <Link href="/post2/xd">PUBLICAR CAMPAÑA</Link>
+                  <Link href="/post2/">PUBLICAR CAMPAÑA</Link>
                 </li>
               </ul>
             </div>
@@ -135,10 +136,21 @@ export default function Home({ users }) {
           >
             {user ? (
               <>
-                <div className="flex">
-                  <h1>welcome {user.name}</h1>
-                  <img src={user.picture} />
-                  <a href="/api/auth/logout">Logout</a>
+                <div className="flex gap-4">
+                  <div className="flex flex-col">
+                    <span className="text-text ">Bienvenido</span>
+                    <span>{user.name}</span>
+                  </div>
+
+                  <Image
+                    width={50}
+                    height={50}
+                    src={user.picture}
+                    className="rounded-full"
+                  />
+                  <button className=" rounded-full bg-color-accent text-font-text text-en">
+                    <a href="/api/auth/logout">Cerrar sesión</a>
+                  </button>
                 </div>
               </>
             ) : (

@@ -97,7 +97,7 @@ const SlidePrevButton = () => {
 };
 
 export async function getStaticProps() {
-  const URL = "http://localhost:5000/api/projects";
+  const URL = `${process.env.BACK_URL}api/projects`;
   const response = await fetch(URL);
   const data = await response.json();
 

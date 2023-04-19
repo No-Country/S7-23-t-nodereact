@@ -19,7 +19,7 @@ const index = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const Url = "http://localhost:5000/api/projects";
+  const Url = `${process.env.BACK_URL}api/projects`;
   const response = await fetch(Url);
   const data = await response.json();
 

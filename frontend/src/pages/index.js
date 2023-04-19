@@ -52,8 +52,8 @@ export default function Home({ order, proy, users }) {
 
 export async function getStaticProps() {
   const [project, user] = await Promise.all([
-    await axios.get("http://localhost:5000/api/projects"),
-    await axios.get("http://localhost:5000/api/users/profile"),
+    await axios.get(`${process.env.BACK_URL}api/projects`),
+    await axios.get(`${process.env.BACK_URL}api/users/profile`),
   ]);
   const projects = project.data;
   const users = user.data;
