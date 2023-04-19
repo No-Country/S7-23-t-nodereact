@@ -74,7 +74,7 @@ const sportFinance = ({ datas }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  const Url = `${process.env.BACK_URL}api/projects/${query._id}`;
+  const Url = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects/${query._id}`;
   const response = await fetch(Url);
   const datas = await response.json();
 
