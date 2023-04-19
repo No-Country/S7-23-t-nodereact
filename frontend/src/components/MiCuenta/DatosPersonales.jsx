@@ -11,7 +11,7 @@ const DatosPersonales = () => {
   useEffect(() => {
     setfirst(filter());
   }, [users]);
-
+  
   console.log(first);
   return (
     <div className="mt-10">
