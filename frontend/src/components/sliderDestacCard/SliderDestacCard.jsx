@@ -53,8 +53,8 @@ const SliderDestacCard = ({ data }) => {
         },
       }}
     >
-      {data?.map((project) => (
-        <SwiperSlide>
+      {data?.map((project, index) => (
+        <SwiperSlide key={index}>
           <div>
             <ProyDestac project={project} />
           </div>

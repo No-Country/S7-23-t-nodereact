@@ -28,7 +28,7 @@ const MisDatos = ({ renderComponent, data }) => {
                 width={150}
                 height={150}
                 className="rounded-full absolute -top-16"
-                ostyle={{ objectFit: "cover" }}
+                // ostyle={{ objectFit: "cover" }}
               />
             </figure>
           </div>

@@ -50,8 +50,8 @@ const TestimonioEslider = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {getCard.map((card) => (
-          <SwiperSlide>
+        {getCard.map((card, index) => (
+          <SwiperSlide key={index}>
             <Testimonios card={card} />
           </SwiperSlide>
         ))}
