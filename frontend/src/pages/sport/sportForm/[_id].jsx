@@ -102,7 +102,7 @@ const sportForm = ({ datas }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  const Url = `http://localhost:5000/api/projects/${query._id}`;
+  const Url = `${process.env.BACK_URL}api/projects/${query._id}`;
   const response = await fetch(Url);
   const datas = await response.json();
 

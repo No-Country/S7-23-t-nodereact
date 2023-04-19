@@ -15,7 +15,7 @@ const feedingFinance = ({ datas }) => {
     if (isLoading) return; // Evitar que el usuario envíe varias solicitudes mientras se está procesando una.
 
     setIsLoading(true);
-    const payUrl = `http://localhost:5000/api/projects/pay/${datas._id}`;
+    const payUrl = `${process.env.BACK_URL}api/projects/pay/${datas._id}`;
     console.log(datas._id);
 
     if (amount < partialTotal) {
@@ -151,7 +151,7 @@ const feedingFinance = ({ datas }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  const Url = `http://localhost:5000/api/projects/${query._id}`;
+  const Url = `${process.env.BACK_URL}api/projects/${query._id}`;
   const response = await fetch(Url);
   const datas = await response.json();
 
