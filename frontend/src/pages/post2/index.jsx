@@ -35,7 +35,7 @@ const FormularioFinanciar = () => {
   }
 
   const createNewProject = (data) => {
-    const URL = `${process.env.BACK_URL}api/projects`;
+    const URL = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects`;
 
     const datas = {
       ...data,
@@ -123,7 +123,7 @@ const FormularioFinanciar = () => {
             <option>Alimentación</option>
             <option>Comunidad</option>
             <option>Criptomonedas</option>
-            <option>Crowfunding"</option>
+            <option>Crowfunding</option>
             <option>Deporte</option>
             <option>Diseño</option>
             <option>Educación</option>

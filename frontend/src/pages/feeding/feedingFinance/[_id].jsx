@@ -3,8 +3,9 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { amountGlobal } from "../../../../store/slices/users.slice";
+import Image from "next/image";
 
-const feedingFinance = ({ datas }) => {
+const FeedingFinance = ({ datas }) => {
   const [amount, setInputValue] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [partialTotal, setpartialTotal] = useState(0);
@@ -15,7 +16,7 @@ const feedingFinance = ({ datas }) => {
     if (isLoading) return; // Evitar que el usuario envíe varias solicitudes mientras se está procesando una.
 
     setIsLoading(true);
-    const payUrl = `${process.env.BACK_URL}api/projects/pay/${datas._id}`;
+    const payUrl = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects/pay/${datas._id}`;
     console.log(datas._id);
 
     if (amount < partialTotal) {
@@ -68,7 +69,13 @@ const feedingFinance = ({ datas }) => {
         sm:p-4 md:mt-[112px]   md:mb-10 "
       >
         <Link href={`/feeding/${datas._id}`}>
-          <img className="my-6 cursor-pointer" src="/arrow.svg" alt="" />
+          <Image
+            width={50}
+            height={50}
+            className="my-6 cursor-pointer"
+            src="/arrow.svg"
+            alt="imagen"
+          />
         </Link>
         <div className="sm:flex sm:gap-6 ">
           <div className="sm:flex sm:flex-col sm:order-2  sm:gap-2 lg:gap-6 ">
@@ -84,7 +91,13 @@ const feedingFinance = ({ datas }) => {
           </div>
 
           <div className="sm:order-1">
-            <img className="w-full h-full rounded-2xl" src={datas.img} alt="" />
+            <Image
+              width={50}
+              height={50}
+              className="w-full h-full rounded-2xl"
+              src={datas.img}
+              alt="image"
+            />
           </div>
 
           <p className="sm:hidden font-Manrope font-bold text-sm text-text mt-4">
@@ -138,7 +151,9 @@ const feedingFinance = ({ datas }) => {
         )}
 
         <button className="w-full my-6 sm:h-[65px] bg-[#009EE3] px-10 py-2 rounded-[40px]">
-          <img
+          <Image
+            width={200}
+            height={40}
             className="w-full h-full rounded-[40px] object-contain"
             src="/pago.png"
             alt=""
@@ -151,7 +166,7 @@ const feedingFinance = ({ datas }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  const Url = `${process.env.BACK_URL}api/projects/${query._id}`;
+  const Url = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects/${query._id}`;
   const response = await fetch(Url);
   const datas = await response.json();
 
@@ -162,4 +177,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default feedingFinance;
+export default FeedingFinance;

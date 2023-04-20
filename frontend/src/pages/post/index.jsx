@@ -88,7 +88,7 @@ const FormularioColaborar = () => {
             <option className="w-50%">Alimentación</option>
             <option className="w-50%">Comunidad</option>
             <option className="w-50%">Criptomonedas</option>
-            <option className="w-50%">Crowfunding"</option>
+            <option className="w-50%">Crowfunding</option>
             <option className="w-50%">Deporte</option>
             <option className="w-50%">Diseño</option>
             <option className="w-50%">Educación</option>

@@ -10,37 +10,39 @@ import Image from "next/image";
 export default function Home({ users }) {
   const [navbar, setNavbar] = useState(false);
   const { user, error, isLoading } = useUser();
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>{error.message}</div>;
 
   const dispatch = useDispatch();
 
   dispatch(userGlobal(users));
-  console.log(users);
+  // console.log(users);
 
-  function postUser() {
-    const URL = `${process.env.BACK_URL}api/users/new`;
-    if (user) {
-    }
-    var dbUser = {
-      userName: user?.name,
-      name: user?.name,
-      email: user?.email,
-      picture: user?.picture,
-    };
-    dispatch(userGlobal(dbUser));
-    fetch(URL, {
-      method: "POST",
-      body: JSON.stringify(dbUser),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .catch((error) => console.error("Error:", error))
-      .then((response) => console.log("Success:", response));
-  }
-  postUser();
+  // function postUser() {
+  //   const URL = `${process.env.NEXT_PUBLIC_BACK_URL}api/users/new`;
+  //   if (user) {
+  //   }
+  //   var dbUser = {
+  //     userName: user?.name,
+  //     name: user?.name,
+  //     email: user?.email,
+  //     picture: user?.picture,
+  //   };
+  //   dispatch(userGlobal(dbUser));
+  //   fetch(URL, {
+  //     method: "POST",
+  //     body: JSON.stringify(dbUser),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .catch((error) => console.error("Error:", error));
+  //   // .then((response) => console.log("Success:", response));
+  // }
+  // useEffect(() => {
+  //   postUser();
+  // }, [user, dispatch]);
 
   return (
     <div className="my-20 absolute z-40">
@@ -50,14 +52,18 @@ export default function Home({ users }) {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
+                  <Image
+                    width={100}
+                    height={50}
                     className="block h-8 w-auto lg:hidden"
-                    src="/logo.png"
+                    src={"/logo.png"}
                     alt="Your Company"
                   />
-                  <img
+                  <Image
+                    width={100}
+                    height={50}
                     className="hidden h-8 w-auto lg:block"
-                    src="/logo.png"
+                    src={"/logo.png"}
                     alt="Your Company"
                   />
                 </div>
@@ -136,7 +142,7 @@ export default function Home({ users }) {
           >
             {user ? (
               <>
-                <div className="flex gap-4">
+                <div className="flex gap-4 bg-neutral-400 w-[300px]">
                   <div className="flex flex-col">
                     <span className="text-text ">Bienvenido</span>
                     <span>{user.name}</span>
@@ -147,9 +153,10 @@ export default function Home({ users }) {
                     height={50}
                     src={user.picture}
                     className="rounded-full"
+                    alt="user"
                   />
                   <button className=" rounded-full bg-color-accent text-font-text text-en">
-                    <a href="/api/auth/logout">Cerrar sesión</a>
+                    <Link href="/api/auth/logout">Cerrar sesión</Link>
                   </button>
                 </div>
               </>

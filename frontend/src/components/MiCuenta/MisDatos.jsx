@@ -21,14 +21,14 @@ const MisDatos = ({ renderComponent, data }) => {
       <div className="flex flex-col h-4/5 px-10 py-24 bg-white  w-72">
         <div className=" space-y-1">
           <div className="flex items-center">
-            <figure className="relative fit-c px-0 pt-5 w-40 h-40">
+            <figure className="relative px-0 pt-5 w-40 h-40">
               <Image
-                src={users.picture}
+                src={`/users.picture`}
                 alt="Shoes"
                 width={150}
                 height={150}
                 className="rounded-full absolute -top-16"
-                ostyle={{ objectFit: "cover" }}
+                // ostyle={{ objectFit: "cover" }}
               />
             </figure>
           </div>

@@ -52,8 +52,8 @@ const SliderMoveCard = ({ proy }) => {
         },
       }}
     >
-      {proy?.map((moves) => (
-        <SwiperSlide>
+      {proy?.map((moves, index) => (
+        <SwiperSlide key={index}>
           <NoveCard moves={moves} />
         </SwiperSlide>
       ))}
@@ -95,7 +95,7 @@ const SlidePrevButton = () => {
 };
 
 export async function getStaticProps() {
-  const URL = `${process.env.BACK_URL}api/projects`;
+  const URL = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects`;
   const response = await fetch(URL);
   const nove = await response.json();
 
