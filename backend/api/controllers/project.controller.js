@@ -3,18 +3,14 @@ import Donation from "../models/donations.js";
 import dotenv from "dotenv";
 import mercadopago from "mercadopago";
 dotenv.config();
-
 mercadopago.configure({
   access_token: process.env.ACCESS_TOKEN,
 });
-
 const projection = { createdAt: 0, updatedAt: 0, __v: 0, avaliable: 0 };
-
 const getProjects = async (req, res) => {
   //////buscamos los proyectos
   const { title, category, autor } = req.query;
   var allProjects = await Project.find({}, { projection });
-
   try {
     ///busqueda por nombre
     if (title) {
@@ -71,7 +67,6 @@ const updateProject = async (req, res) => {
     let projectByName = allProject.filter((e) =>
       e.title.toLowerCase().includes(title.toLowerCase())
     );
-
     const forUpdateProject = await Project.findByIdAndUpdate(
       { _id: projectByName[0]._id },
       data,
@@ -86,11 +81,11 @@ const updateProject = async (req, res) => {
   }
 };
 const PayCard = async (req, res) => {
-  const { id } = req.query;
+  const {id}= req.query
   const datos = req.body;
   try {
-    if (datos.amount <= 0) {
-      res.status(400).json({ amount: "Invalid" });
+    if(datos.amount<=0){
+      res.status(400).json({amount:"Invalid"})
     }
     const donation = new Donation(datos);
     const project = await Project.findById(donation.projectId, projection);
@@ -130,5 +125,19 @@ const PayCard = async (req, res) => {
     console.log(error);
   }
 };
-
-export { getProjects, postProject, getProjectById, updateProject, PayCard };
+const Success = async (req, res) => {
+  const { id, amount } = req.params;
+  console.log(id);
+  console.log(amount);
+  const card = await Project.findById(id, projection);
+  console.log("HOLA");
+  console.log(card);
+};
+export {
+  getProjects,
+  postProject,
+  getProjectById,
+  updateProject,
+  PayCard,
+  Success,
+};

@@ -107,7 +107,7 @@ const feedingDetail = ({ datas }) => {
               )}
 
               {datas.totalAmount >= 1 && (
-                <Link href={`/community/communityFinance/${datas._id}`}>
+                <Link href={`/feeding/feedingFinance/${datas._id}`}>
                   <button
                     className="w-full h-[47px] sm:h-[40px] flex gap-4 justify-center items-center bg-color-accent rounded-[30px] mt-6 font-semibold font-Kanit text-font-text 
                  lg:h-[50px]"
