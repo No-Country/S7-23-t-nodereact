@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import Search from "./Search";
 import Despegable from "@/components/Desplegable";
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { useDispatch } from "react-redux";
-import { userGlobal } from "../../store/slices/users.slice";
+
 import Image from "next/image";
 
 export default function Home({ users }) {
@@ -13,36 +12,33 @@ export default function Home({ users }) {
   // if (isLoading) return <div>Loading...</div>;
   // if (error) return <div>{error.message}</div>;
 
-  const dispatch = useDispatch();
-
-  dispatch(userGlobal(users));
   // console.log(users);
 
-  // function postUser() {
-  //   const URL = `${process.env.NEXT_PUBLIC_BACK_URL}api/users/new`;
-  //   if (user) {
-  //   }
-  //   var dbUser = {
-  //     userName: user?.name,
-  //     name: user?.name,
-  //     email: user?.email,
-  //     picture: user?.picture,
-  //   };
-  //   dispatch(userGlobal(dbUser));
-  //   fetch(URL, {
-  //     method: "POST",
-  //     body: JSON.stringify(dbUser),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .catch((error) => console.error("Error:", error));
-  //   // .then((response) => console.log("Success:", response));
-  // }
-  // useEffect(() => {
-  //   postUser();
-  // }, [user, dispatch]);
+  function postUser() {
+    const URL = `${process.env.NEXT_PUBLIC_BACK_URL}api/users/new`;
+    if (user) {
+    }
+    var dbUser = {
+      userName: user?.name,
+      name: user?.name,
+      email: user?.email,
+      picture: user?.picture,
+    };
+
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(dbUser),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => console.error("Error:", error));
+    // .then((response) => console.log("Success:", response));
+  }
+  useEffect(() => {
+    postUser();
+  }, [user]);
 
   return (
     <div className="my-20 absolute z-40">

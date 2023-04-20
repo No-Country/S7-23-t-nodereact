@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const CardEducation = ({ education }) => {
@@ -5,7 +7,9 @@ const CardEducation = ({ education }) => {
     <Link href={`/education/${education._id}`}>
       <div className="w-full   h-[570px] lg:w-[100%]   cursor-pointer   border-[2px] border-[#dfdada] rounded-[15px] shadow-2xl">
         <div className="w-full h-[266.7px] p-[10px]  ">
-          <img
+          <Image
+            width={50}
+            height={50}
             src={education.img}
             className="w-full h-full object-cover rounded-[20px] "
             alt={education.img}

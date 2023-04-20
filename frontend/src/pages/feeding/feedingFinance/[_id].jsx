@@ -1,66 +1,51 @@
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { amountGlobal } from "../../../../store/slices/users.slice";
-import Image from "next/image";
+import { parse } from "postcss";
+import React, { useState } from "react";
 
-const FeedingFinance = ({ datas }) => {
-  const [amount, setInputValue] = useState(0);
+const feedingFinance = ({ datas }) => {
+  const [amount, setInputValue] = useState(100);
   const [isLoading, setIsLoading] = useState(false);
-  const [partialTotal, setpartialTotal] = useState(0);
-
-  const dispatch = useDispatch();
 
   const handleButtonClick = async () => {
     if (isLoading) return; // Evitar que el usuario envíe varias solicitudes mientras se está procesando una.
 
     setIsLoading(true);
-    const payUrl = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects/pay/${datas._id}`;
-    console.log(datas._id);
+    const payUrl = `http://localhost:5000/api/projects/pay/${datas._id}`;
+    console.log(datas._id)
 
-    if (amount < partialTotal) {
-      try {
-        const response = await fetch(payUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            projectId: datas._id,
-            amount: parseInt(amount),
-            userId: "642ae88a3e2ddb5011988a86",
-          }),
-        });
-        console.log(response);
-        const responseData = await response.json();
-        window.open(`${responseData}`, "_blank");
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-          dispatch(amountGlobal({ amount, projectId: datas._id }));
-          localStorage.setItem(
-            "amount2",
-            JSON.stringify({ amount, projectId: datas._id })
-          );
-        }, 5000); // Deshabilitar temporalmente el botón durante 10 segundos después de enviar la solicitud.
-      }
-    }
-  };
+    try {
+
+
+    const response = await fetch(payUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        projectId: datas._id,
+        amount: parseInt(amount),
+        userId:"642ae88a3e2ddb5011988a86",
+      }),
+    });
+    console.log(response)
+    const responseData = await response.json();
+    window.location.href = responseData;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 10000); // Deshabilitar temporalmente el botón durante 10 segundos después de enviar la solicitud.
+  }
+};
+
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  const diferences = () => {
-    setpartialTotal(datas.totalAmount - datas.parcialAmount);
-  };
 
-  useEffect(() => {
-    diferences();
-  }, [amount]);
 
   return (
     <Layout>
@@ -69,13 +54,7 @@ const FeedingFinance = ({ datas }) => {
         sm:p-4 md:mt-[112px]   md:mb-10 "
       >
         <Link href={`/feeding/${datas._id}`}>
-          <Image
-            width={50}
-            height={50}
-            className="my-6 cursor-pointer"
-            src="/arrow.svg"
-            alt="imagen"
-          />
+          <img className="my-6 cursor-pointer" src="/arrow.svg" alt="" />
         </Link>
         <div className="sm:flex sm:gap-6 ">
           <div className="sm:flex sm:flex-col sm:order-2  sm:gap-2 lg:gap-6 ">
@@ -86,20 +65,12 @@ const FeedingFinance = ({ datas }) => {
               {datas.title}
             </h2>
             <p className="hidden sm:block font-Manrope font-bold text-sm text-text mt-4 sm:text-lg sm:font-bold sm:my-0 lg:text-xl xl:text-xl">
-              Tu financiación será recibida por {datas.autor}
+              Tu financiación será recibida por Lisa Martínez
             </p>
           </div>
-
           <div className="sm:order-1">
-            <Image
-              width={50}
-              height={50}
-              className="w-full h-full rounded-2xl"
-              src={datas.img}
-              alt="image"
-            />
+            <img className="w-full h-full rounded-2xl" src={datas.img} alt="" />
           </div>
-
           <p className="sm:hidden font-Manrope font-bold text-sm text-text mt-4">
             Tu financiación será recibida por Lisa Martínez
           </p>
@@ -113,7 +84,7 @@ const FeedingFinance = ({ datas }) => {
             placeholder="300"
             type="text"
             value={amount}
-            onChange={handleInputChange}
+          onChange={handleInputChange}
           />
           <span className="absolute top-3 left-4 text-lg text-text font-Manrope font-bold">
             $
@@ -124,36 +95,18 @@ const FeedingFinance = ({ datas }) => {
         </h3>
         <div className="flex justify-between my-5 ">
           <span className="text-lg font-bold font-Manrope text-text">
-            Total a recaudar
+            Tu financiación
           </span>
           <span className="text-lg font-bold font-Manrope text-text  ">
-            ${datas.totalAmount}
-          </span>
-        </div>
-        <div className="flex justify-between my-5 ">
-          <span className="text-lg font-bold font-Manrope text-text">
-            monto recaudado
-          </span>
-          <span className="text-lg font-bold font-Manrope text-text  ">
-            ${datas.parcialAmount}
+            $3.000
           </span>
         </div>
         <p className="font-Manrope font-bold my-5 text-text text-base">
           ¡Gracias a esta financiación estamos más cerca de llegar a nuestro
           objetivo!
         </p>
-        {amount < partialTotal ? (
-          <div></div>
-        ) : (
-          <div className="text-lg text-color-accent font-bold text-center">
-            el monto no puede superar el monto total
-          </div>
-        )}
-
         <button className="w-full my-6 sm:h-[65px] bg-[#009EE3] px-10 py-2 rounded-[40px]">
-          <Image
-            width={200}
-            height={40}
+          <img
             className="w-full h-full rounded-[40px] object-contain"
             src="/pago.png"
             alt=""
@@ -164,17 +117,14 @@ const FeedingFinance = ({ datas }) => {
     </Layout>
   );
 };
-
 export async function getServerSideProps({ query }) {
-  const Url = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects/${query._id}`;
+  const Url = `http://localhost:5000/api/projects/${query._id}`;
   const response = await fetch(Url);
   const datas = await response.json();
-
   return {
     props: {
       datas: datas,
     },
   };
 }
-
-export default FeedingFinance;
+export default feedingFinance;

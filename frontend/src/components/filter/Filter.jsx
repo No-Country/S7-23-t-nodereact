@@ -37,25 +37,25 @@ const Filter = () => {
           <div className="w-[80%] p-3 flex flex-col bg-[#FDFDFD] rounded-[20px] gap-2 sm:gap-1 absolute  top-10   font-semibold border-[2px] border-[#dfdada]   shadow-2xl">
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               Frontend
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               Backend
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               UX/UI
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               Tester
             </a>
@@ -83,19 +83,19 @@ const Filter = () => {
           <div className="w-[80%]  sm:w-full flex flex-col bg-[#FDFDFD] rounded-[20px] gap-2 sm:gap-1 p-3 absolute  top-10   font-semibold border-[2px] border-[#dfdada]   shadow-2xl">
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               Financiar y Colaborar
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               Financiar
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               colaborar
             </a>
@@ -126,19 +126,19 @@ const Filter = () => {
           >
             <a
               className="text-text font-Manrope font-semibold  text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               mas recientes
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base"
-              href="#"
+              href="/"
             >
               Mejor Valorados
             </a>
             <a
               className="text-text font-Manrope font-semibold text-xs sm:text-base "
-              href="#"
+              href="/"
             >
               Cerca de mí
             </a>

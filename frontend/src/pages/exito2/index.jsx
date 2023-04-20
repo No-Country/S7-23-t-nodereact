@@ -1,11 +1,8 @@
 import Layout from "@/components/Layout/Layout";
 import Link from "next/link";
 import style from "./exito2.module.css";
-import { useSelector } from "react-redux";
 
 const exito2 = () => {
-  const amount = useSelector((state) => state.amount);
-
   return (
     <>
       <Layout>

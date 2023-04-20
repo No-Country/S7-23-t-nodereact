@@ -32,7 +32,7 @@ const index = ({ filter }) => {
 };
 
 export async function getStaticProps() {
-  const Url = `${process.env.NEXT_PUBLIC_BACK_URL}api/projects`;
+  const Url = `http://localhost:5000/api/projects`;
   const response = await fetch(Url);
   const data = await response.json();
   const filter = data.filter((f) => f.category === "Alimentación");
